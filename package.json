@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx serve exe-project",
-    "build": "nx build",
+    "build": "nx build exe-project",
     "test": "nx test",
     "lint": "eslint . --ext .ts"
   },
