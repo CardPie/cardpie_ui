@@ -8,6 +8,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('libs/homepage/src/index').then((m) => m.HomepageModule),
   },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('libs/auth/login/src/index').then((m) => m.AuthLoginModule),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

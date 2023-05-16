@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <nav class="main-nav" style="max-height: 80px">
+                <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="/" class="logo">
+                    <a href="index.html" class="logo">
                         <img
                             src="assets/images/logo_cardpie_1.png"
                             alt=""
@@ -13,13 +13,9 @@
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
-                    <ul
-                        fxLayout="row"
-                        fxLayoutAlign="space-between"
-                        class="nav flex-nav"
-                    >
+                    <ul class="nav">
                         <li class="scroll-to-section">
-                            <a href="#top" class="active">Home</a>
+                            <a href="index.html" class="active">Home</a>
                         </li>
                         <li class="scroll-to-section">
                             <a href="#services">Services</a>
@@ -28,17 +24,17 @@
                             <a href="#projects">Projects</a>
                         </li>
                         <li class="has-sub">
-                            <a href="/">Pages</a>
+                            <a href="javascript:void(0)">Pages</a>
                             <ul class="sub-menu">
-                                <li><a href="/">About Us</a></li>
-                                <li><a href="/">FAQs</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="faqs.html">FAQs</a></li>
                             </ul>
                         </li>
                         <li class="scroll-to-section">
                             <a href="#infos">Infos</a>
                         </li>
                         <li class="scroll-to-section">
-                            <a href="#contact">Login</a>
+                            <a routerLink="/login">Login</a>
                         </li>
                     </ul>
                     <a class="menu-trigger">
