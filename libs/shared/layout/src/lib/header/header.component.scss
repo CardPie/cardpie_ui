@@ -1,0 +1,12 @@
+:host {
+  .flex-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  ul {
+    width: fit-content;
+  }
+  ul > li {
+    width: fit-content;
+  }
+}
