@@ -13,6 +13,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('libs/auth/login/src/index').then((m) => m.AuthLoginModule),
   },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('libs/learning/src/index').then((m) => m.LearningModule),
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
