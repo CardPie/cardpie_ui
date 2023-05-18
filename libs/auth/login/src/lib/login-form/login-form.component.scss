@@ -7,10 +7,6 @@
       .card {
         height: 550px;
       }
-      :ng-deep mat-card .card2 {
-        width: auto;
-        height: 100%;
-      }
       .card2 {
         color: white;
         background-image: url(../../../../../../apps/exe-project/src/assets/images/infos-bg.jpg);
@@ -31,10 +27,11 @@
 
           input.form-control {
             border: none;
-            background-color: black;
+            background-color: white;
             border-radius: 4px;
             padding: 12px;
             width: 100%;
+            margin-top: 10px;
           }
         }
 
@@ -88,5 +85,8 @@
     width: 861px;
     height: 746px;
     z-index: -1;
+  }
+  .login-btn {
+    width: 150px;
   }
 }

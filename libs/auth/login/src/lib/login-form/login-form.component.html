@@ -38,20 +38,24 @@
                             fxLayoutGap="30px"
                         >
                             <div fxFlex="80" fxFlex.lt-md="100">
+                                <a
+                                    class="logo"
+                                    routerLink="/"
+                                    style="margin-left: 100px"
+                                >
+                                    <img
+                                        id="logo_login"
+                                        src="assets/images/logo_cardpie_3.png"
+                                        alt="Logo"
+                                        style="width: 140px; height: auto"
+                                    />
+                                </a>
                                 <div
                                     fxLayout="row"
                                     fxLayoutAlign="center center"
                                     fxLayoutGap="30px"
                                     fxLayoutWrap
                                 >
-                                    <a class="logo" routerLink="/">
-                                        <img
-                                            id="logo_login"
-                                            src="assets/images/logo_cardpie_3.png"
-                                            alt="Logo"
-                                            style="width: 100px; height: auto"
-                                        />
-                                    </a>
                                     <div fxFlex="500" style="width: 300px">
                                         <h6 class="msg-info">
                                             Please login to your account
@@ -61,7 +65,6 @@
                                             [formGroup]="loginForm"
                                             (ngSubmit)="onSubmit()"
                                         >
-                                            <mat-label>Username</mat-label>
                                             <input
                                                 type="text"
                                                 id="username"
@@ -70,8 +73,6 @@
                                                 class="form-control"
                                                 formControlName="username"
                                             />
-
-                                            <mat-label>Password</mat-label>
                                             <input
                                                 placeholder="Password"
                                                 class="form-control"
@@ -82,11 +83,12 @@
 
                                             <div
                                                 fxLayout="row"
-                                                fxLayoutAlign="center"
+                                                fxLayoutAlign="space-between center"
                                                 fxLayoutGap="10px"
                                                 style="margin-top: 10px"
                                             >
                                                 <button
+                                                    class="login-btn"
                                                     mat-raised-button
                                                     color="primary"
                                                     type="submit"
