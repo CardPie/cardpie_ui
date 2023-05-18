@@ -4,9 +4,12 @@ import {RouterModule} from '@angular/router';
 import {authLoginRoutes} from './lib.routes';
 import {LoginFormComponent} from './login-form/login-form.component';
 import {SharedLayoutModule} from 'libs/shared/layout/src/index';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     SharedLayoutModule,
     RouterModule.forChild(authLoginRoutes),
   ],

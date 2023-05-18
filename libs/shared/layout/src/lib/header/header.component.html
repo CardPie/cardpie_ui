@@ -1,48 +1,55 @@
-<header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img
-                            src="assets/images/logo_cardpie_1.png"
-                            alt=""
-                            style="max-width: 250px; margin-top: -20px"
-                        />
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li class="scroll-to-section">
-                            <a href="index.html" class="active">Home</a>
-                        </li>
-                        <li class="scroll-to-section">
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="scroll-to-section">
-                            <a href="#projects">Projects</a>
-                        </li>
-                        <li class="has-sub">
-                            <a href="javascript:void(0)">Pages</a>
-                            <ul class="sub-menu">
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="faqs.html">FAQs</a></li>
-                            </ul>
-                        </li>
-                        <li class="scroll-to-section">
-                            <a href="#infos">Infos</a>
-                        </li>
-                        <li class="scroll-to-section">
-                            <a routerLink="/login">Login</a>
-                        </li>
-                    </ul>
-                    <a class="menu-trigger">
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
+<header>
+    <mat-toolbar color="primary">
+        <div
+            fxLayout="row"
+            fxLayoutAlign="space-around"
+            class="header-container"
+        >
+            <div>
+                <a routerLink="/">
+                    <img
+                        src="assets/images/logo_cardpie_1.png"
+                        alt="Logo"
+                        class="logo"
+                    />
+                </a>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="none center">
+                <nav mat-tab-nav-bar>
+                    <a
+                        mat-tab-link
+                        routerLink="#"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >Home</a
+                    >
+                    <a
+                        mat-tab-link
+                        routerLink="/about"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >About</a
+                    >
+                    <a
+                        mat-tab-link
+                        routerLink="/contact"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >Contact</a
+                    >
+                    <a
+                        mat-tab-link
+                        routerLink="/login"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >Login</a
+                    >
                 </nav>
             </div>
         </div>
-    </div>
+    </mat-toolbar>
 </header>

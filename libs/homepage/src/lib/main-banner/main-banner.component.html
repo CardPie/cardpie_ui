@@ -1,78 +1,35 @@
-<div class="main-banner" id="top">
+<div fxLayout="row" fxLayout.gt-sm="column" class="main-banner" id="top">
+    <div class="banner-image image1"></div>
+    <div class="banner-image image2"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-lg-7">
+        <div fxLayout="row" fxLayout.xs="column" class="row">
+            <div fxFlex="70" fxFlex.gt-sm="100">
                 <div class="caption header-text">
-                    <h6>Provide learning services</h6>
+                    <h3>Provide learning services</h3>
                     <div class="line-dec"></div>
                     <h4>
-                        Better way <em>to learn and</em
-                        ><span>memorize words</span>
+                        Better way <em>to learn and</em>
+                        <span>memorize words</span>
                     </h4>
-                    <div class="d-flex flex-column">
-                        <p class="d-flex" style="opacity: 1; transform: none">
-                            <svg
-                                style="
-                                    height: 20px;
-                                    width: 20px;
-                                    margin-top: 5px;
-                                "
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                                class="h-5 w-5 text-primary"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                    clip-rule="evenodd"
-                                ></path></svg
-                            >Create your own flashcard
+                    <div fxLayout="column" fxLayoutGap="10px">
+                        <p>
+                            <mat-icon>create</mat-icon> Create your own
+                            flashcard
                         </p>
-                        <p class="d-flex" style="opacity: 1; transform: none">
-                            <svg
-                                style="
-                                    height: 20px;
-                                    width: 20px;
-                                    margin-top: 5px;
-                                "
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                                class="h-5 w-5 text-primary"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                    clip-rule="evenodd"
-                                ></path></svg
-                            >Spaced repetition technique
+                        <p>
+                            <mat-icon>schedule</mat-icon> Spaced repetition
+                            technique
                         </p>
-                        <p class="d-flex" style="opacity: 1; transform: none">
-                            <svg
-                                style="
-                                    height: 20px;
-                                    width: 20px;
-                                    margin-top: 5px;
-                                "
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 20 20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                                class="h-5 w-5 text-primary"
-                            >
-                                <path
-                                    fill-rule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                                    clip-rule="evenodd"
-                                ></path></svg
-                            >Share with your friends
+                        <p>
+                            <mat-icon>share</mat-icon> Share with your friends
                         </p>
                     </div>
                     <div>
-                        <button type="button" class="btn btn-primary">
+                        <button
+                            routerLink="/login"
+                            mat-raised-button
+                            color="primary"
+                        >
                             EXPLORE
                         </button>
                     </div>
