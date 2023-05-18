@@ -12,12 +12,14 @@ import {InfosComponent} from './infos/infos.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   imports: [
     CommonModule,
     SharedLayoutModule,
     MatIconModule,
     MatButtonModule,
+    MatCardModule,
     RouterModule.forChild(homepageRoutes),
   ],
   declarations: [
