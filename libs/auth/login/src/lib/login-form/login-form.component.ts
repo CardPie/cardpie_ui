@@ -39,7 +39,7 @@ export class LoginFormComponent implements OnInit {
         if (response.status_code >= 200 && response.status_code < 300) {
           const authToken = response.data.access_token;
           const refreshToken = response.data.refresh_token;
-          localStorage.setItem('authToken', authToken);
+          localStorage.setItem('accessToken', authToken);
           localStorage.setItem('refreshToken', refreshToken);
         }
         this.router.navigate(['/home']);

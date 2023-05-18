@@ -10,10 +10,14 @@ import {ServicesComponent} from './services/services.component';
 import {ProjectsComponent} from './projects/projects.component';
 import {InfosComponent} from './infos/infos.component';
 import {ContactUsComponent} from './contact-us/contact-us.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   imports: [
     CommonModule,
     SharedLayoutModule,
+    MatIconModule,
+    MatButtonModule,
     RouterModule.forChild(homepageRoutes),
   ],
   declarations: [
