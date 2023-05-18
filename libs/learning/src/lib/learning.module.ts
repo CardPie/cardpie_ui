@@ -7,6 +7,8 @@ import {FooterComponent} from './footer/footer.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,6 +16,8 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
     RouterModule.forChild(learningRoutes),
     RouterModule.forChild(learningRoutes),
+    MatFormFieldModule,
+    MatInputModule,
   ],
   declarations: [HeaderComponent, FooterComponent, MainPageComponent],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],
