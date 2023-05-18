@@ -1,12 +1,16 @@
 :host {
-  .flex-nav {
-    display: flex;
-    justify-content: space-around;
+  .header-container {
+    width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
   }
-  ul {
-    width: fit-content;
+
+  .logo {
+    height: auto;
+    width: 120px;
   }
-  ul > li {
-    width: fit-content;
+
+  ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
+    color: white;
   }
 }

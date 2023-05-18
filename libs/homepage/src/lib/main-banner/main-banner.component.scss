@@ -1,0 +1,75 @@
+:host {
+  .main-banner {
+    background-color: #f8f8f8;
+    padding: 40px;
+    position: relative;
+
+    .banner-image {
+      position: absolute;
+      top: 0;
+      width: 50%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+
+      &.image1 {
+        left: 0;
+        background-image: url('../../../../../apps/exe-project/src/assets/images/banner-left.png');
+      }
+
+      &.image2 {
+        right: 0;
+        background-image: url('../../../../../apps/exe-project/src/assets/images/banner-right.png');
+      }
+    }
+
+    .container {
+      width: 600px;
+      left: 0;
+      z-index: 10;
+      margin: unset;
+    }
+
+    .caption {
+      color: #333;
+      text-align: start;
+      h3 {
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #007bff;
+      }
+      h4 {
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 20px;
+
+        em {
+          font-style: normal;
+          color: #ff4081;
+        }
+
+        span {
+          color: #007bff;
+        }
+      }
+
+      p {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+
+        mat-icon {
+          margin-right: 10px;
+          font-size: 20px;
+          color: #007bff;
+        }
+      }
+
+      button {
+        margin-top: 20px;
+      }
+    }
+  }
+}
