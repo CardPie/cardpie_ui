@@ -1,11 +1,11 @@
 <header>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="fixed-toolbar">
         <div
             fxLayout="row"
             fxLayoutAlign="space-around"
             class="header-container"
         >
-            <div>
+            <div class="fit-content">
                 <a routerLink="/">
                     <img
                         src="assets/images/logo_cardpie_1.png"
@@ -26,7 +26,7 @@
                     >
                     <a
                         mat-tab-link
-                        routerLink="/about"
+                        href="#about"
                         routerLinkActive
                         #rla="routerLinkActive"
                         [active]="rla.isActive"
@@ -34,7 +34,7 @@
                     >
                     <a
                         mat-tab-link
-                        routerLink="/contact"
+                        href="#contact"
                         routerLinkActive
                         #rla="routerLinkActive"
                         [active]="rla.isActive"

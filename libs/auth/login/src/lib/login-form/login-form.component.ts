@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
@@ -6,6 +6,7 @@ import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
   selector: 'exe-project-login-form',
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class LoginFormComponent implements OnInit {
   loginForm!: FormGroup;
