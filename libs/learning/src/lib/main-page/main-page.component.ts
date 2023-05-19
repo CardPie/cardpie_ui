@@ -9,41 +9,42 @@ import { FlashcardSet, Folder } from './main-page-model';
 export class MainPageComponent {
   recentFlashcardSets: FlashcardSet[] = [
     {
-      name: "Hieu",
-      cardCount: 100,
-      creatorName: "Hieunmt",
-      creatorAvatar: ""
+      name: "ISC-Full",
+      cardCount: 394,
+      creatorName: "Thaycacac",
+      creatorAvatar: "https://w7.pngwing.com/pngs/627/97/png-transparent-avatar-web-development-computer-network-avatar-game-web-design-heroes.png"
     },
     {
-      name: "Hieu",
-      cardCount: 100,
-      creatorName: "Hieunmt",
-      creatorAvatar: ""
+      name: "Swd392",
+      cardCount: 208,
+      creatorName: "Ptien",
+      creatorAvatar: "https://w7.pngwing.com/pngs/627/97/png-transparent-avatar-web-development-computer-network-avatar-game-web-design-heroes.png"
     }, 
     {
-      name: "Hieu",
-      cardCount: 100,
-      creatorName: "Hieunmt",
-      creatorAvatar: ""
+      name: "SWD392",
+      cardCount: 198,
+      creatorName: "biggunnyso4",
+      creatorAvatar: "https://w7.pngwing.com/pngs/627/97/png-transparent-avatar-web-development-computer-network-avatar-game-web-design-heroes.png"
     }, 
     {
-      name: "Hieu",
-      cardCount: 100,
-      creatorName: "Hieunmt",
-      creatorAvatar: ""
+      name: "PRM-Tổng hợp",
+      cardCount: 338,
+      creatorName: "Thaycacac",
+      creatorAvatar: "https://w7.pngwing.com/pngs/627/97/png-transparent-avatar-web-development-computer-network-avatar-game-web-design-heroes.png"
     },
     {
-      name: "Hieu",
-      cardCount: 100,
-      creatorName: "Hieunmt",
-      creatorAvatar: ""
+      name: "PRM-Tổng hợp",
+      cardCount: 338,
+      creatorName: "Thaycacac",
+      creatorAvatar: "https://w7.pngwing.com/pngs/627/97/png-transparent-avatar-web-development-computer-network-avatar-game-web-design-heroes.png"
     },
     {
-      name: "Hieu",
-      cardCount: 100,
-      creatorName: "Hieunmt",
-      creatorAvatar: ""
+      name: "PRM-Tổng hợp",
+      cardCount: 338,
+      creatorName: "Thaycacac",
+      creatorAvatar: "https://w7.pngwing.com/pngs/627/97/png-transparent-avatar-web-development-computer-network-avatar-game-web-design-heroes.png"
     },
+    
   ];
   createdFolders: Folder[] = [
     {
@@ -53,16 +54,6 @@ export class MainPageComponent {
     {
       name: "Hieu",
       flashcardSetCount: 100
-    },
-    {
-      name: "Hieu",
-      flashcardSetCount: 100
-    }, {
-      name: "Hieu",
-      flashcardSetCount: 100
-    }, {
-      name: "Hieu",
-      flashcardSetCount: 100
-    },
+    }
   ];
 }
