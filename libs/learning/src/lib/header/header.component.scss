@@ -1,5 +1,6 @@
 /* app.component.css */
-.navbar-container {
+:host{
+  .navbar-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,3 +42,4 @@
   .menu-items {
     margin: 30px;
   }
+}

@@ -1,0 +1,44 @@
+:host {
+  .container {
+    padding: 20px;
+  }
+  .title {
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-style: italic;
+  }
+  .recent-cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .flashcard-card {
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .flashcard-info {
+    padding: 16px;
+  }
+  
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .folder-tile {
+    padding: 10px;
+  }
+  
+  .folder-card {
+    height: 100px;
+    width: 100%;
+  }
+  
+  .folder-info {
+    padding: 16px;
+  }
+}

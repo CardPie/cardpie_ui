@@ -9,6 +9,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -18,6 +21,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     RouterModule.forChild(learningRoutes),
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
+    MatGridListModule
   ],
   declarations: [HeaderComponent, FooterComponent, MainPageComponent],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],
