@@ -10,22 +10,25 @@
       </a>
   </div>
     <div class="menu-items">
-      <a mat-button routerLink="/home" class="menu-items">Home</a>
-      <a mat-button routerLink="/about" class="menu-items">Folder</a>
+      <a mat-button routerLink="/home" class="menu-items">Trang chủ</a>
+      <a mat-button routerLink="/about" class="menu-items">Thư mục</a>
       <a mat-button routerLink="/contact" class="menu-items">Forum</a>
     </div>
-    <div class="search-container">
-      <mat-form-field>
-        <input matInput placeholder="Search">
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon>close</mat-icon>
+      <form action="" class="search-bar">
+        <input type="search" name="search" pattern=".*\S.*" required>
+        <button class="search-btn" type="submit">
+          <span>Search</span>
         </button>
-      </mat-form-field>
-    </div>
+      </form>
     <div class="bell-icon-container">
       <button mat-icon-button class="bell-icon-button">
         <mat-icon>notifications</mat-icon>
       </button>
     </div>
+    <button mat-button [matMenuTriggerFor]="beforeMenu" class="avatar-btn"><img src="assets/images/logo_cardpie_1.png" class="avatar"></button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
   </div>
 </mat-toolbar>

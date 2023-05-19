@@ -1,17 +1,18 @@
 <exe-project-header></exe-project-header>
-<div class="container">
+<div class="main-banner">
+  <div class=" container">
     <h2 class="title">Gần đây</h2>
     <div class="recent-cards">
       <mat-card *ngFor="let flashcardSet of recentFlashcardSets" class="flashcard-card">
         <div class="flashcard-info">
-          <h3>{{ flashcardSet.name }}</h3>
-          <p>{{ flashcardSet.cardCount }} thẻ</p>
+          <h4>{{ flashcardSet.name }}</h4>
+          <p>{{ flashcardSet.cardCount }} thuật ngữ</p>
+                    <img [src]="flashcardSet.creatorAvatar" alt="Avatar" class="avatar">
           <p>{{ flashcardSet.creatorName }}</p>
-          <img [src]="flashcardSet.creatorAvatar" alt="Avatar" class="avatar">
         </div>
       </mat-card>
     </div>
-    
+
     <h2 class="title">Folder bạn đã tạo</h2>
     <mat-grid-list cols="1" rowHeight="150px">
       <mat-grid-tile *ngFor="let folder of createdFolders" class="folder-tile">
@@ -24,5 +25,5 @@
       </mat-grid-tile>
     </mat-grid-list>
   </div>
-  
+</div>
 <exe-project-footer></exe-project-footer>
