@@ -18,6 +18,12 @@ const routes: Routes = [
     loadChildren: () =>
       import('libs/learning/src/index').then((m) => m.LearningModule),
   },
+  {
+    path: 'not-found',
+    loadChildren: () =>
+      import('libs/notfoundpage/src/index').then((m) => m.NotfoundpageModule),
+  },
+  {path: '**', redirectTo: 'not-found'},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
