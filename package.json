@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve exe-project --proxy-config proxy.config.json",
     "build": "nx build exe-project",
+    "watch": "nx build exe-project --watch --configuration production",
     "test": "nx test",
     "lint": "eslint . --ext .ts"
   },
