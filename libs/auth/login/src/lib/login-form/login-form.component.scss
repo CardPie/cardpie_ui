@@ -1,11 +1,9 @@
 :host {
   .main-banner_login {
-    position: relative;
     padding: 50px 0px 50px 0px;
     .container {
-      margin-top: 40px;
       .card {
-        height: 550px;
+        height: 700px;
       }
       .card2 {
         color: white;
@@ -43,15 +41,13 @@
           background-color: blue;
           color: black;
         }
+        .btn-group {
+          margin-top: 60px;
+        }
 
         .login100-social-item {
           margin-right: 10px;
           background-color: white;
-          color: black;
-
-          &:last-child {
-            margin-right: 0;
-          }
         }
 
         .bottom {

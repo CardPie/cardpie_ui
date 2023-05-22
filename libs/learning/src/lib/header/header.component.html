@@ -1,26 +1,54 @@
-<p>header works!</p>
-<mat-toolbar>
-    <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with menu icon"
-    >
-        <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button
-        mat-icon-button
-        class="example-icon favorite-icon"
-        aria-label="Example icon-button with heart icon"
-    >
-        <mat-icon>favorite</mat-icon>
-    </button>
-    <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with share icon"
-    >
-        <mat-icon>share</mat-icon>
-    </button>
-</mat-toolbar>
+<header>
+    <mat-toolbar class="fixed-toolbar">
+        <div
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+            class="header-container"
+        >
+            <div class="fit-content">
+                <a routerLink="/home">
+                    <img
+                        src="assets/images/logo_cardpie_1.png"
+                        alt="Logo"
+                        class="logo"
+                    />
+                </a>
+            </div>
+            <div class="search-bar" fxLayout="row" fxLayoutAlign="none center">
+                <form class="search-form">
+                    <input
+                        type="text"
+                        placeholder="Search..."
+                        [(ngModel)]="searchTerm"
+                        name="searchTerm"
+                    />
+                    <button type="submit" class="search-button">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </form>
+            </div>
+            <div
+                fxLayout="row"
+                fxLayoutAlign="space-between center"
+                class="group-items"
+            >
+                <div class="new-desk">
+                    <button class="create-desk" (click)="openPopup()">
+                        Create new desks
+                    </button>
+                </div>
+                <button
+                    mat-button
+                    [matMenuTriggerFor]="beforeMenu"
+                    class="avatar-btn"
+                >
+                    <img src="assets/images/Ellipse 1.png" class="avatar" />
+                </button>
+                <mat-menu #beforeMenu="matMenu" xPosition="before">
+                    <button mat-menu-item>Account</button>
+                    <button mat-menu-item>Logout</button>
+                </mat-menu>
+            </div>
+        </div>
+    </mat-toolbar>
+</header>

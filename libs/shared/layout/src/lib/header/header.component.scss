@@ -1,4 +1,12 @@
 :host {
+  .fixed-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+  }
   .header-container {
     width: 1200px;
     margin: 0 auto;

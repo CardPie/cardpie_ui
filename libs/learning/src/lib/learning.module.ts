@@ -7,6 +7,19 @@ import {FooterComponent} from './footer/footer.component';
 import {MainPageComponent} from './main-page/main-page.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {FormsModule} from '@angular/forms';
+import {RecommendSectionComponent} from './recommend-section/recommend-section.component';
+import {CardItemsComponent} from './card-items/card-items.component';
+import {MostCommonSectionComponent} from './most-common-section/most-common-section.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -14,8 +27,24 @@ import {MatIconModule} from '@angular/material/icon';
     MatIconModule,
     RouterModule.forChild(learningRoutes),
     RouterModule.forChild(learningRoutes),
+    MatFormFieldModule,
+    MatInputModule,
+    MatCardModule,
+    MatGridListModule,
+    MatMenuModule,
+    FormsModule,
+    MatListModule,
+    MatTabsModule,
+    FlexLayoutModule,
   ],
-  declarations: [HeaderComponent, FooterComponent, MainPageComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    MainPageComponent,
+    RecommendSectionComponent,
+    CardItemsComponent,
+    MostCommonSectionComponent,
+  ],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],
 })
 export class LearningModule {}

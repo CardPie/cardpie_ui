@@ -1,3 +1,17 @@
 <exe-project-header></exe-project-header>
-<p>main-page works!</p>
+<section class="new-desk">
+    <div
+        class="plus-button"
+        fxLayout="column"
+        fxLayoutAlign="space-between center"
+    >
+        <button (click)="openPopup()" class="icon-plus">
+            <mat-icon>add</mat-icon>
+        </button>
+        <span class="button-label">CREATE NEW DESKS</span>
+    </div>
+    <div class="banner-desk"></div>
+</section>
+<exe-project-recommend-section></exe-project-recommend-section>
+<exe-project-most-common-section></exe-project-most-common-section>
 <exe-project-footer></exe-project-footer>

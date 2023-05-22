@@ -17,7 +17,14 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('libs/learning/src/index').then((m) => m.LearningModule),
+    canActivate: [AuthGuard],
   },
+  {
+    path: 'not-found',
+    loadChildren: () =>
+      import('libs/notfoundpage/src/index').then((m) => m.NotfoundpageModule),
+  },
+  {path: '**', redirectTo: 'not-found'},
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

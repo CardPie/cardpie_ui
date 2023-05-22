@@ -1,0 +1,27 @@
+:host {
+  .container {
+    margin: 0 25px 25px 25px;
+    .title {
+      width: 250px;
+      margin-bottom: 10px;
+      p {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+      }
+      mat-icon {
+        margin-top: 5px;
+      }
+    }
+    .item-list {
+      width: 1300px;
+      overflow-x: scroll;
+      scrollbar-width: none; /* Hide scrollbar for Firefox */
+      -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+    }
+    .item-list::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+    }
+  }
+}

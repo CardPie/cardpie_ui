@@ -1,0 +1,39 @@
+:host {
+  .new-desk {
+    height: 300px;
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+  .plus-button {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    .icon-plus {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+    }
+    .button-label {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+    }
+  }
+  .plus-button:hover {
+    cursor: pointer;
+  }
+
+  .banner-desk {
+    position: absolute;
+    right: 0;
+    top: 10;
+    background-image: url('../../../../../apps/exe-project/src/assets/images/21047837\ [Converted]-01\ 3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 689.85px;
+    height: 300px;
+    z-index: -1;
+  }
+}
