@@ -1,8 +1,12 @@
 {
-  "redirects": [
+  "routes": [
     {
-      "source": "/api/(.*)",
-      "destination": "/$1"
+      "src": "/api/(.*)",
+      "headers": {
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+      },
+      "status": 200,
+      "continue": true
     }
   ]
 }
