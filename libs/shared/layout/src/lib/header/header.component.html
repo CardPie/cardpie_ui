@@ -1,31 +1,63 @@
 <header>
     <mat-toolbar color="primary" class="fixed-toolbar">
-        <div fxLayout="row" fxLayoutAlign="space-around" class="header-container">
+        <div
+            fxLayout="row"
+            fxLayoutAlign="space-around"
+            class="header-container"
+        >
             <div class="fit-content">
                 <a routerLink="/">
-                    <img src="assets/images/logo_cardpie_1.png" alt="Logo" class="logo" />
+                    <img
+                        src="assets/images/logo_cardpie_1.png"
+                        alt="Logo"
+                        class="logo"
+                    />
                 </a>
             </div>
             <div fxLayout="row" fxLayoutAlign="none center">
                 <nav mat-tab-nav-bar>
-                    <a mat-tab-link routerLink="#" routerLinkActive #rla="routerLinkActive"
-                        [active]="rla.isActive">Trang chủ</a>
-                    <a mat-tab-link href="#about" routerLinkActive #rla="routerLinkActive"
-                        [active]="rla.isActive">About</a>
-                    <a mat-tab-link href="#contact" routerLinkActive #rla="routerLinkActive"
-                        [active]="rla.isActive">Contact</a>
-                    <a mat-tab-link href="#contact" routerLinkActive #rla="routerLinkActive"
-                        [active]="rla.isActive">Forum</a>
-                    <a mat-tab-link routerLink="/login" routerLinkActive #rla="routerLinkActive"
-                        [active]="rla.isActive">Login</a>
+                    <a
+                        mat-tab-link
+                        routerLink="#"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >Trang chủ</a
+                    >
+                    <a
+                        mat-tab-link
+                        href="#about"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >About</a
+                    >
+                    <a
+                        mat-tab-link
+                        href="#contact"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >Contact</a
+                    >
+                    <a
+                        mat-tab-link
+                        href="#contact"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >Forum</a
+                    >
+                    <a
+                        mat-tab-link
+                        routerLink="/login"
+                        routerLinkActive
+                        #rla="routerLinkActive"
+                        [active]="rla.isActive"
+                        >Login</a
+                    >
                 </nav>
             </div>
-            <form action="" class="search-bar">
-                <input type="search" name="search" pattern=".*\S.*" required>
-                <button class="search-btn" type="submit">
-                  <span>Search</span>
-                </button>
-              </form>
         </div>
     </mat-toolbar>
 </header>

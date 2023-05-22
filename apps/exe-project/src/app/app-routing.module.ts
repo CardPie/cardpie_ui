@@ -17,6 +17,7 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () =>
       import('libs/learning/src/index').then((m) => m.LearningModule),
+    canActivate: [AuthGuard],
   },
   {
     path: 'not-found',

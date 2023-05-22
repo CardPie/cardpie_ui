@@ -1,7 +1,7 @@
 import {Component, NgModule, ViewEncapsulation} from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'exe-project-header',
@@ -9,5 +9,6 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  searchTerm: any;
+  openPopup(): void {}
 }
-

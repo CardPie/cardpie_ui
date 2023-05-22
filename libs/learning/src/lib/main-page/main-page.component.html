@@ -1,29 +1,17 @@
 <exe-project-header></exe-project-header>
-<div class="main-banner">
-  <div class=" container">
-    <h2 class="title">Gần đây</h2>
-    <div class="recent-cards">
-      <mat-card *ngFor="let flashcardSet of recentFlashcardSets" class="flashcard-card">
-        <div class="flashcard-info">
-          <h4>{{ flashcardSet.name }}</h4>
-          <p>{{ flashcardSet.cardCount }} thuật ngữ</p>
-                    <img [src]="flashcardSet.creatorAvatar" alt="Avatar" class="avatar">
-          <p>{{ flashcardSet.creatorName }}</p>
-        </div>
-      </mat-card>
+<section class="new-desk">
+    <div
+        class="plus-button"
+        fxLayout="column"
+        fxLayoutAlign="space-between center"
+    >
+        <button (click)="openPopup()" class="icon-plus">
+            <mat-icon>add</mat-icon>
+        </button>
+        <span class="button-label">CREATE NEW DESKS</span>
     </div>
-
-    <h2 class="title">Folder bạn đã tạo</h2>
-    <mat-grid-list cols="1" rowHeight="150px">
-      <mat-grid-tile *ngFor="let folder of createdFolders" class="folder-tile">
-        <mat-card class="folder-card">
-          <div class="folder-info">
-            <h3>{{ folder.name }}</h3>
-            <p>{{ folder.flashcardSetCount }} bộ thẻ</p>
-          </div>
-        </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
-  </div>
-</div>
+    <div class="banner-desk"></div>
+</section>
+<exe-project-recommend-section></exe-project-recommend-section>
+<exe-project-most-common-section></exe-project-most-common-section>
 <exe-project-footer></exe-project-footer>
