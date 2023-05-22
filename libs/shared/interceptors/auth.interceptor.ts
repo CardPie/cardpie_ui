@@ -29,12 +29,6 @@ export class AuthInterceptor implements HttpInterceptor {
         },
       });
     }
-    if (request.url.startsWith('https://')) {
-      const insecurerequest = request.clone({
-        url: request.url.replace('https://', 'http://'),
-      });
-      return next.handle(insecurerequest);
-    }
 
     return next.handle(request).pipe(
       catchError((error) => {
