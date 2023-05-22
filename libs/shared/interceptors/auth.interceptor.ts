@@ -38,10 +38,10 @@ export class AuthInterceptor implements HttpInterceptor {
           return this.authService.refreshAccessToken(refreshToken).pipe(
             switchMap((response) => {
               const newAccessToken = response.data.access_token;
-
+              const refreshToken = response.data.refresh_token;
               // Update the access token in local storage
               localStorage.setItem('accessToken', newAccessToken);
-
+              localStorage.setItem('refreshToken', refreshToken);
               // Clone the original request with the new access token
               request = request.clone({
                 setHeaders: {
