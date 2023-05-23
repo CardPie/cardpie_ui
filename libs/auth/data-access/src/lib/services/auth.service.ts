@@ -2,8 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {LOGIN_RES, LOGOUT_RES} from '../models/respone.model';
 import {injectAPI} from '../APIConfigs/api';
-import {tap} from 'rxjs/operators';
-import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root',

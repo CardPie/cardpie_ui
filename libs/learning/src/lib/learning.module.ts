@@ -19,6 +19,7 @@ import {FormsModule} from '@angular/forms';
 import {RecommendSectionComponent} from './recommend-section/recommend-section.component';
 import {CardItemsComponent} from './card-items/card-items.component';
 import {MostCommonSectionComponent} from './most-common-section/most-common-section.component';
+import {DestroyService} from 'libs/shared/services/destroy.service';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import {MostCommonSectionComponent} from './most-common-section/most-common-sect
     CardItemsComponent,
     MostCommonSectionComponent,
   ],
+  providers: [DestroyService],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],
 })
 export class LearningModule {}
