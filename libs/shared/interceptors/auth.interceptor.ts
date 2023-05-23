@@ -6,13 +6,18 @@ import {
   HttpEvent,
 } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
-import {catchError, switchMap} from 'rxjs/operators';
+import {catchError, switchMap, tap} from 'rxjs/operators';
 import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
 import {Router} from '@angular/router';
+import {SpinnerService} from 'libs/shared/components/spinner/src/lib/spinner/spinner.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private spinnerService: SpinnerService,
+  ) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -20,7 +25,7 @@ export class AuthInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
     const accessToken = localStorage.getItem('accessToken');
     const refreshToken = localStorage.getItem('refreshToken');
-
+    this.spinnerService.requestStarted();
     // Add access token to the request headers
     if (accessToken) {
       request = request.clone({
@@ -31,6 +36,9 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     return next.handle(request).pipe(
+      tap((event) => {
+        this.spinnerService.requestEnded();
+      }),
       catchError((error) => {
         if (error.status === 401 && refreshToken) {
           // If the request fails with 401 Unauthorized and we have a refresh token,
@@ -50,10 +58,12 @@ export class AuthInterceptor implements HttpInterceptor {
               });
 
               // Retry the request with the new access token
+              this.spinnerService.requestEnded();
               return next.handle(request);
             }),
             catchError(() => {
               // If refreshing the token fails, log the user out
+              this.spinnerService.resetSpinner();
               this.logout();
               return throwError('Token refresh failed');
             }),

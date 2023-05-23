@@ -36,6 +36,8 @@ $theme: mat.define-light-theme(
 // that you are using.
 @include mat.all-component-themes($theme);
 @import '~bootstrap/dist/css/bootstrap.css';
+// regular style toast
+@import 'ngx-toastr/toastr';
 html {
   -webkit-text-size-adjust: 100%;
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,

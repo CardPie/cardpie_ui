@@ -2,6 +2,8 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
+import {ToastrService} from 'ngx-toastr';
+
 @Component({
   selector: 'exe-project-login-form',
   templateUrl: './login-form.component.html',
@@ -10,21 +12,23 @@ import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
 })
 export class LoginFormComponent implements OnInit {
   loginForm!: FormGroup;
-
+  summitted = false;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private router: Router,
+    private toastr: ToastrService,
   ) {}
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
   onSubmit() {
+    this.summitted = true;
     if (this.loginForm.invalid) {
       return;
     }
@@ -42,11 +46,17 @@ export class LoginFormComponent implements OnInit {
           const refreshToken = response.data.refresh_token;
           localStorage.setItem('accessToken', authToken);
           localStorage.setItem('refreshToken', refreshToken);
+          this.router.navigate(['/home']);
         }
-        this.router.navigate(['/home']);
       },
       (error) => {
-        console.error('login error', error);
+        if (error.status === 500) {
+          this.toastr.error('An error occurred. Please try again later.');
+        } else if (error.status == 400) {
+          this.toastr.warning('Wrong password.');
+        } else if (error.status == 404) {
+          this.toastr.warning('User not exist.');
+        }
       },
     );
   }

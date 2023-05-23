@@ -1,7 +1,6 @@
 import {Component, NgModule, ViewEncapsulation} from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import {Router} from '@angular/router';
+import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
 
 @Component({
   selector: 'exe-project-header',
@@ -10,5 +9,14 @@ import {MatInputModule} from '@angular/material/input';
 })
 export class HeaderComponent {
   searchTerm: any;
+
+  constructor(private authService: AuthService, private router: Router) {}
   openPopup(): void {}
+
+  logout(): void {
+    localStorage.removeItem('accessToken');
+    localStorage.removeItem('refreshToken');
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }
