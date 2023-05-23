@@ -1,0 +1,41 @@
+:host {
+  .user-infor {
+    .avatar {
+      margin-bottom: 7px;
+      width: 54px;
+      height: 54px;
+    }
+    .user-name {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 122.02%;
+      margin-bottom: 30px;
+    }
+
+    .study-section {
+      width: 77%;
+      .study-infor {
+        margin-bottom: 5px;
+        text-align: center;
+        width: 49px;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 13px;
+        color: #f5f5f5;
+
+        .study-numbers {
+          margin-top: 10px;
+          font-style: normal;
+          font-weight: 700;
+          font-size: 24px;
+          line-height: 122.02%;
+          /* or 29px */
+
+          text-align: center;
+        }
+      }
+    }
+  }
+}

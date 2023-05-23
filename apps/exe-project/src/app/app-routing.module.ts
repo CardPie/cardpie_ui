@@ -20,6 +20,13 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'folders',
+    loadChildren: () =>
+      import('libs/folder-management/src/index').then(
+        (m) => m.FolderManagementModule,
+      ),
+  },
+  {
     path: 'not-found',
     loadChildren: () =>
       import('libs/notfoundpage/src/index').then((m) => m.NotfoundpageModule),
