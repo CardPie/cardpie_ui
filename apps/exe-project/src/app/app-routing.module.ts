@@ -25,6 +25,7 @@ const routes: Routes = [
       import('libs/folder-management/src/index').then(
         (m) => m.FolderManagementModule,
       ),
+    canActivate: [AuthGuard],
   },
   {
     path: 'not-found',

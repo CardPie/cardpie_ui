@@ -11,6 +11,7 @@ import {environment} from '../environments/environment';
 import {AuthInterceptor} from 'libs/shared/interceptors/auth.interceptor';
 import {ToastrModule} from 'ngx-toastr';
 import {SharedComponentsSpinnerModule} from 'libs/shared/components/spinner/src/index';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -21,6 +22,7 @@ import {SharedComponentsSpinnerModule} from 'libs/shared/components/spinner/src/
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
+
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,

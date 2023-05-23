@@ -3,7 +3,7 @@
         <img src="assets/images/Ellipse 1.png" />
     </div>
     <div class="user-name">
-        <p>Nguyen Huu Doan</p>
+        <p>{{ userInfor?.fullname }}</p>
     </div>
     <div
         class="study-section"
@@ -12,15 +12,17 @@
     >
         <div class="study-infor">
             <p>Cards studied</p>
-            <p class="study-numbers">100</p>
+            <p class="study-numbers">
+                {{ userInfor?.studied_card ? userInfor?.studied_card : 0 }}
+            </p>
         </div>
         <div class="study-infor">
             <p>Created desks</p>
-            <p class="study-numbers">3</p>
+            <p class="study-numbers">{{ userInfor?.created_deck }}</p>
         </div>
         <div class="study-infor">
             <p>Saved decks</p>
-            <p class="study-numbers">1</p>
+            <p class="study-numbers">{{ userInfor.saved_deck }}</p>
         </div>
     </div>
 </div>

@@ -1,17 +1,14 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {Subject, timer} from 'rxjs';
+import {Observable, Subject, timer} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
 @Injectable()
 export class DestroyService implements OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
 
-  constructor() {
-    timer(0, 1000)
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((value) => {
-        // Handle timer value
-      });
+  constructor() {}
+  getDestroySubject(): Observable<void> {
+    return this.destroy$.asObservable();
   }
 
   ngOnDestroy(): void {

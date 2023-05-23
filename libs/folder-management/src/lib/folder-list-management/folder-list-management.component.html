@@ -12,30 +12,26 @@
             <p>Saved decks</p>
         </div>
     </div>
-    <div class="folder-item">
-        <div class="devicer" style="background: #e72a9b"></div>
-        <div
-            class="folder-name"
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
-        >
-            <p>Intellectual property rights</p>
-            <button class="delete-btn">
-                <img src="assets/images/solar_trash-bin-trash-bold.png" />
-            </button>
-        </div>
-    </div>
-    <div class="folder-item">
-        <div class="devicer" style="background: #4441db"></div>
-        <div
-            class="folder-name"
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
-        >
-            <p>Aesthetic and design history</p>
-            <button class="delete-btn">
-                <img src="assets/images/solar_trash-bin-trash-bold.png" />
-            </button>
-        </div>
-    </div>
+    <ng-container *ngIf="total_count > 0; else noData">
+        <ng-container *ngFor="let folder of folderList; let i = index">
+            <div class="folder-item">
+                <div class="devicer" style="background: colorArray[i]"></div>
+                <div
+                    class="folder-name"
+                    fxLayout="row"
+                    fxLayoutAlign="space-between center"
+                >
+                    <p>{{ folder.folder_name }}</p>
+                    <button class="delete-btn">
+                        <img
+                            src="assets/images/solar_trash-bin-trash-bold.png"
+                        />
+                    </button>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+    <ng-template #noData>
+        <p class="no-data">No folder created</p>
+    </ng-template>
 </div>
