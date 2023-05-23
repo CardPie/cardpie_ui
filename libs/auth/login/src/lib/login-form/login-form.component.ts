@@ -12,7 +12,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class LoginFormComponent implements OnInit {
   loginForm!: FormGroup;
-  summitted = false;
+  submitted = false;
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
@@ -28,7 +28,7 @@ export class LoginFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.summitted = true;
+    this.submitted = true;
     if (this.loginForm.invalid) {
       return;
     }
