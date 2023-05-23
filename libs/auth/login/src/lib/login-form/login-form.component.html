@@ -73,13 +73,14 @@
                                                 class="form-control"
                                                 [ngClass]="{
                                                     'is-invalid':
+                                                        submitted &&
                                                         loginForm.controls
                                                             .username.errors
                                                 }"
                                                 formControlName="username"
                                             />
                                             <div
-                                                *ngIf="loginForm.controls.username.errors?.['required']"
+                                                *ngIf=" submitted && loginForm.controls.username.errors?.['required']"
                                                 class="text-danger"
                                             >
                                                 Username is required
@@ -92,12 +93,14 @@
                                                 formControlName="password"
                                                 [ngClass]="{
                                                     'is-invalid':
+                                                        submitted &&
                                                         loginForm.controls
                                                             .password.errors
                                                 }"
                                             />
                                             <div
                                                 *ngIf="
+                                                    submitted &&
                                                     loginForm.controls.password
                                                         .errors?.required
                                                 "
@@ -107,6 +110,7 @@
                                             </div>
                                             <div
                                                 *ngIf="
+                                                    submitted &&
                                                     loginForm.controls.password
                                                         .errors?.minlength
                                                 "
