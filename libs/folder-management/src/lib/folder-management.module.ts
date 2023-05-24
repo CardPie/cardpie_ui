@@ -10,13 +10,20 @@ import {FolderListManagementComponent} from './folder-list-management/folder-lis
 import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
-
+import {DeckSectionComponent} from './deck-section/deck-section.component';
+import {MemorizeSectionComponent} from './memorize-section/memorize-section.component';
+import {ForumSectionComponent} from './forum-section/forum-section.component';
+import {TestSectionComponent} from './test-section/test-section.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatButtonModule} from '@angular/material/button';
+import {CardManagementComponent} from './card-management/card-management.component';
 @NgModule({
   imports: [
     CommonModule,
     MatIconModule,
     FlexLayoutModule,
-    RouterModule.forChild(folderManagementRoutes),
+    MatTabsModule,
+    MatButtonModule,
     RouterModule.forChild(folderManagementRoutes),
   ],
   declarations: [
@@ -26,6 +33,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     UserInforComponent,
     FolderListManagementComponent,
     NavBarComponent,
+    DeckSectionComponent,
+    MemorizeSectionComponent,
+    ForumSectionComponent,
+    TestSectionComponent,
+    CardManagementComponent,
   ],
   exports: [MainPageComponent],
 })
