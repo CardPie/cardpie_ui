@@ -3,6 +3,7 @@ import {UserInfor} from '../data-acess/models/user.model';
 import {FolderService} from '../data-acess/services/folder-management.service';
 import {take} from 'rxjs';
 import {Subscription} from 'rxjs';
+import {Router} from '@angular/router';
 @Component({
   selector: 'exe-project-user-infor',
   templateUrl: './user-infor.component.html',

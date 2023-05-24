@@ -1,0 +1,93 @@
+:host {
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .horizontal-line {
+    margin-bottom: 4%;
+    width: 39rem;
+    display: block;
+    height: 0.44rem;
+    background: #4441db;
+    border-radius: 10px;
+  }
+  .folder-overview-infor {
+    .folder-name {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+      /* identical to box height */
+
+      color: #000000;
+
+      img {
+        margin-left: 1rem;
+      }
+      img:hover {
+        cursor: pointer;
+      }
+    }
+    .owner-infor {
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 122.02%;
+      /* or 20px */
+
+      color: #7e7e7e;
+
+      .owner-name {
+        color: #4441db;
+        line-height: 144.02%;
+        font-weight: 600;
+        margin-left: 0.6rem;
+      }
+    }
+    .folder-infor {
+      margin-top: 1.1rem;
+      .number-created {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 122.02%;
+        margin-right: 0.4rem;
+      }
+      .infor-created {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 122.02%;
+        /* or 20px */
+
+        color: #7e7e7e;
+      }
+      .card-created {
+        margin-left: 5rem;
+      }
+    }
+  }
+  .sections {
+    margin-top: 3rem;
+    padding: 0 4rem 0 4rem;
+    mat-tab-group {
+      ::ng-deep .mdc-tab__text-label {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 122.02%;
+        /* or 20px */
+
+        color: #000000;
+      }
+
+      ::ng-deep .mdc-tab {
+        padding: unset;
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
-<ng-container *ngIf="true; else selectedFolder">
-    <div class="large-thumb-nail">
+<ng-container *ngIf="false; else selectedFolder">
+    <div class="large-thumb-nail centered">
         <img
             src="assets/images/logo-cardpieee-08 2.png"
             alt="Large thumb nail"
@@ -7,4 +7,69 @@
     </div>
 </ng-container>
 
-<ng-template #selectedFolder> </ng-template>
+<ng-template #selectedFolder>
+    <div class="folder-container">
+        <div
+            class="header-section"
+            fxLayout="row"
+            fxLayoutAlign="space-around center"
+        >
+            <div class="folder-avatar">
+                <img src="assets/images/Rectangle 24.png" />
+            </div>
+            <div class="folder-overview-infor">
+                <div class="horizontal-line"></div>
+                <div
+                    class="folder-name"
+                    fxLayout="row"
+                    fxLayoutAlign="start end"
+                >
+                    <p>Aesthetic and design history</p>
+                    <img src="assets/images/jam_write-f.png" />
+                </div>
+                <div
+                    class="owner-infor"
+                    fxLayout="row"
+                    fxLayoutAlign="start end"
+                >
+                    <p>Owner:</p>
+                    <p class="owner-name">Nguyen Van A</p>
+                </div>
+                <div
+                    class="folder-infor"
+                    fxLayout="row"
+                    fxLayoutAlign="start end"
+                >
+                    <div
+                        class="deck-created"
+                        fxLayout="row"
+                        fxLayoutAlign="start end"
+                    >
+                        <p class="number-created">2</p>
+                        <p class="infor-created">create decks</p>
+                    </div>
+                    <div
+                        class="card-created"
+                        fxLayout="row"
+                        fxLayoutAlign="start end"
+                    >
+                        <p class="number-created">75</p>
+                        <p class="infor-created">create cards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sections">
+            <mat-tab-group>
+                <mat-tab label="Decks"
+                    ><exe-project-deck-section></exe-project-deck-section
+                ></mat-tab>
+                <mat-tab label="Memorize"
+                    ><exe-project-forum-section></exe-project-forum-section
+                ></mat-tab>
+                <mat-tab label="Forum"> Content 3 </mat-tab>
+                <mat-tab label="Test"> Content 3 </mat-tab>
+            </mat-tab-group>
+        </div>
+    </div>
+</ng-template>
