@@ -1,12 +1,12 @@
 :host {
   .new-desk {
+    margin-top: 50px;
     height: 300px;
     position: relative;
     margin-bottom: 50px;
   }
 
   .plus-button {
-    position: absolute;
     top: 50%;
     left: 45%;
     .icon-plus {
@@ -32,7 +32,8 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 689.85px;
+    max-width: 700px;
+    width: 100%;
     height: 300px;
     z-index: -1;
   }
