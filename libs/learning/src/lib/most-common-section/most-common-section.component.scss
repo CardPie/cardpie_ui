@@ -1,8 +1,9 @@
 :host {
   .container {
-    margin: 0 25px 25px 25px;
+    max-width: 90%;
+    margin-bottom: 20px;
     .title {
-      width: 250px;
+      width: 190px;
       margin-bottom: 10px;
       p {
         font-style: normal;
@@ -15,7 +16,7 @@
       }
     }
     .item-list {
-      width: 1300px;
+      width: 100%;
       overflow-x: scroll;
       scrollbar-width: none; /* Hide scrollbar for Firefox */
       -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
