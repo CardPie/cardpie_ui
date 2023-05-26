@@ -1,0 +1,53 @@
+:host {
+    .folder-list-section {
+      margin-top: 44px;
+      width: 100%;
+      .title-section {
+        margin-left: 5%;
+        margin-bottom: 8%;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 122.02%;
+      }
+      .devicer {
+        margin-left: 5%;
+        margin-bottom: 4%;
+        width: 18rem;
+        display: block;
+        height: 5px;
+        background: #f5f5f5;
+        border-radius: 10px;
+      }
+      .create-folder {
+        width: 100%;
+        color: white;
+        background-color: transparent;
+        margin-bottom: 5%;
+        p {
+          margin-left: 10%;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 15px;
+        }
+      }
+      .folder-item {
+        margin-bottom: 8%;
+  
+        .folder-name {
+          margin-left: 5%;
+  
+          .delete-btn {
+            background-color: transparent;
+            color: white;
+            margin-right: 5%;
+          }
+        }
+      }
+    }
+    .no-data {
+      margin-left: 5%;
+    }
+  }
+  

@@ -28,6 +28,15 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'preview',
+    loadChildren: () =>
+      import('libs/preview/src/index').then(
+        (m) => m.PreviewModule,
+      ),
+    canActivate: [AuthGuard],
+  },
+  
+  {
     path: 'not-found',
     loadChildren: () =>
       import('libs/notfoundpage/src/index').then((m) => m.NotfoundpageModule),
