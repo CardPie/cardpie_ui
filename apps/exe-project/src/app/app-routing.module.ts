@@ -28,16 +28,12 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-
     path: 'preview',
     loadChildren: () =>
-      import('libs/preview/src/index').then(
-        (m) => m.PreviewModule,
-      ),
+      import('libs/preview/src/index').then((m) => m.PreviewModule),
     canActivate: [AuthGuard],
   },
-  
-
+  {
     path: 'deck',
     loadChildren: () =>
       import('libs/deck-management/src/index').then(

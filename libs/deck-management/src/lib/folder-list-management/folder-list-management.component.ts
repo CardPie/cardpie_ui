@@ -27,7 +27,7 @@ export class FolderListManagementComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.folderService
       .getFolderOfUser()
-      .pipe(take(1))
+      .pipe(take(2))
       .subscribe(
         (data) => (
           (this.folderList = data.data), (this.total_count = data.total_count)

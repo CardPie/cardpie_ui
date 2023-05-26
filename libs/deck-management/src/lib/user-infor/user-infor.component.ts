@@ -20,6 +20,7 @@ export class UserInforComponent implements OnInit, OnDestroy, OnChanges {
       .subscribe((data: UserInforRes) => (this.userInfor = data.data));
   }
   ngOnChanges() {
+    console.log('onchange run');
     this.subscription = this.folderService
       .getUserInfor()
       .pipe(take(1))

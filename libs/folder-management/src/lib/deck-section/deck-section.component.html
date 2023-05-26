@@ -40,7 +40,15 @@
                     </ng-template>
                 </div>
                 <div class="setting-btn">
-                    <mat-icon>settings</mat-icon>
+                    <mat-icon mat-button [matMenuTriggerFor]="beforeMenu"
+                        >settings</mat-icon
+                    >
+                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                        <button mat-menu-item (click)="openDialog(deck)">
+                            Delete
+                        </button>
+                        <button mat-menu-item>Edit</button>
+                    </mat-menu>
                 </div>
             </div>
         </div>
