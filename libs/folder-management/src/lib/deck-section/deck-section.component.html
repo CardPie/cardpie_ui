@@ -1,41 +1,7 @@
 <div class="container">
-    <div class="item-list">
-        <div
-            class="item-deck"
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
-        >
-            <div
-                class="left-part"
-                fxLayout="row"
-                fxLayoutAlign="space-around center"
-            >
-                <div class="check-icon"><mat-icon>check_circle</mat-icon></div>
-                <p class="desk-name">Chap 1</p>
-            </div>
-            <div
-                class="rigth-part"
-                fxLayout="row"
-                fxLayoutAlign="space-around center"
-            >
-                <div class="number-items">50 items</div>
-                <button mat-raised-button color="primary" class="start-btn">
-                    Get started
-                </button>
-                <div class="is-public">
-                    <ng-container *ngIf="true; else falseIcon">
-                        <img src="assets/images/earth.png" />
-                    </ng-container>
 
-                    <ng-template #falseIcon>
-                        <mat-icon>lock</mat-icon>
-                    </ng-template>
-                </div>
-                <div class="setting-btn">
-                    <mat-icon>settings</mat-icon>
-                </div>
-            </div>
-        </div>
+    <div class="item-list" *ngFor="let deck of deskList">
+
         <div
             class="item-deck"
             fxLayout="row"
@@ -47,19 +13,25 @@
                 fxLayoutAlign="space-around center"
             >
                 <div class="check-icon"><mat-icon>check_circle</mat-icon></div>
-                <p class="desk-name">Chap 1</p>
+
+                <p class="desk-name">{{ deck.name }}</p>
+
             </div>
             <div
                 class="rigth-part"
                 fxLayout="row"
                 fxLayoutAlign="space-around center"
             >
-                <div class="number-items">50 items</div>
+
+                <div class="number-items">{{ deck.total_card }} items</div>
+
                 <button mat-raised-button color="primary" class="start-btn">
                     Get started
                 </button>
                 <div class="is-public">
-                    <ng-container *ngIf="true; else falseIcon">
+
+                    <ng-container *ngIf="deck.is_public; else falseIcon">
+
                         <img src="assets/images/earth.png" />
                     </ng-container>
 
@@ -74,7 +46,13 @@
         </div>
     </div>
     <div class="button-create-desk">
-        <button fxLayout="row" fxLayoutAlign="space-around center">
+
+        <button
+            fxLayout="row"
+            fxLayoutAlign="space-around center"
+            (click)="createNewDesk()"
+        >
+
             <img src="assets/images/plus-border.png" />
             <p>Create new desks</p>
         </button>

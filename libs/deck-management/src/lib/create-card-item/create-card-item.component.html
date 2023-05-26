@@ -1,0 +1,128 @@
+<div
+    class="card-item"
+    [formGroup]="childForm"
+    fxLayout="row"
+    fxLayoutAlign="space-around center"
+>
+    <div class="side front-side">
+        <div class="delete-item-button" (click)="onDelete()">
+            <mat-icon>delete</mat-icon>
+        </div>
+        <div class="large-input">
+            <input
+                type="text"
+                formControlName="front_content"
+                placeholder="Type something"
+                (input)="onlargeInputFront($event)"
+            />
+        </div>
+        <div class="small-input">
+            <input
+                type="text"
+                formControlName="front_description"
+                placeholder="(Add description)"
+                (input)="ondescriptionFront($event)"
+            />
+        </div>
+        <div
+            class="bottom-section"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+        >
+            <div
+                class="option-letter"
+                fxLayout="row"
+                fxLayoutAlign="space-around center"
+            >
+                <mat-icon> format_bold</mat-icon>
+                <mat-icon> format_italic</mat-icon>
+                <mat-icon> format_underlined</mat-icon>
+            </div>
+            <div
+                class="attached-file"
+                fxLayout="row"
+                fxLayoutAlign="space-around center"
+            >
+                <label class="img-input-label">
+                    <input
+                        type="file"
+                        class="file-input"
+                        formControlName="front_image_url"
+                        accept="image/png, image/jpeg"
+                        (change)="onImgFrontSelected($event)"
+                    />
+                    <mat-icon>photo_size_select_actual</mat-icon>
+                </label>
+
+                <label class="sound-input-label">
+                    <input
+                        type="file"
+                        class="file-input"
+                        formControlName="front_sound_url"
+                        accept="audio/*"
+                        (change)="onSoundFrontSelected($event)"
+                    />
+                    <img src="assets/images/sound.png" />
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="side back-side">
+        <div class="large-input">
+            <input
+                (input)="onlargeInputBack($event)"
+                formControlName="back_content"
+                placeholder="Type something"
+            />
+        </div>
+        <div class="small-input">
+            <input
+                (input)="ondescriptionBack($event)"
+                formControlName="back_description"
+                placeholder="(Add description)"
+            />
+        </div>
+        <div
+            class="bottom-section"
+            fxLayout="row"
+            fxLayoutAlign="space-between center"
+        >
+            <div
+                class="option-letter"
+                fxLayout="row"
+                fxLayoutAlign="space-around center"
+            >
+                <mat-icon> format_bold</mat-icon>
+                <mat-icon> format_italic</mat-icon>
+                <mat-icon> format_underlined</mat-icon>
+            </div>
+            <div
+                class="attached-file"
+                fxLayout="row"
+                fxLayoutAlign="space-around center"
+            >
+                <label class="img-input-label">
+                    <input
+                        type="file"
+                        class="file-input"
+                        formControlName="back_image_url"
+                        accept="image/png, image/jpeg"
+                        (change)="onImgBackSelected($event)"
+                    />
+                    <mat-icon>photo_size_select_actual</mat-icon>
+                </label>
+
+                <label class="sound-input-label">
+                    <input
+                        type="file"
+                        class="file-input"
+                        accept="audio/*"
+                        formControlName="back_sound_url"
+                        (change)="onSoundBackSelected($event)"
+                    />
+                    <img src="assets/images/sound.png" />
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

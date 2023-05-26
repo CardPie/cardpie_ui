@@ -16,7 +16,10 @@ import {ForumSectionComponent} from './forum-section/forum-section.component';
 import {TestSectionComponent} from './test-section/test-section.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatButtonModule} from '@angular/material/button';
-import {CardManagementComponent} from './card-management/card-management.component';
+
+import {AvatarBaseComponent} from './avatar-base/avatar-base.component';
+import {FolderDetailComponent} from './folder-detail/folder-detail.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -37,8 +40,10 @@ import {CardManagementComponent} from './card-management/card-management.compone
     MemorizeSectionComponent,
     ForumSectionComponent,
     TestSectionComponent,
-    CardManagementComponent,
+    AvatarBaseComponent,
+    FolderDetailComponent,
+
   ],
-  exports: [MainPageComponent],
+  exports: [MainPageComponent, SideBarComponent],
 })
 export class FolderManagementModule {}

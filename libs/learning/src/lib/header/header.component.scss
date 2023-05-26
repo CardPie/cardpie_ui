@@ -10,6 +10,20 @@
   .header-container {
     width: 100%;
   }
+  // .logo_container{
+  //   width: 100px;
+  // }
+  // .logo {
+  //   width: 100px;
+  //   background-image: url('../../../../../apps/exe-project/src/assets/images/logo_cardpie_2.png');
+  // }
+
+  // @media (max-width: 992px) {
+  //   .logo {
+  //     width: 100px;
+  //    background-image: url('../../../../../apps/exe-project/src/assets/images/logo_cardpie_1.png');
+  //   }
+  // }
   .fixed-toolbar {
     position: fixed;
     top: 0;
@@ -73,12 +87,16 @@
     }
   }
   .avatar-btn {
-    width: 50px;
-    height: 50px;
     flex: 0 0 auto;
     border-radius: 50%;
-    .avatar {
+    padding: unset;
+    width: 54px;
+    height: 54px;
+    img {
       max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
     }
   }
 

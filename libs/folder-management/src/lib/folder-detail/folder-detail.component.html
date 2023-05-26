@@ -1,0 +1,61 @@
+<div class="folder-container">
+    <div
+        class="header-section"
+        fxLayout="row"
+        fxLayoutAlign="space-around center"
+    >
+        <div class="folder-avatar">
+            <img src="assets/images/Rectangle 24.png" />
+        </div>
+        <div class="folder-overview-infor">
+            <div class="horizontal-line"></div>
+            <div class="folder-name" fxLayout="row" fxLayoutAlign="start end">
+                <p>{{ folderInformation.data.folder_name }}</p>
+                <img src="assets/images/jam_write-f.png" />
+            </div>
+            <div class="owner-infor" fxLayout="row" fxLayoutAlign="start end">
+                <p>Owner:</p>
+                <p class="owner-name">
+                    {{ folderInformation.data.creator.fullname }}
+                </p>
+            </div>
+            <div class="folder-infor" fxLayout="row" fxLayoutAlign="start end">
+                <div
+                    class="deck-created"
+                    fxLayout="row"
+                    fxLayoutAlign="start end"
+                >
+                    <p class="number-created">
+                        {{ folderInformation.data.total_deck }}
+                    </p>
+                    <p class="infor-created">create decks</p>
+                </div>
+                <div
+                    class="card-created"
+                    fxLayout="row"
+                    fxLayoutAlign="start end"
+                >
+                    <p class="number-created">
+                        {{ folderInformation.data.total_card }}
+                    </p>
+                    <p class="infor-created">create cards</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sections">
+        <mat-tab-group>
+            <mat-tab label="Decks"
+                ><exe-project-deck-section
+                    [deskList]="folderInformation.data.list_deck"
+                    [folder]="folderInformation"
+                ></exe-project-deck-section
+            ></mat-tab>
+            <mat-tab label="Memorize"
+                ><exe-project-forum-section></exe-project-forum-section
+            ></mat-tab>
+            <mat-tab label="Forum"> Content 3 </mat-tab>
+            <mat-tab label="Test"> Content 3 </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

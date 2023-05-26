@@ -1,0 +1,142 @@
+<div class="container">
+    <div class="horizontal-line"></div>
+    <div class="deck-infor">
+        <form
+            class="form-group"
+            [formGroup]="deckCreateForm"
+            (ngSubmit)="onSubmit()"
+        >
+            <div class="deck-name" fxLayout="row" fxLayoutAlign="start end">
+                <input formControlName="nameDesk" placeholder="Unnamed" />
+                <img src="assets/images/jam_write-f.png" />
+            </div>
+            <div class="deck-detail">
+                <div
+                    class="card-created"
+                    fxLayout="row"
+                    fxLayoutAlign="start end"
+                >
+                    <p class="number-created">0</p>
+                    <p class="infor-created">create decks</p>
+                </div>
+                <div
+                    class="folder-under"
+                    fxLayout="row"
+                    fxLayoutAlign="start end"
+                >
+                    <p class="folder-tag">Folder:</p>
+                    <p class="folder-name">
+                        {{ folderDetail.data.folder_name }}
+                    </p>
+                </div>
+            </div>
+            <div class="deck-description">
+                <div clas="deck-description-labe">Description (optional)</div>
+                <mat-form-field>
+                    <input
+                        matInput
+                        formControlName="description"
+                        placeholder="Type something..."
+                        style="border-bottom: none"
+                    />
+                </mat-form-field>
+            </div>
+            <div
+                class="deck-status"
+                fxLayout="row"
+                fxLayoutAlign="start end"
+                [(ngModel)]="isPublic"
+            >
+                <div
+                    class="status-item"
+                    fxLayout="row"
+                    fxLayoutAlign="space-around center"
+                >
+                    <mat-radio-button formControlName="isPublic" value="true"
+                        >PUBLIC</mat-radio-button
+                    >
+                </div>
+                <div
+                    class="status-item"
+                    fxLayout="row"
+                    fxLayoutAlign="space-around center"
+                >
+                    <mat-radio-button formControlName="isPublic" value="false"
+                        >PRIVATE</mat-radio-button
+                    >
+                </div>
+            </div>
+            <div class="import-set-title">Import a flashcard set</div>
+            <div
+                class="import-set"
+                fxLayout="row"
+                fxLayoutAlign="space-around center"
+            >
+                <div
+                    class="import-button"
+                    fxLayout="row"
+                    fxLayoutAlign="space-around center"
+                >
+                    <button>
+                        <img src="assets/images/a.png" />
+                        <p>From file</p>
+                    </button>
+                </div>
+                <div class="import-button">
+                    <button>
+                        <img src="assets/images/ggdrive 1.png" />
+                    </button>
+                </div>
+            </div>
+            <div class="help-button">
+                <button fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-icon>help</mat-icon>
+                    <p>How to import a file ?</p>
+                </button>
+            </div>
+            <div class="create-card-section">
+                <div class="create-title">Create new cards</div>
+                <div
+                    class="sides"
+                    fxLayout="row"
+                    fxLayoutAlign="space-around center"
+                >
+                    <div class="side">FRONT</div>
+                    <div class="side back-side">BACK</div>
+                </div>
+            </div>
+            <div class="card-list" formArrayName="inputs">
+                <div #container>
+                    <exe-project-create-card-item
+                        (listenFormParent)="getData($event)"
+                    ></exe-project-create-card-item>
+                </div>
+            </div>
+            <div
+                class="add-new-card-btn"
+                fxLayout="row"
+                fxLayoutAlign="start center"
+                (click)="addComponent()"
+            >
+                <img src="assets/images/plus-border.png" />
+                <p>Add new card</p>
+            </div>
+            <div class="bottom-button-group" fxLayout="row">
+                <div class="center-button">
+                    <button class="border-btn" mat-raised-button>Delete</button>
+                    <button
+                        class="border-btn"
+                        mat-raised-button
+                        color="primary"
+                        type="submit"
+                    >
+                        Save
+                    </button>
+                </div>
+                <div class="preview-btn">
+                    <a>Preview</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

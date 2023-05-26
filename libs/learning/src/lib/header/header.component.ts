@@ -1,16 +1,32 @@
-import {Component, NgModule, ViewEncapsulation} from '@angular/core';
+import {Component, NgModule, OnInit, ViewEncapsulation} from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
+import {LearningService} from '../data-access/services/learning.service';
+import {Subscription, take} from 'rxjs';
+import {UserInfor} from 'libs/folder-management/src/lib/data-acess/models/user.model';
 
 @Component({
   selector: 'exe-project-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   searchTerm: any;
-
-  constructor(private authService: AuthService, private router: Router) {}
+  subscription!: Subscription;
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private learningService: LearningService,
+  ) {}
+  userInfor!: UserInfor;
+  ngOnInit(): void {
+    this.subscription = this.learningService
+      .getUserInfor()
+      .pipe(take(1))
+      .subscribe((data) => {
+        this.userInfor = data.data;
+      });
+  }
   openPopup(): void {}
 
   logout(): void {
