@@ -28,7 +28,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'preview',
+    path: 'learning',
     loadChildren: () =>
       import('libs/preview/src/index').then((m) => m.PreviewModule),
     canActivate: [AuthGuard],

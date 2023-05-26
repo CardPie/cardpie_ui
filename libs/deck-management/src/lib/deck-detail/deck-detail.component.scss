@@ -10,8 +10,8 @@
       border-radius: 10px;
     }
     .deck-infor {
+      margin-left: 3.3rem;
       .deck-name {
-        margin-left: 3.3rem;
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
@@ -29,7 +29,6 @@
         }
       }
       .deck-detail {
-        margin-left: 3.3rem;
         display: flex;
         align-items: flex-end;
         .card-created {
@@ -81,7 +80,6 @@
       }
 
       .deck-description {
-        margin-left: 3.3rem;
         margin-top: 2rem;
         font-style: normal;
         font-weight: 600;
@@ -105,7 +103,6 @@
       }
 
       .deck-status {
-        margin-left: 3.3rem;
         margin-top: 2rem;
 
         .status-item {
