@@ -1,7 +1,5 @@
 <div class="container">
-
     <div class="item-list" *ngFor="let deck of deskList">
-
         <div
             class="item-deck"
             fxLayout="row"
@@ -15,23 +13,24 @@
                 <div class="check-icon"><mat-icon>check_circle</mat-icon></div>
 
                 <p class="desk-name">{{ deck.name }}</p>
-
             </div>
             <div
                 class="rigth-part"
                 fxLayout="row"
                 fxLayoutAlign="space-around center"
             >
-
                 <div class="number-items">{{ deck.total_card }} items</div>
 
-                <button mat-raised-button color="primary" class="start-btn">
+                <button
+                    mat-raised-button
+                    color="primary"
+                    class="start-btn"
+                    (click)="learning(deck)"
+                >
                     Get started
                 </button>
                 <div class="is-public">
-
                     <ng-container *ngIf="deck.is_public; else falseIcon">
-
                         <img src="assets/images/earth.png" />
                     </ng-container>
 
@@ -54,13 +53,11 @@
         </div>
     </div>
     <div class="button-create-desk">
-
         <button
             fxLayout="row"
             fxLayoutAlign="space-around center"
             (click)="createNewDesk()"
         >
-
             <img src="assets/images/plus-border.png" />
             <p>Create new desks</p>
         </button>

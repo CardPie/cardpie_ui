@@ -1,17 +1,14 @@
-
 import {Component, Input, OnInit} from '@angular/core';
 import {Desk, DetailFolder} from '../data-acess/models/folder.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {DialogComponent} from '../dialog/dialog.component';
 
-
 @Component({
   selector: 'exe-project-deck-section',
   templateUrl: './deck-section.component.html',
   styleUrls: ['./deck-section.component.scss'],
 })
-
 export class DeckSectionComponent implements OnInit {
   @Input() deskList: Desk[] = [];
   @Input() folder!: DetailFolder;
@@ -19,7 +16,7 @@ export class DeckSectionComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
+
     public dialog: MatDialog,
   ) {}
 
@@ -39,5 +36,9 @@ export class DeckSectionComponent implements OnInit {
       }
     });
   }
-}
 
+  learning(deck: Desk) {
+    const id = deck.id;
+    this.router.navigate(['learning', id]);
+  }
+}
