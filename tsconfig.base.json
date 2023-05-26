@@ -22,6 +22,7 @@
         "libs/auth/reset-password/src/index.ts"
       ],
       "@exe-project/auth/shared": ["libs/auth/shared/src/index.ts"],
+      "@exe-project/deck-management": ["libs/deck-management/src/index.ts"],
       "@exe-project/folder-management": ["libs/folder-management/src/index.ts"],
       "@exe-project/homepage": ["libs/homepage/src/index.ts"],
       "@exe-project/learning": ["libs/learning/src/index.ts"],
