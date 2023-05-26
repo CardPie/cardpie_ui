@@ -28,6 +28,14 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'deck',
+    loadChildren: () =>
+      import('libs/deck-management/src/index').then(
+        (m) => m.DeckManagementModule,
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
     path: 'not-found',
     loadChildren: () =>
       import('libs/notfoundpage/src/index').then((m) => m.NotfoundpageModule),

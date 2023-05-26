@@ -13,6 +13,8 @@
 
         .left-part {
           width: 20%;
+          margin-left: 4rem;
+          width: 15rem;
           .desk-name {
             font-style: normal;
             font-weight: 600;
@@ -21,11 +23,13 @@
             /* or 20px */
 
             color: #000000;
+            max-width: 20rem;
           }
           .check-icon {
             margin-top: 2px;
             background-color: transparent;
             color: #d3d3d3;
+            margin-right: 2rem;
           }
         }
         .rigth-part {
@@ -49,6 +53,7 @@
     }
   }
   .button-create-desk {
+    margin-bottom: 5rem;
     button {
       width: 16rem;
       background-color: transparent;
