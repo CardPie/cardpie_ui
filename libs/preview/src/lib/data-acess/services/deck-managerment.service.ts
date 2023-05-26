@@ -6,13 +6,13 @@ import {IDeckRes} from '../models/deck.model';
 @Injectable({
   providedIn: 'root',
 })
-export class DeckService{
+export class DeckService {
   private readonly apiDomain = injectAPI();
 
   DECKS_OF_USER = `${this.apiDomain}/deck/`;
   constructor(private httpClient: HttpClient) {}
 
-  getDecksOfUser(deck_id: string) {
+  getDecksOfUser(deck_id: string | null) {
     return this.httpClient.get<IDeckRes>(this.DECKS_OF_USER + `${deck_id}`);
   }
 }
