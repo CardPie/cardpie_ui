@@ -1,12 +1,15 @@
+
 import {Component, Input, OnInit} from '@angular/core';
 import {Desk, DetailFolder} from '../data-acess/models/folder.model';
 import {ActivatedRoute, Router} from '@angular/router';
+
 
 @Component({
   selector: 'exe-project-deck-section',
   templateUrl: './deck-section.component.html',
   styleUrls: ['./deck-section.component.scss'],
 })
+
 export class DeckSectionComponent implements OnInit {
   @Input() deskList: Desk[] = [];
   @Input() folder!: DetailFolder;
@@ -21,3 +24,4 @@ export class DeckSectionComponent implements OnInit {
     this.router.navigate(['deck', id]);
   }
 }
+

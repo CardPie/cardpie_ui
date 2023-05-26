@@ -1,0 +1,22 @@
+:host {
+    .nav-bar {
+      width: 100%;
+      margin-bottom: 44px;
+      .back-btn {
+        background-color: transparent;
+        color: white;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 13px;
+        text-align: center;
+        margin-left: 5%;
+      }
+      .setting-btn {
+        margin-top: 0.6em;
+        margin-right: 5%;
+        background-color: transparent;
+        color: white;
+      }
+    }
+  }
+  

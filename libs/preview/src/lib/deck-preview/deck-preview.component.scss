@@ -1,0 +1,61 @@
+:host {
+  .container {
+    .header {
+      padding: 5%;
+      max-width: 100%;
+      .card-info {
+        width: 100%;
+      }
+      .horizontal-line {
+        margin-bottom: 4%;
+        width: 100%;
+        display: block;
+        height: 0.44rem;
+        background: #4441db;
+        border-radius: 10px;
+      }
+      .save-button {
+        text-align: right;
+        .save-btn {
+          top: 50%;
+          background: #4441db;
+          border-radius: 37px;
+          width: 123px;
+          height: 43px;
+          color: white;
+          font-size: 20px;
+        }
+      }
+    }
+    .deck-list {
+      position: absolute;
+      margin-top: 50px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .title {
+      font-style: normal;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 122.02%;
+      margin-right: 0.4rem;
+    }
+    .name {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 122.02%;
+      /* or 20px */
+      color: #7e7e7e;
+    }
+    .folder {
+      .folder-name {
+        color: #4441db;
+        font-weight: 700;
+        margin-left: 5px;
+      }
+    }
+  }
+}
