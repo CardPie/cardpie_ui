@@ -5,14 +5,17 @@
         fxLayout="row"
         fxLayoutAlign="space-between center"
     >
-        <p>Most common</p>
-        <mat-icon>keyboard_arrow_right</mat-icon>
+        <p>Most common</p><mat-icon>keyboard_arrow_right</mat-icon>
+        
     </header>
     <div class="item-list" fxLayout="row" fxLayoutAlign="space-between center">
-        <exe-project-card-items></exe-project-card-items>
-        <exe-project-card-items></exe-project-card-items>
-        <exe-project-card-items></exe-project-card-items>
-        <exe-project-card-items></exe-project-card-items>
-        <exe-project-card-items></exe-project-card-items>
+        <ng-container *ngIf="totalDesk > 0; else noData">
+            <ng-container *ngFor="let desk of mostCommonDeskList">
+                <exe-project-card-items [desk]="desk"></exe-project-card-items>
+            </ng-container>
+        </ng-container>
+        <ng-template #noData>
+            <p>No data yet</p>
+        </ng-template>
     </div>
 </section>

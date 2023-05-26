@@ -13,6 +13,7 @@ import {ContactUsComponent} from './contact-us/contact-us.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   imports: [
     CommonModule,
@@ -20,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
+    MatDialogModule,
     RouterModule.forChild(homepageRoutes),
   ],
   declarations: [

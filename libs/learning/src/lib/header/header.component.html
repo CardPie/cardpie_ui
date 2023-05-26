@@ -3,9 +3,9 @@
         <div
             fxLayout="row"
             fxLayoutAlign="space-between center"
-            class="header-container"
+            class="header-container row"
         >
-            <div class="fit-content">
+            <div class="fit-content col-lg-5">
                 <a routerLink="/home">
                     <img
                         src="assets/images/logo_cardpie_1.png"
@@ -14,7 +14,11 @@
                     />
                 </a>
             </div>
-            <div class="search-bar" fxLayout="row" fxLayoutAlign="none center">
+            <div
+                class="search-bar col-lg-5"
+                fxLayout="row"
+                fxLayoutAlign="none center"
+            >
                 <form class="search-form">
                     <input
                         type="text"
@@ -30,7 +34,7 @@
             <div
                 fxLayout="row"
                 fxLayoutAlign="space-between center"
-                class="group-items"
+                class="group-items col-lg-2"
             >
                 <div class="new-desk">
                     <button class="create-desk" (click)="openPopup()">
@@ -42,11 +46,13 @@
                     [matMenuTriggerFor]="beforeMenu"
                     class="avatar-btn"
                 >
-                    <img src="assets/images/Ellipse 1.png" class="avatar" />
+                    <img src="{{ userInfor.avatar }}" class="avatar" />
                 </button>
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
-                    <button mat-menu-item>Account</button>
-                    <button mat-menu-item>Logout</button>
+                    <button mat-menu-item routerLink="/folders">
+                        Folder management
+                    </button>
+                    <button mat-menu-item (click)="logout()">Logout</button>
                 </mat-menu>
             </div>
         </div>

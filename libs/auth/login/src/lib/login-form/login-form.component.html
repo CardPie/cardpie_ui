@@ -71,16 +71,54 @@
                                                 name="username"
                                                 placeholder="Username"
                                                 class="form-control"
+                                                [ngClass]="{
+                                                    'is-invalid':
+                                                        submitted &&
+                                                        loginForm.controls
+                                                            .username.errors
+                                                }"
                                                 formControlName="username"
                                             />
+                                            <div
+                                                *ngIf=" submitted && loginForm.controls.username.errors?.['required']"
+                                                class="text-danger"
+                                            >
+                                                Username is required
+                                            </div>
                                             <input
                                                 placeholder="Password"
                                                 class="form-control"
                                                 type="password"
                                                 id="password"
                                                 formControlName="password"
+                                                [ngClass]="{
+                                                    'is-invalid':
+                                                        submitted &&
+                                                        loginForm.controls
+                                                            .password.errors
+                                                }"
                                             />
-
+                                            <div
+                                                *ngIf="
+                                                    submitted &&
+                                                    loginForm.controls.password
+                                                        .errors?.required
+                                                "
+                                                class="text-danger"
+                                            >
+                                                Password is required
+                                            </div>
+                                            <div
+                                                *ngIf="
+                                                    submitted &&
+                                                    loginForm.controls.password
+                                                        .errors?.minlength
+                                                "
+                                                class="text-danger"
+                                            >
+                                                Password should be at least 6
+                                                characters
+                                            </div>
                                             <div
                                                 fxLayout="row"
                                                 fxLayoutAlign="space-between center"

@@ -20,6 +20,29 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
+    path: 'folders',
+    loadChildren: () =>
+      import('libs/folder-management/src/index').then(
+        (m) => m.FolderManagementModule,
+      ),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'learning',
+    loadChildren: () =>
+      import('libs/preview/src/index').then((m) => m.PreviewModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'deck',
+    loadChildren: () =>
+      import('libs/deck-management/src/index').then(
+        (m) => m.DeckManagementModule,
+      ),
+    canActivate: [AuthGuard],
+  },
+
+  {
     path: 'not-found',
     loadChildren: () =>
       import('libs/notfoundpage/src/index').then((m) => m.NotfoundpageModule),

@@ -10,6 +10,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatDialogModule} from '@angular/material/dialog';
+import {DialogComponent} from './utils/dialog/dialog.component';
+import {ToastrModule} from 'ngx-toastr';
 
 @NgModule({
   imports: [
@@ -22,9 +25,11 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatIconModule,
     FlexLayoutModule,
     SharedLayoutModule,
+    MatDialogModule,
+    ToastrModule,
     RouterModule.forChild(authLoginRoutes),
   ],
-  declarations: [LoginFormComponent],
+  declarations: [LoginFormComponent, DialogComponent],
   exports: [LoginFormComponent],
 })
 export class AuthLoginModule {}

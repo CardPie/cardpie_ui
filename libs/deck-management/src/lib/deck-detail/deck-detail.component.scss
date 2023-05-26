@@ -1,0 +1,260 @@
+:host {
+  .container {
+    .horizontal-line {
+      margin-bottom: 4%;
+      margin-left: 3.3rem;
+      width: 88%;
+      display: block;
+      height: 0.44rem;
+      background: #4441db;
+      border-radius: 10px;
+    }
+    .deck-infor {
+      margin-left: 3.3rem;
+      .deck-name {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 29px;
+        /* identical to box height */
+
+        color: #7e7e7e;
+        width: 16%;
+        display: flex;
+        input {
+          width: 9rem;
+        }
+        img {
+          margin-left: 0.8rem;
+        }
+      }
+      .deck-detail {
+        display: flex;
+        align-items: flex-end;
+        .card-created {
+          display: flex;
+          align-items: flex-end;
+          .number-created {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 122.02%;
+            /* or 29px */
+
+            color: #000000;
+          }
+          .infor-created {
+            margin-left: 0.8rem;
+
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 122.02%;
+            /* or 20px */
+
+            color: #7e7e7e;
+          }
+        }
+        .folder-under {
+          display: flex;
+          align-items: flex-end;
+          margin-left: 3rem;
+          .folder-tag {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 122.02%;
+            /* or 20px */
+
+            color: #7e7e7e;
+          }
+          .folder-name {
+            margin-left: 0.8rem;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 122.02%;
+            color: #4441db;
+          }
+        }
+      }
+
+      .deck-description {
+        margin-top: 2rem;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 122.02%;
+        /* or 20px */
+
+        color: #000000;
+        mat-form-field {
+          width: 88%;
+
+          color: #d3d3d3;
+        }
+        ::ng-deep .mat-mdc-text-field-wrapper {
+          background: transparent;
+        }
+
+        ::ng-deep .mdc-text-field--focused {
+          background: transparent;
+        }
+      }
+
+      .deck-status {
+        margin-top: 2rem;
+
+        .status-item {
+          margin-right: 1.6rem;
+          width: 9rem;
+          height: 3rem;
+          box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.09);
+          border-radius: 10px;
+          color: #d3d3d3;
+          padding: 0 1rem 0 1rem;
+          mat-checkbox {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 122.02%;
+            color: black;
+          }
+        }
+        .status-item:hover {
+          cursor: pointer;
+          transform: translateY(-0.8px);
+        }
+      }
+
+      .import-set-title {
+        margin-left: 3.3rem;
+        margin-top: 4rem;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 122.02%;
+        /* or 20px */
+
+        color: #000000;
+      }
+      .import-set {
+        margin-left: 3.3rem;
+        margin-top: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        button {
+          display: flex;
+          background: transparent;
+          background: #f5f5f5;
+          align-items: center;
+          justify-content: center;
+          /* card shadow */
+
+          box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.09);
+          border-radius: 10px;
+          width: 25rem;
+          height: 3.7rem;
+        }
+        button:hover {
+          cursor: pointer;
+          transform: translateY(-0.8px);
+        }
+      }
+      .help-button {
+        margin-top: 1.2rem;
+        margin-left: 3.3rem;
+        button {
+          align-items: center;
+          color: #7e7e7e;
+          background: transparent;
+          font-weight: 600;
+          font-size: 13px;
+          line-height: 108.02%;
+        }
+      }
+
+      .create-card-section {
+        margin-top: 1.8rem;
+        margin-left: 3.3rem;
+
+        .create-title {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 122.02%;
+          /* or 20px */
+
+          color: #000000;
+        }
+        .sides {
+          margin-top: 1.8rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          .side {
+            color: #7e7e7e;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 122.02%;
+            width: 33%;
+          }
+        }
+      }
+      .card-list {
+        margin-left: 3.3rem;
+      }
+      .add-new-card-btn {
+        margin-left: 3.3rem;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        margin-bottom: 4rem;
+        color: #7e7e7e;
+        p {
+          margin-left: 1rem;
+        }
+      }
+      .add-new-card-btn:hover {
+        cursor: pointer;
+      }
+
+      .bottom-button-group {
+        position: relative;
+        margin-bottom: 5rem;
+
+        .center-button {
+          position: absolute;
+          left: 40%;
+          .border-btn {
+            width: 6rem;
+            height: 2.2rem;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 19px;
+            border-radius: 38px;
+            margin-left: 2rem;
+          }
+        }
+      }
+      .preview-btn {
+        position: absolute;
+        right: 12%;
+        a {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 122.02%;
+          /* or 20px */
+
+          text-align: right;
+
+          color: #4441db;
+        }
+      }
+    }
+  }
+}

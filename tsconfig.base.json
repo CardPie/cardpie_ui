@@ -22,9 +22,15 @@
         "libs/auth/reset-password/src/index.ts"
       ],
       "@exe-project/auth/shared": ["libs/auth/shared/src/index.ts"],
+      "@exe-project/deck-management": ["libs/deck-management/src/index.ts"],
+      "@exe-project/folder-management": ["libs/folder-management/src/index.ts"],
       "@exe-project/homepage": ["libs/homepage/src/index.ts"],
       "@exe-project/learning": ["libs/learning/src/index.ts"],
       "@exe-project/notfoundpage": ["libs/notfoundpage/src/index.ts"],
+      "@exe-project/preview": ["libs/preview/src/index.ts"],
+      "@exe-project/shared/components/spinner": [
+        "libs/shared/components/spinner/src/index.ts"
+      ],
       "@exe-project/shared/layout": ["libs/shared/layout/src/index.ts"]
     }
   },

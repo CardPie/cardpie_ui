@@ -9,15 +9,25 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {API_CONFIGURATION} from 'libs/auth/data-access/src';
 import {environment} from '../environments/environment';
 import {AuthInterceptor} from 'libs/shared/interceptors/auth.interceptor';
+import {ToastrModule} from 'ngx-toastr';
+import {SharedComponentsSpinnerModule} from 'libs/shared/components/spinner/src/index';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
+
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    SharedComponentsSpinnerModule,
     AppRoutingModule,
   ],
   providers: [
