@@ -19,6 +19,9 @@ import {MatButtonModule} from '@angular/material/button';
 
 import {AvatarBaseComponent} from './avatar-base/avatar-base.component';
 import {FolderDetailComponent} from './folder-detail/folder-detail.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {DialogComponent} from './dialog/dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -27,6 +30,8 @@ import {FolderDetailComponent} from './folder-detail/folder-detail.component';
     FlexLayoutModule,
     MatTabsModule,
     MatButtonModule,
+    MatMenuModule,
+    MatDialogModule,
     RouterModule.forChild(folderManagementRoutes),
   ],
   declarations: [
@@ -42,7 +47,7 @@ import {FolderDetailComponent} from './folder-detail/folder-detail.component';
     TestSectionComponent,
     AvatarBaseComponent,
     FolderDetailComponent,
-
+    DialogComponent,
   ],
   exports: [MainPageComponent, SideBarComponent],
 })
