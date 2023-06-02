@@ -1,31 +1,33 @@
 <div class="container" #container>
-    <div class="left" *ngIf="total_count > 1" (click)="previousCard()" [ngClass]="{'disabled': currentCardIndex === 0}">
+    <div class="left" *ngIf="totalCards > 1" (click)="previousCard()" [ngClass]="{'disabled': currentCardIndex === 0}">
         <mat-icon class="custom-icon">chevron_left</mat-icon>
-
     </div>
     <div class="tp-wrapper d-flex justify-content-center align-items-center">
-        <div class="box tp-box" *ngIf="flashList[currentCardIndex]" (click)="toggleFlip()" [@flipState]="flip">
+        <div class="box tp-box" *ngIf="listFlashCard![currentCardIndex]" (click)="toggleFlip()" [@flipState]="flip">
             <div class="tp-box__side tp-box__front">
                 <div class="icon col-12 d-flex justify-content-center align-items-center" fxLayout="row" fxLayoutAlign="start end">
-                    <mat-icon class="icon-create">create</mat-icon>
+                    <img _ngcontent-ng-c1938978110="" class="icon-create" src="assets/svg/writte.svg">
                     <mat-icon class="icon-volume">volume_up</mat-icon>
+
                 </div>
-                <span>{{flashList[currentCardIndex].front_content}}</span>
+                <span>{{listFlashCard![currentCardIndex].front_content}}
+                </span>
+                <span class="noted-text">Click to show the answer</span>
             </div>
             <div class="tp-box__side tp-box__back">
                 <div class="icon col-12 d-flex justify-content-center align-items-center" fxLayout="row" fxLayoutAlign="start end">
-                    <mat-icon class="icon-create">create</mat-icon>
+                    <img _ngcontent-ng-c1938978110="" class="icon-create" src="assets/svg/writte.svg">
                     <mat-icon class="icon-volume">volume_up</mat-icon>
                 </div>
 
-                <span>{{flashList[currentCardIndex].back_content}}</span>
+                <span>{{listFlashCard![currentCardIndex].back_content}}</span>
             </div>
         </div>
         <div class="box box-a"></div>
         <div class="box box-b"></div>
     </div>
-    <div class="right" *ngIf="total_count > 1" (click)="nextCard()"
-        [ngClass]="{'disabled': currentCardIndex === flashList.length - 1}"> <mat-icon
+    <div class="right" *ngIf="totalCards > 1" (click)="nextCard()"
+        [ngClass]="{'disabled': currentCardIndex === listFlashCard!.length - 1}"> <mat-icon
             class="custom-icon">chevron_right</mat-icon>
     </div>
 </div>

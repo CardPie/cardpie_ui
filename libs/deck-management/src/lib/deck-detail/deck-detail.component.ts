@@ -50,7 +50,10 @@ export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
     this.subscription = this.folderService
       .getFolderDetail(this.idFolder)
       .pipe(take(1))
-      .subscribe((data) => (this.folderDetail = data));
+      .subscribe((data) => {
+        this.folderDetail = data;
+      });
+
     this.deckCreateForm = this.formBuilder.group({
       nameDesk: ['Unnamed'],
       description: [''],

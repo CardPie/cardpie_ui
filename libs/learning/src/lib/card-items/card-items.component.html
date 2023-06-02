@@ -22,7 +22,13 @@
             <p class="item-numbers">{{ desk.total_card }} items</p>
             <p class="view-numbers">| {{ desk.view }} views</p>
             <mat-card-actions>
-                <button mat-button class="btn-start primary">Get started</button>
+                <button
+                    mat-button
+                    class="btn-start primary"
+                    (click)="learning(desk)"
+                >
+                    Get started
+                </button>
             </mat-card-actions>
         </div>
     </mat-card-content>

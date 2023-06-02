@@ -8,6 +8,7 @@ export interface IDecks {
     order: number;
     user_id: string;
     view: number;
+    folder_name: string;
     recall_strength: number;
     reminder_time: string;
     learning_length: number;
