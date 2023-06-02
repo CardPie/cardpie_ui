@@ -1,0 +1,22 @@
+<section class="container">
+    <header
+        class="title"
+        div
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+    >
+        <p>Saved</p>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </header>
+    <div class="item-list" fxLayout="row" fxLayoutAlign="space-between center">
+        <ng-container *ngIf="totalDeck > 0; else noData">
+            <ng-container *ngFor="let desk of savedDeck">
+                <exe-project-card-items [desk]="desk"></exe-project-card-items>
+            </ng-container>
+        </ng-container>
+        <ng-template #noData>
+            <p>No data yet</p>
+        </ng-template>
+    </div>
+    <div class="image-banner"></div>
+</section>

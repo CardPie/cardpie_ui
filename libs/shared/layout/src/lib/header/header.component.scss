@@ -1,36 +1,69 @@
 :host {
   .fixed-toolbar {
+    margin-top: 41px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 60px;
-    background-color: black;
-  }
-  .header-container {
-    width: 1200px;
-    margin: 0 auto;
-    padding: 0 16px;
-  }
-
-  .fixed-toolbar {
+    height: 150px;
+    background-color: transparent;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 99999; /* Adjust the z-index value if needed */
+    position: absolute;
+    z-index: 1;
     transition: top 0.3s ease-in-out; /* Add smooth transition */
     scroll-behavior: smooth; /* Add smooth scrolling */
   }
-  .logo {
-    height: auto;
-    width: 120px;
+  .header-container {
+    z-index: 1;
+    width: 94%;
+    margin-left: 3%;
+    margin-right: 3%;
+    .logo {
+      height: auto;
+      width: 157px;
+    }
+    .menu {
+      background-color: white;    
+      margin-top: 25px;
+      vertical-align: middle;
+      display: table-cell;
+      max-height: 80px;
+      width: 75%;
+      border-radius: 15px;
+      .navbar {
+        width: 95%;
+        a{
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 19px;
+        }
+        .signin-signup {
+          .login {
+            width: 123px;
+            height: 43px;
+            border-radius: 38px;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(
+              131.38deg,
+              #000000 17.65%,
+              #222356 17.66%,
+              #4043bf 97.08%
+            );
+          }
+        }
+      }
+    }
   }
-
   ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
-    color: white;
+    color: #4043BF;
   }
-
   .fit-content {
     width: fit-content;
   }
+
 }

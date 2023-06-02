@@ -20,6 +20,8 @@ import {RecommendSectionComponent} from './recommend-section/recommend-section.c
 import {CardItemsComponent} from './card-items/card-items.component';
 import {MostCommonSectionComponent} from './most-common-section/most-common-section.component';
 import {DestroyService} from 'libs/shared/services/destroy.service';
+import {SeenRecentlyComponent} from './seen-recently/seen-recently.component';
+import {SavedDeckComponent} from './saved-deck/saved-deck.component';
 
 @NgModule({
   imports: [
@@ -45,6 +47,8 @@ import {DestroyService} from 'libs/shared/services/destroy.service';
     RecommendSectionComponent,
     CardItemsComponent,
     MostCommonSectionComponent,
+    SeenRecentlyComponent,
+    SavedDeckComponent,
   ],
   providers: [DestroyService],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],
