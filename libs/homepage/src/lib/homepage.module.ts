@@ -14,6 +14,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MainBannerV2Component} from './main-banner-v2/main-banner-v2.component';
+import {CardpieIntroduceComponent} from './cardpie-introduce/cardpie-introduce.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -31,6 +33,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ProjectsComponent,
     InfosComponent,
     ContactUsComponent,
+    MainBannerV2Component,
+    CardpieIntroduceComponent,
   ],
 })
 export class HomepageModule {}

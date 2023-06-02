@@ -1,0 +1,168 @@
+:host {
+  .cardpie-introduce {
+    text-align: center;
+    justify-content: center;
+    .header-text {
+      color: #4043bf;
+      font-size: 35px;
+    }
+    .info-row {
+      justify-self: center;
+      .box-info {
+        margin-top: 50px;
+        margin-left: 5%;
+        width: 255px;
+        height: 438px;
+        background: #ffffff;
+        box-shadow: 5px 9px 13px rgba(32, 31, 74, 0.1);
+        border-radius: 8px;
+        .icon {
+          margin-top: 60px;
+          margin-bottom: 40px;
+          width: 90px;
+          height: 110px;
+        }
+        .content {
+          width: 100%;
+          .horizontal-line {
+            background: #4043bf;
+            border-radius: 2px;
+            height: 3px;
+            width: 55%;
+            margin: auto;
+            margin-top: 40px;
+            margin-bottom: 25px;
+          }
+          h4 {
+            margin-top: 40px;
+            color: #4043bf;
+            margin: auto;
+            font-size: 25px;
+          }
+          p {
+            width: 55%;
+            color: #4043bf;
+            margin: auto;
+          }
+        }
+      }
+    }
+    .header-text-2 {
+      margin-top: 200px;
+      color: #4043bf;
+      font-size: 35px;
+    }
+    .info-row-2 {
+      justify-self: center;
+      .box-info-2 {
+        margin-top: 30px;
+        margin-left: 5%;
+        width: 255px;
+        height: 438px;
+        border-radius: 8px;
+        .icon-2 {
+          margin-bottom: 40px;
+          width: 90px;
+          height: 110px;
+        }
+        .content-2 {
+          width: 100%;
+          .horizontal-line-2 {
+            background: #4043bf;
+            height: 5px;
+            width: 40%;
+            margin: auto;
+            margin-top: 40px;
+            margin-bottom: 25px;
+            border-radius: 2px;
+          }
+          h4 {
+            margin-top: 40px;
+            color: #4043bf;
+            margin: auto;
+            font-size: 30px;
+          }
+          p {
+            width: 100%;
+            color: #4043bf;
+            margin: auto;
+          }
+        }
+      }
+    }
+    ._icon_1ho08_15 {
+      width: 155px;
+      height: 155px;
+      left: 17%;
+      top: 140%;
+      position: absolute;
+      z-index: -1;
+    }
+    ._icon_1ho08_15-2 {
+      width: 155px;
+      height: 155px;
+      left: 77%;
+      top: 195%;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .icon-learner {
+      margin-bottom: 30px;
+      ._icon_1f7tb_6 {
+        width: 150px;
+        overflow: visible;
+      }
+      ._icon_fhynk_5 {
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 25px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .icon-lecturers {
+      margin-bottom: 30px;
+      ._icon_1f7tb_6 {
+        width: 150px;
+        overflow: visible;
+      }
+      ._icon_b8871_5 {
+        position: absolute;
+        margin-top: 30px;
+        margin-left: 25px;
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    ._icon_doz8t_6 {
+      position: absolute;
+      z-index: -1;
+      width: 200px;
+      left: -5%;
+      top: 150%;
+    }
+ 
+      // .mat-icon{
+      //   width: 100%;
+      //   height: 600px;
+      //   .special{
+      //     width: 1000px;
+
+      //   }
+      // }
+      .special-banner{
+        justify-self: center;
+        width: 100%;
+        height: 580px;
+        background-image: url("../../../../../apps/exe-project/src/assets/images/cardpie-special.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        right: 100px;
+      }
+   
+  }
+}
