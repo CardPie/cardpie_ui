@@ -34,3 +34,8 @@ export interface Desk {
   order: number;
   total_card: number;
 }
+
+export interface CountView {
+  status_code: number;
+  message: string;
+}

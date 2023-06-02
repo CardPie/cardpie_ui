@@ -32,7 +32,6 @@ import {MatRadioModule} from '@angular/material/radio';
     MatRadioModule,
     MatFormFieldModule,
     RouterModule.forChild(deckManagementRoutes),
-    RouterModule.forChild(deckManagementRoutes),
   ],
   declarations: [
     MainPageComponent,
