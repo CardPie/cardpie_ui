@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Subscription, take } from 'rxjs';
 import { DeckService } from '../data-acess/services/deck-managerment.service';
 import { ActivatedRoute } from '@angular/router';
-import { IDecks, IFlashCard } from '../data-acess/models/deck.model';
+import { IFlashCard } from '../data-acess/models/deck.model';
 
 @Component({
   selector: 'exe-project-deck-preview',
@@ -18,10 +18,8 @@ export class DeckPreviewComponent implements OnInit, OnDestroy {
   total_card: number = 0;
   folder_name!: string;
   deck_name!: string;
-  dataParent!: IDecks;
-  @Input() listFlashCard!: IFlashCard[]
-  @Input() total_count!: number;
-  @Input() totalCards!: number;
+  listFlashCard!: IFlashCard[]
+
 
   id!: string | null;
   async ngOnInit(): Promise<void> {
@@ -32,7 +30,6 @@ export class DeckPreviewComponent implements OnInit, OnDestroy {
         this.total_card = data.data.total_card;
         this.deck_name = data.data.folder_name;
         this.folder_name = data.data.folder_name
-        this.dataParent = data.data;
         this.listFlashCard = data.data.list_flash_cards
       }
     } catch (error) {
