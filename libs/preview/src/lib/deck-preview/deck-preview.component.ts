@@ -16,6 +16,7 @@ export class DeckPreviewComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute,
   ) { }
   total_card: number = 0;
+  folder_name!: string;
   deck_name!: string;
   dataParent!: IDecks;
   @Input() listFlashCard!: IFlashCard[]
@@ -29,7 +30,8 @@ export class DeckPreviewComponent implements OnInit, OnDestroy {
       const data = await this.deckService.getDecksOfUser(this.id).pipe(take(1)).toPromise();
       if (data?.data) {
         this.total_card = data.data.total_card;
-        this.deck_name = data.data.name;
+        this.deck_name = data.data.folder_name;
+        this.folder_name = data.data.folder_name
         this.dataParent = data.data;
         this.listFlashCard = data.data.list_flash_cards
       }

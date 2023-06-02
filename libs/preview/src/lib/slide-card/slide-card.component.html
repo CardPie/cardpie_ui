@@ -6,16 +6,17 @@
         <div class="box tp-box" *ngIf="dataChild![currentCardIndex]" (click)="toggleFlip()" [@flipState]="flip">
             <div class="tp-box__side tp-box__front">
                 <div class="icon col-12 d-flex justify-content-center align-items-center" fxLayout="row" fxLayoutAlign="start end">
-                    <mat-icon class="icon-create">create</mat-icon>
+                    <img _ngcontent-ng-c1938978110="" class="icon-create" src="assets/svg/writte.svg">
                     <mat-icon class="icon-volume">volume_up</mat-icon>
 
                 </div>
                 <span>{{dataChild![currentCardIndex].front_content}}
                 </span>
+                <span class="noted-text">Click to show the answer</span>
             </div>
             <div class="tp-box__side tp-box__back">
                 <div class="icon col-12 d-flex justify-content-center align-items-center" fxLayout="row" fxLayoutAlign="start end">
-                    <mat-icon class="icon-create">create</mat-icon>
+                    <img _ngcontent-ng-c1938978110="" class="icon-create" src="assets/svg/writte.svg">
                     <mat-icon class="icon-volume">volume_up</mat-icon>
                 </div>
 

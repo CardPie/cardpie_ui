@@ -55,6 +55,11 @@
       -webkit-transform: rotateY(0deg);
       -ms-transform: rotateY(0deg);
       transform: rotateY(0deg);
+      .noted-text{
+        font-size: 15px;
+        font-weight: 100;
+        margin-top: 100px;
+      }
     }
     .tp-box__back {
       background: #ffffff;
@@ -83,7 +88,7 @@
   }
 
   .box span {
-    font-size: 48px;
+    font-size: 30px;
     color: black;
     position: absolute;
     top: 50%;
