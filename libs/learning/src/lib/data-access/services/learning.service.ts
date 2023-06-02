@@ -12,6 +12,8 @@ export class LearningService {
   RECOMMEND_DESK_URL = `${this.apiDomain}/deck/recommend`;
   MOST_COMMON_DESK_URL = `${this.apiDomain}/deck?order_by=View desc`;
   USER_INFORMATION_URL = `${this.apiDomain}/account/information`;
+  SAVED_DECK_URL = `${this.apiDomain}/saved-deck`;
+
   constructor(private httpClient: HttpClient) {}
 
   getRecommendDesk() {
@@ -23,5 +25,8 @@ export class LearningService {
   }
   getUserInfor() {
     return this.httpClient.get<UserInforRes>(this.USER_INFORMATION_URL);
+  }
+  getSavedDeck(){
+    return this.httpClient.get<DeskRes>(this.SAVED_DECK_URL);
   }
 }

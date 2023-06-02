@@ -1,11 +1,19 @@
 :host {
   .new-desk {
-    margin-top: 50px;
-    height: 300px;
+    margin-top: 30px;
+    height: 600px;
     position: relative;
     margin-bottom: 50px;
+    overflow: hidden;
   }
-
+  .image-banner{
+    background-image: url("../../../../../apps/exe-project/src/assets/images/homepage.png");
+    width: 530px;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .plus-button {
     top: 50%;
     left: 45%;
@@ -28,7 +36,6 @@
     position: absolute;
     right: 0;
     top: 10;
-    background-image: url('../../../../../apps/exe-project/src/assets/images/21047837\ [Converted]-01\ 3.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
