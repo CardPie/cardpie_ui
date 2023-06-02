@@ -24,8 +24,7 @@ import { Subscription } from "rxjs";
 })
 export class SlideCardComponent implements OnInit, OnDestroy {
 
-  @Input() dataChild!: IFlashCard[];
-  @Input() total_count!: number;
+  @Input() listFlashCard!: IFlashCard[];
   @Input() totalCards!: number;
   subscription!: Subscription;
   currentPage: number = 1;
@@ -41,8 +40,8 @@ export class SlideCardComponent implements OnInit, OnDestroy {
     if (newCardsPerPage != this.cardsPerPage) {
       this.cardsPerPage = newCardsPerPage;
       this.initializeSlider();
-      if (this.currentPage > this.total_count) {
-        this.currentPage = this.total_count;
+      if (this.currentPage > this.totalCards) {
+        this.currentPage = this.totalCards;
         this.populatePagePosition();
       }
     }
@@ -60,11 +59,11 @@ export class SlideCardComponent implements OnInit, OnDestroy {
   }
 
   initializeSlider() {
-    console.log("datadata:  ", this.dataChild)
-    this.total_count = Math.ceil(this.totalCards / this.cardsPerPage);
-    this.overflowWidth = `calc(${this.total_count * 100}% + ${this.total_count *
+    console.log("datadata:  ", this.listFlashCard)
+    this.totalCards = Math.ceil(this.totalCards / this.cardsPerPage);
+    this.overflowWidth = `calc(${this.totalCards * 100}% + ${this.totalCards *
       10}px)`;
-    this.cardWidth = `calc((${100 / this.total_count}% - ${this.cardsPerPage *
+    this.cardWidth = `calc((${100 / this.totalCards}% - ${this.cardsPerPage *
       10}px) / ${this.cardsPerPage})`;
   }
 
@@ -84,7 +83,7 @@ export class SlideCardComponent implements OnInit, OnDestroy {
   currentCardIndex: number = 0; // Chỉ số của card hiện tại
 
   nextCard() {
-    if (this.currentCardIndex < this.dataChild.length - 1) {
+    if (this.currentCardIndex < this.listFlashCard.length - 1) {
       this.currentCardIndex++;
     }
   }
