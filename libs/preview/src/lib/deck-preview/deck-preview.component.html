@@ -9,7 +9,7 @@
             </div>
             <div class="folder col-4" fxLayout="row" fxLayoutAlign="start end">
                 <p class="folder-title">Folder : </p>
-                <p class="folder-name">Aesthenic and design history</p>
+                <p class="folder-name">{{folder_name}}</p>
                
             </div>
             <div class="save-button col-6">
@@ -21,6 +21,6 @@
         </div>
     </div>
     <div class="deck-list">
-        <exe-project-slide-card></exe-project-slide-card>
+        <exe-project-slide-card [listFlashCard]="listFlashCard" [totalCards]="total_card"></exe-project-slide-card>
     </div>
 </div>
