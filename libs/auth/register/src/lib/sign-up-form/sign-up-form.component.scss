@@ -24,17 +24,18 @@
   top: -5vh;
   left: -19vw;
 }
-
 .logo {
   width: 130px;
   padding: 0;
 }
 
 .text {
-  font-size: 40px; /* Adjust the font size as needed */
+  font-size: 40px;
+  /* Adjust the font size as needed */
   font-weight: bold;
-  margin-top: 10px; /* Adjust the margin as needed */
-  margin-bottom: 5px;
+  margin-top: 10px;
+  /* Adjust the margin as needed */
+  margin-bottom: 20px;
 }
 
 .normal-text {
@@ -58,28 +59,7 @@ form button {
   background-color: #000000;
   width: 100%;
   color: white;
-}
-
-.btn-google-login {
-  background-color: #FBFBFB;
-  border: solid 1px #CFCFCF;
-  width: 100%;
   margin-bottom: 20px;
-}
-
-.line {
-  width: 45%;
-}
-
-.or {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  width: 10%;
-  color: #7E7E7E;
-}
-
-.or p {
-  width: fit-content;
 }
 
 .sign-up {
@@ -92,6 +72,24 @@ form button {
   margin-right: 10px;
 }
 
-.test {
-  padding: 0;
+.form-outline {
+  margin-bottom: 15px !important;
+}
+
+.form-check-inline {
+  margin-right: 100px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.form-check-inline input {
+  border: solid 2px #4441DB;
+}
+
+.terms_conditions {
+  color: #7E7E7E;
+}
+
+.terms_conditions span {
+  color: #000000;
 }

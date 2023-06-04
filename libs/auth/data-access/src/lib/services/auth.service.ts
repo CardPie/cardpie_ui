@@ -15,9 +15,9 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) {}
 
-  login(username: string, password: string) {
+  login(email: string, password: string) {
     return this.httpClient.post<LOGIN_RES>(this.LOGIN_URL, {
-      username,
+      email,
       password,
     });
   }

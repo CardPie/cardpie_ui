@@ -22,7 +22,7 @@ export class LoginFormComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
@@ -33,12 +33,12 @@ export class LoginFormComponent implements OnInit {
       return;
     }
 
-    const username = this.loginForm.value.username;
+    const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
 
     // Send login request to the server
     // Example: Using HttpClient module
-    this.authService.login(username, password).subscribe(
+    this.authService.login(email, password).subscribe(
       (response) => {
         // Handle successful login
         if (response.status_code >= 200 && response.status_code < 300) {
