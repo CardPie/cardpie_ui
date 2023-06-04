@@ -16,6 +16,12 @@ const routes: Routes = [
       import('libs/auth/login/src/index').then((m) => m.AuthLoginModule),
   },
   {
+    path: 'register',
+    pathMatch: 'full',
+    loadChildren: () =>
+      import('libs/auth/register/src/index').then((m) => m.AuthRegisterModule),
+  },
+  {
     path: 'home',
     pathMatch: 'full',
     loadChildren: () =>

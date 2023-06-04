@@ -1,237 +1,74 @@
-<exe-project-header></exe-project-header>
-<div class="main-banner_login">
-    <div class="container">
-        <div fxLayout="row" fxLayoutAlign="space-between center">
-            <div
-                fxFlex.gt-lg="50"
-                fxFlex.lt-lg="100"
-                fxLayout.lt-lg="column-reverse"
-                style="height: 700px"
-            >
-                <mat-card
-                    class="card card2"
-                    fxLayout="row"
-                    fxLayoutAlign="center center"
-                >
-                    <mat-card-content>
-                        <h3 class="text-white">We are Cardpie</h3>
-                        <p class="text-white">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat.
-                        </p>
-                    </mat-card-content>
-                </mat-card>
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex align-items-center h-100">
+            <div class="col-lg-6 d-flex align-items-center justify-content-center vh-100 banner">
+                <!-- Login form fields go here -->
+                <div class="image-container  vh-100 banner">
+                    <img src="assets/images/landingpage.png" class="flip-horizontal" alt="Banner">
+                </div>
             </div>
-            <div fxFlex.gt-lg="50" fxFlex.lt-lg="100">
-                <mat-card
-                    class="card card1"
-                    fxLayout="row"
-                    fxLayoutAlign="center center"
-                >
-                    <mat-card-content>
-                        <div
-                            fxLayout="row"
-                            fxLayoutAlign="center center"
-                            fxLayoutGap="30px"
-                        >
-                            <div fxFlex="80" fxFlex.lt-md="100">
-                                <a
-                                    class="logo"
-                                    routerLink="/"
-                                    style="margin-left: 100px"
-                                >
-                                    <img
-                                        id="logo_login"
-                                        src="assets/images/logo_cardpie_3.png"
-                                        alt="Logo"
-                                        style="width: 140px; height: auto"
-                                    />
-                                </a>
-                                <div
-                                    fxLayout="row"
-                                    fxLayoutAlign="center center"
-                                    fxLayoutGap="30px"
-                                    fxLayoutWrap
-                                >
-                                    <div fxFlex="500" style="width: 300px">
-                                        <h6 class="msg-info">
-                                            Please login to your account
-                                        </h6>
-                                        <form
-                                            class="form-group"
-                                            [formGroup]="loginForm"
-                                            (ngSubmit)="onSubmit()"
-                                        >
-                                            <input
-                                                type="text"
-                                                id="username"
-                                                name="username"
-                                                placeholder="Username"
-                                                class="form-control"
-                                                [ngClass]="{
-                                                    'is-invalid':
-                                                        submitted &&
-                                                        loginForm.controls
-                                                            .username.errors
-                                                }"
-                                                formControlName="username"
-                                            />
-                                            <div
-                                                *ngIf=" submitted && loginForm.controls.username.errors?.['required']"
-                                                class="text-danger"
-                                            >
-                                                Username is required
-                                            </div>
-                                            <input
-                                                placeholder="Password"
-                                                class="form-control"
-                                                type="password"
-                                                id="password"
-                                                formControlName="password"
-                                                [ngClass]="{
-                                                    'is-invalid':
-                                                        submitted &&
-                                                        loginForm.controls
-                                                            .password.errors
-                                                }"
-                                            />
-                                            <div
-                                                *ngIf="
-                                                    submitted &&
-                                                    loginForm.controls.password
-                                                        .errors?.required
-                                                "
-                                                class="text-danger"
-                                            >
-                                                Password is required
-                                            </div>
-                                            <div
-                                                *ngIf="
-                                                    submitted &&
-                                                    loginForm.controls.password
-                                                        .errors?.minlength
-                                                "
-                                                class="text-danger"
-                                            >
-                                                Password should be at least 6
-                                                characters
-                                            </div>
-                                            <div
-                                                fxLayout="row"
-                                                fxLayoutAlign="space-between center"
-                                                fxLayoutGap="10px"
-                                                style="margin-top: 10px"
-                                            >
-                                                <button
-                                                    class="login-btn"
-                                                    mat-raised-button
-                                                    color="primary"
-                                                    type="submit"
-                                                    [disabled]="
-                                                        loginForm.invalid
-                                                    "
-                                                >
-                                                    Login
-                                                </button>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <div class="row">
+                    <img src="assets/images/logo_cardpie_2.png" class="logo" alt="logo">
+                </div>
+                <div class="row">
+                    <h1 class="text">Hey, hello</h1>
+                    <p class="normal-text">Enter the information you entered while registering</p>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-                                                <a href="#"
-                                                    ><small class="text-muted"
-                                                        >Forgot Password?</small
-                                                    ></a
-                                                >
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <input type="email" id="email" name="email" class="form-control form-control-lg"
+                            placeholder="Email address *" [ngClass]="{'is-invalid': submitted && loginForm.controls.email.errors}" 
+                            formControlName="email" />
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <input type="password" id="form3Example4" class="form-control form-control-lg"
+                            placeholder="Password" id="password"
+                            formControlName="password"
+                            [ngClass]="{'is-invalid':submitted && loginForm.controls.password.errors}"/>
+                    </div>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <!-- Checkbox -->
+                        <div class="form-check mb-0">
+                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                            <label class="form-check-label" for="form2Example3">
+                                Remember me
+                            </label>
+                        </div>
+                        <a href="#!" class="text-primary fw-bold">Forgot password?</a>
+                    </div>
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-lg btn-login"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;" [disabled]="loginForm.invalid">
+                            Login
+                        </button>
+                        <div class="row justify-content-between align-items-center">
+                            <div class="line">
+                                <hr>
                             </div>
-                            <div fxFlex="20" fxFlex.lt-md="0" class="btn-group">
-                                <div
-                                    fxLayout="column"
-                                    fxLayoutAlign="center center"
-                                >
-                                    <button
-                                        mat-icon-button
-                                        class="login100-social-item bg1"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            data-name="Ebene 1"
-                                            viewBox="0 0 1024 1024"
-                                            id="facebook-logo-2019"
-                                        >
-                                            <path
-                                                fill="#1877f2"
-                                                d="M1024,512C1024,229.23016,794.76978,0,512,0S0,229.23016,0,512c0,255.554,187.231,467.37012,432,505.77777V660H302V512H432V399.2C432,270.87982,508.43854,200,625.38922,200,681.40765,200,740,210,740,210V336H675.43713C611.83508,336,592,375.46667,592,415.95728V512H734L711.3,660H592v357.77777C836.769,979.37012,1024,767.554,1024,512Z"
-                                            ></path>
-                                            <path
-                                                fill="#fff"
-                                                d="M711.3,660,734,512H592V415.95728C592,375.46667,611.83508,336,675.43713,336H740V210s-58.59235-10-114.61078-10C508.43854,200,432,270.87982,432,399.2V512H302V660H432v357.77777a517.39619,517.39619,0,0,0,160,0V660Z"
-                                            ></path>
-                                        </svg>
-                                    </button>
-                                    <button
-                                        mat-icon-button
-                                        class="login100-social-item bg2"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="2500"
-                                            height="2500"
-                                            viewBox="126.444 2.281 589 589"
-                                            id="twitter"
-                                        >
-                                            <circle
-                                                cx="420.944"
-                                                cy="296.781"
-                                                r="294.5"
-                                                fill="#2daae1"
-                                            ></circle>
-                                            <path
-                                                fill="#fff"
-                                                d="M609.773 179.634c-13.891 6.164-28.811 10.331-44.498 12.204 16.01-9.587 28.275-24.779 34.066-42.86a154.78 154.78 0 0 1-49.209 18.801c-14.125-15.056-34.267-24.456-56.551-24.456-42.773 0-77.462 34.675-77.462 77.473 0 6.064.683 11.98 1.996 17.66-64.389-3.236-121.474-34.079-159.684-80.945-6.672 11.446-10.491 24.754-10.491 38.953 0 26.875 13.679 50.587 34.464 64.477a77.122 77.122 0 0 1-35.097-9.686v.979c0 37.54 26.701 68.842 62.145 75.961-6.511 1.784-13.344 2.716-20.413 2.716-4.998 0-9.847-.473-14.584-1.364 9.859 30.769 38.471 53.166 72.363 53.799-26.515 20.785-59.925 33.175-96.212 33.175-6.25 0-12.427-.373-18.491-1.104 34.291 21.988 75.006 34.824 118.759 34.824 142.496 0 220.428-118.052 220.428-220.428 0-3.361-.074-6.697-.236-10.021a157.855 157.855 0 0 0 38.707-40.158z"
-                                            ></path>
-                                        </svg>
-                                    </button>
-                                    <button
-                                        mat-icon-button
-                                        class="login100-social-item bg3"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="2443"
-                                            height="2500"
-                                            preserveAspectRatio="xMidYMid"
-                                            viewBox="0 0 256 262"
-                                            id="google"
-                                        >
-                                            <path
-                                                fill="#4285F4"
-                                                d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"
-                                            ></path>
-                                            <path
-                                                fill="#34A853"
-                                                d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"
-                                            ></path>
-                                            <path
-                                                fill="#FBBC05"
-                                                d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"
-                                            ></path>
-                                            <path
-                                                fill="#EB4335"
-                                                d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
-                                            ></path>
-                                        </svg>
-                                    </button>
-                                </div>
+                            <div class="or">
+                                <p>or</p>
+                            </div>
+                            <div class="line">
+                                <hr>
                             </div>
                         </div>
-                    </mat-card-content>
-                </mat-card>
+                        <button type="submit" class="btn btn-lg btn-google-login"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                            <img src="assets/svg/icons8-google.svg" class="google-icon" alt="Google Icon">
+                            Sign in with Google
+                        </button>
+                        <p class="small mt-2 pt-1 mb-0 sign-up text-center">Don't have an account? <a href="#!"
+                                class="link-primary fw-bold"> Sign up</a></p>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
-</div>
-<exe-project-footer></exe-project-footer>
+</section>

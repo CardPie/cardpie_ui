@@ -86,3 +86,97 @@
     width: 150px;
   }
 }
+
+.banner {
+  padding: 0 !important;
+  background-color: #4043BF;
+}
+
+.container-fluid {
+  height: 100vh;
+}
+
+.banner img {
+  width: 1200px;
+}
+
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+
+.image-container {
+  overflow: hidden;
+}
+
+.image-container img {
+  position: relative;
+  top: -5vh;
+  left: -19vw;
+}
+
+.logo {
+  width: 130px;
+  padding: 0;
+}
+
+.text {
+  font-size: 40px; /* Adjust the font size as needed */
+  font-weight: bold;
+  margin-top: 10px; /* Adjust the margin as needed */
+  margin-bottom: 5px;
+}
+
+.normal-text {
+  color: #7E7E7E;
+  margin-bottom: 30px;
+}
+
+form input {
+  font-size: 16px;
+}
+
+.text-primary {
+  color: #4043BF;
+}
+
+form button {
+  font-size: 16px;
+}
+
+.btn-login {
+  background-color: #000000;
+  width: 100%;
+  color: white;
+}
+
+.btn-google-login {
+  background-color: #FBFBFB;
+  border: solid 1px #CFCFCF;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.line {
+  width: 45%;
+}
+
+.or {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 10%;
+  color: #7E7E7E;
+}
+
+.or p {
+  width: fit-content;
+}
+
+.sign-up {
+  width: 100%;
+  color: #7E7E7E;
+}
+
+.google-icon {
+  height: 25px;
+  margin-right: 10px;
+}
