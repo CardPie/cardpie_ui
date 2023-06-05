@@ -1,9 +1,16 @@
-import { Component, HostListener, ViewChild, ElementRef, OnInit, OnDestroy, Input } from "@angular/core";
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { DeckService } from "../data-acess/services/deck-managerment.service";
-import { IFlashCard } from "../data-acess/models/deck.model";
-import { Subscription } from "rxjs";
-
+import {
+  Component,
+  HostListener,
+  ViewChild,
+  ElementRef,
+  OnInit,
+  OnDestroy,
+  Input,
+} from '@angular/core';
+import {trigger, state, style, transition, animate} from '@angular/animations';
+import {DeckService} from '../data-acess/services/deck-managerment.service';
+import {IFlashCard} from '../data-acess/models/deck.model';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'exe-project-slide-card',
@@ -11,31 +18,36 @@ import { Subscription } from "rxjs";
   styleUrls: ['./slide-card.component.scss'],
   animations: [
     trigger('flipState', [
-      state('active', style({
-        transform: 'rotateY(179deg)'
-      })),
-      state('inactive', style({
-        transform: 'rotateY(0)'
-      })),
+      state(
+        'active',
+        style({
+          transform: 'rotateY(179deg)',
+        }),
+      ),
+      state(
+        'inactive',
+        style({
+          transform: 'rotateY(0)',
+        }),
+      ),
       transition('active => inactive', animate('500ms ease-out')),
-      transition('inactive => active', animate('500ms ease-in'))
-    ])
-  ]
+      transition('inactive => active', animate('500ms ease-in')),
+    ]),
+  ],
 })
 export class SlideCardComponent implements OnInit, OnDestroy {
-
   @Input() listFlashCard!: IFlashCard[];
   @Input() totalCards!: number;
   subscription!: Subscription;
   currentPage: number = 1;
-  pagePosition: string = "0%";
+  pagePosition: string = '0%';
   cardsPerPage!: number;
   overflowWidth!: string;
   cardWidth!: string;
   containerWidth!: number;
-  @ViewChild("container", { static: true, read: ElementRef })
+  @ViewChild('container', {static: true, read: ElementRef})
   container!: ElementRef;
-  @HostListener("window:resize") windowResize() {
+  @HostListener('window:resize') windowResize() {
     let newCardsPerPage = this.getCardsPerPage();
     if (newCardsPerPage != this.cardsPerPage) {
       this.cardsPerPage = newCardsPerPage;
@@ -49,9 +61,9 @@ export class SlideCardComponent implements OnInit, OnDestroy {
   flip: string = 'inactive';
 
   toggleFlip() {
-    this.flip = (this.flip == 'inactive') ? 'active' : 'inactive';
+    this.flip = this.flip == 'inactive' ? 'active' : 'inactive';
   }
-  constructor(private deckService: DeckService) { }
+  constructor(private deckService: DeckService) {}
 
   ngOnInit(): void {
     this.cardsPerPage = this.getCardsPerPage();
@@ -59,12 +71,13 @@ export class SlideCardComponent implements OnInit, OnDestroy {
   }
 
   initializeSlider() {
-    console.log("datadata:  ", this.listFlashCard)
     this.totalCards = Math.ceil(this.totalCards / this.cardsPerPage);
-    this.overflowWidth = `calc(${this.totalCards * 100}% + ${this.totalCards *
-      10}px)`;
-    this.cardWidth = `calc((${100 / this.totalCards}% - ${this.cardsPerPage *
-      10}px) / ${this.cardsPerPage})`;
+    this.overflowWidth = `calc(${this.totalCards * 100}% + ${
+      this.totalCards * 10
+    }px)`;
+    this.cardWidth = `calc((${100 / this.totalCards}% - ${
+      this.cardsPerPage * 10
+    }px) / ${this.cardsPerPage})`;
   }
 
   getCardsPerPage() {
@@ -77,8 +90,9 @@ export class SlideCardComponent implements OnInit, OnDestroy {
   }
 
   populatePagePosition() {
-    this.pagePosition = `calc(${-100 * (this.currentPage - 1)}% - ${10 *
-      (this.currentPage - 1)}px)`;
+    this.pagePosition = `calc(${-100 * (this.currentPage - 1)}% - ${
+      10 * (this.currentPage - 1)
+    }px)`;
   }
   currentCardIndex: number = 0; // Chỉ số của card hiện tại
 
