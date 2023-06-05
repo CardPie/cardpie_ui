@@ -24,7 +24,7 @@ export class SignUpFormComponent implements OnInit {
       {
         account_type: ['', Validators.required],
         fullname: ['', Validators.required],
-        email: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         confirmPassword: ['', Validators.required],
       },
@@ -69,7 +69,6 @@ export class SignUpFormComponent implements OnInit {
           }
         },
         (error) => {
-          console.log(error);
           this.toastr.error(error.error.message);
         },
       );
