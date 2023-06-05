@@ -20,3 +20,13 @@ export interface LOGOUT_RES {
   status_code: number;
   message: string;
 }
+
+export enum Accountype {
+  Learning = 1,
+  Teaching = 2,
+}
+
+export interface BaseReponse {
+  status_code: number;
+  message: string;
+}
