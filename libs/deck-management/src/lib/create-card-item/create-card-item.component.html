@@ -1,127 +1,125 @@
-<div
-    class="card-item"
-    [formGroup]="childForm"
-    fxLayout="row"
-    fxLayoutAlign="space-around center"
->
-    <div class="side front-side">
-        <div class="delete-item-button" (click)="onDelete()">
-            <mat-icon>delete</mat-icon>
-        </div>
-        <div class="large-input">
-            <input
-                type="text"
-                formControlName="front_content"
-                placeholder="Type something"
-                (input)="onlargeInputFront($event)"
-            />
-        </div>
-        <div class="small-input">
-            <input
-                type="text"
-                formControlName="front_description"
-                placeholder="(Add description)"
-                (input)="ondescriptionFront($event)"
-            />
-        </div>
-        <div
-            class="bottom-section"
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
-        >
-            <div
-                class="option-letter"
-                fxLayout="row"
-                fxLayoutAlign="space-around center"
-            >
-                <mat-icon> format_bold</mat-icon>
-                <mat-icon> format_italic</mat-icon>
-                <mat-icon> format_underlined</mat-icon>
+<div class="card-item" [formGroup]="childForm">
+    <div class="col-6">
+        <div class="notice">FRONT</div>
+        <div class="side front-side">
+            <div class="delete-item-button" (click)="onDelete()">
+                <mat-icon>delete</mat-icon>
             </div>
-            <div
-                class="attached-file"
-                fxLayout="row"
-                fxLayoutAlign="space-around center"
-            >
-                <label class="img-input-label">
-                    <input
-                        type="file"
-                        class="file-input"
-                        formControlName="front_image_url"
-                        accept="image/png, image/jpeg"
-                        (change)="onImgFrontSelected($event)"
-                    />
-                    <mat-icon>photo_size_select_actual</mat-icon>
-                </label>
+            <div class="large-input">
+                <input type="text" formControlName="front_content" placeholder="Type something"
+                    (input)="onlargeInputFront($event)" />
+            </div>
+            <div class="small-input">
+                <input type="text" formControlName="front_description" placeholder="(Add description)"
+                    (input)="ondescriptionFront($event)" />
+            </div>
+            <div class="bottom-section" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="option-letter" fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-icon> format_bold</mat-icon>
+                    <mat-icon> format_italic</mat-icon>
+                    <mat-icon> format_underlined</mat-icon>
+                </div>
+                <div class="attached-file" fxLayout="row" fxLayoutAlign="space-around center">
+                    <label class="img-input-label">
+                        <input type="file" class="file-input" formControlName="front_image_url"
+                            accept="image/png, image/jpeg" (change)="onImgFrontSelected($event)" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <g clip-path="url(#clip0_750_2570)">
+                                <path
+                                    d="M21.3333 2.66669H2.66659C2.31296 2.66669 1.97382 2.80716 1.72378 3.05721C1.47373 3.30726 1.33325 3.6464 1.33325 4.00002V20C1.33325 20.3536 1.47373 20.6928 1.72378 20.9428C1.97382 21.1929 2.31296 21.3334 2.66659 21.3334H21.3333C21.6869 21.3334 22.026 21.1929 22.2761 20.9428C22.5261 20.6928 22.6666 20.3536 22.6666 20V4.00002C22.6666 3.6464 22.5261 3.30726 22.2761 3.05721C22.026 2.80716 21.6869 2.66669 21.3333 2.66669ZM5.94659 5.33335C6.34215 5.33335 6.72883 5.45065 7.05773 5.67041C7.38662 5.89018 7.64297 6.20253 7.79434 6.56799C7.94572 6.93344 7.98533 7.33557 7.90816 7.72353C7.83099 8.1115 7.6405 8.46786 7.3608 8.74757C7.08109 9.02727 6.72473 9.21775 6.33677 9.29492C5.9488 9.37209 5.54667 9.33249 5.18122 9.18111C4.81577 9.02974 4.50341 8.77339 4.28365 8.44449C4.06388 8.1156 3.94659 7.72892 3.94659 7.33335C3.94659 6.80292 4.1573 6.29421 4.53237 5.91914C4.90744 5.54407 5.41615 5.33335 5.94659 5.33335ZM3.99992 18V15.2667L7.99992 11.2134C8.12483 11.0892 8.2938 11.0195 8.46992 11.0195C8.64604 11.0195 8.81501 11.0892 8.93992 11.2134L10.6666 12.9L5.54659 18H3.99992ZM19.9999 18H7.43325L11.5866 13.8467L15.1866 10.2467C15.3115 10.1225 15.4805 10.0528 15.6566 10.0528C15.8327 10.0528 16.0017 10.1225 16.1266 10.2467L19.9999 14.12V18Z"
+                                    fill="#7E7E7E" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_750_2570">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </label>
 
-                <label class="sound-input-label">
-                    <input
-                        type="file"
-                        class="file-input"
-                        formControlName="front_sound_url"
-                        accept="audio/*"
-                        (change)="onSoundFrontSelected($event)"
-                    />
-                    <img src="assets/images/sound.png" />
-                </label>
+                    <label class="sound-input-label">
+                        <input type="file" class="file-input" formControlName="front_sound_url" accept="audio/*"
+                            (change)="onSoundFrontSelected($event)" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 26 20" fill="none">
+                            <g clip-path="url(#clip0_750_1721)">
+                                <path
+                                    d="M0.000102912 7.63866C0.222957 6.92742 0.730307 6.67612 1.44629 6.69983C2.38038 6.72828 3.31447 6.71405 4.24856 6.69983C4.38133 6.69983 4.5378 6.64293 4.64211 6.55758C6.63832 4.91225 8.62979 3.25744 10.626 1.60737C11.2187 1.11898 11.9394 1.15218 12.3472 1.73065C12.4942 1.93454 12.5653 2.22377 12.5843 2.48456C12.6175 3.07252 12.5938 3.66522 12.5938 4.25317C12.5938 8.73397 12.5938 13.2148 12.5938 17.7003C12.5938 18.4258 12.2144 18.8999 11.5696 18.9805C11.2139 19.0279 10.9152 18.8904 10.645 18.6628C9.13239 17.4063 7.61509 16.1545 6.10252 14.898C5.6094 14.4902 5.12101 14.0777 4.62315 13.6794C4.52357 13.6036 4.37659 13.5467 4.2533 13.5467C3.33344 13.5372 2.41831 13.5135 1.49844 13.5467C0.777723 13.5751 0.256148 13.3523 -0.00463867 12.6458V7.62918L0.000102912 7.63866Z"
+                                    fill="#7E7E7E" />
+                                <path
+                                    d="M25.192 9.74867C25.1303 13.651 24.0208 16.7804 21.7875 19.5068C21.3323 20.0616 20.6543 20.1564 20.1375 19.7487C19.4879 19.2366 19.3598 18.5775 19.8245 17.9706C20.4125 17.2119 20.9625 16.4296 21.3892 15.5666C21.9914 14.348 22.3944 13.063 22.5651 11.7117C22.9634 8.53008 22.2285 5.63298 20.384 3.01562C20.1564 2.69319 19.9004 2.39447 19.6538 2.09101C19.1512 1.47461 19.2366 0.810785 19.8909 0.270245C20.4077 -0.156498 21.0905 -0.0664075 21.5647 0.483616C23.3428 2.54621 24.4902 4.91226 24.9502 7.60073C25.0924 8.43525 25.1446 9.28874 25.192 9.75341V9.74867Z"
+                                    fill="#7E7E7E" />
+                                <path
+                                    d="M19.6396 10.0332C19.6396 12.1242 19.0374 13.9355 17.8568 15.5571C17.4727 16.0882 16.7852 16.2162 16.2683 15.8653C15.6235 15.4244 15.4196 14.7273 15.8084 14.1441C16.3015 13.4092 16.7235 12.6505 16.9322 11.7876C17.4111 9.77713 17.0744 7.92317 15.8843 6.23043C15.7136 5.98861 15.5287 5.72782 15.4481 5.44807C15.2916 4.90753 15.6519 4.30534 16.2209 4.03507C16.7093 3.80748 17.2688 3.94973 17.6292 4.40018C18.9568 6.0787 19.6301 7.98481 19.6396 10.0379V10.0332Z"
+                                    fill="#7E7E7E" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_750_1721">
+                                    <rect width="25.192" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
-    <div class="side back-side">
-        <div class="large-input">
-            <input
-                (input)="onlargeInputBack($event)"
-                formControlName="back_content"
-                placeholder="Type something"
-            />
-        </div>
-        <div class="small-input">
-            <input
-                (input)="ondescriptionBack($event)"
-                formControlName="back_description"
-                placeholder="(Add description)"
-            />
-        </div>
-        <div
-            class="bottom-section"
-            fxLayout="row"
-            fxLayoutAlign="space-between center"
-        >
-            <div
-                class="option-letter"
-                fxLayout="row"
-                fxLayoutAlign="space-around center"
-            >
-                <mat-icon> format_bold</mat-icon>
-                <mat-icon> format_italic</mat-icon>
-                <mat-icon> format_underlined</mat-icon>
+    <div class="col-6">
+        <div class="notice">BACK</div>
+        <div class="side back-side">
+            <div class="large-input">
+                <input (input)="onlargeInputBack($event)" formControlName="back_content" placeholder="Type something" />
             </div>
-            <div
-                class="attached-file"
-                fxLayout="row"
-                fxLayoutAlign="space-around center"
-            >
-                <label class="img-input-label">
-                    <input
-                        type="file"
-                        class="file-input"
-                        formControlName="back_image_url"
-                        accept="image/png, image/jpeg"
-                        (change)="onImgBackSelected($event)"
-                    />
-                    <mat-icon>photo_size_select_actual</mat-icon>
-                </label>
+            <div class="small-input">
+                <input (input)="ondescriptionBack($event)" formControlName="back_description"
+                    placeholder="(Add description)" />
+            </div>
+            <div class="bottom-section" fxLayout="row" fxLayoutAlign="space-between center">
+                <div class="option-letter" fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-icon> format_bold</mat-icon>
+                    <mat-icon> format_italic</mat-icon>
+                    <mat-icon> format_underlined</mat-icon>
+                </div>
+                <div class="attached-file" fxLayout="row" fxLayoutAlign="space-around center">
+                    <label class="img-input-label">
+                        <input type="file" class="file-input" formControlName="back_image_url"
+                            accept="image/png, image/jpeg" (change)="onImgBackSelected($event)" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <g clip-path="url(#clip0_750_2570)">
+                                <path
+                                    d="M21.3333 2.66669H2.66659C2.31296 2.66669 1.97382 2.80716 1.72378 3.05721C1.47373 3.30726 1.33325 3.6464 1.33325 4.00002V20C1.33325 20.3536 1.47373 20.6928 1.72378 20.9428C1.97382 21.1929 2.31296 21.3334 2.66659 21.3334H21.3333C21.6869 21.3334 22.026 21.1929 22.2761 20.9428C22.5261 20.6928 22.6666 20.3536 22.6666 20V4.00002C22.6666 3.6464 22.5261 3.30726 22.2761 3.05721C22.026 2.80716 21.6869 2.66669 21.3333 2.66669ZM5.94659 5.33335C6.34215 5.33335 6.72883 5.45065 7.05773 5.67041C7.38662 5.89018 7.64297 6.20253 7.79434 6.56799C7.94572 6.93344 7.98533 7.33557 7.90816 7.72353C7.83099 8.1115 7.6405 8.46786 7.3608 8.74757C7.08109 9.02727 6.72473 9.21775 6.33677 9.29492C5.9488 9.37209 5.54667 9.33249 5.18122 9.18111C4.81577 9.02974 4.50341 8.77339 4.28365 8.44449C4.06388 8.1156 3.94659 7.72892 3.94659 7.33335C3.94659 6.80292 4.1573 6.29421 4.53237 5.91914C4.90744 5.54407 5.41615 5.33335 5.94659 5.33335ZM3.99992 18V15.2667L7.99992 11.2134C8.12483 11.0892 8.2938 11.0195 8.46992 11.0195C8.64604 11.0195 8.81501 11.0892 8.93992 11.2134L10.6666 12.9L5.54659 18H3.99992ZM19.9999 18H7.43325L11.5866 13.8467L15.1866 10.2467C15.3115 10.1225 15.4805 10.0528 15.6566 10.0528C15.8327 10.0528 16.0017 10.1225 16.1266 10.2467L19.9999 14.12V18Z"
+                                    fill="#7E7E7E" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_750_2570">
+                                    <rect width="24" height="24" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </label>
 
-                <label class="sound-input-label">
-                    <input
-                        type="file"
-                        class="file-input"
-                        accept="audio/*"
-                        formControlName="back_sound_url"
-                        (change)="onSoundBackSelected($event)"
-                    />
-                    <img src="assets/images/sound.png" />
-                </label>
+                    <label class="sound-input-label">
+                        <input type="file" class="file-input" accept="audio/*" formControlName="back_sound_url"
+                            (change)="onSoundBackSelected($event)" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="20" viewBox="0 0 26 20" fill="none">
+                            <g clip-path="url(#clip0_750_1721)">
+                                <path
+                                    d="M0.000102912 7.63866C0.222957 6.92742 0.730307 6.67612 1.44629 6.69983C2.38038 6.72828 3.31447 6.71405 4.24856 6.69983C4.38133 6.69983 4.5378 6.64293 4.64211 6.55758C6.63832 4.91225 8.62979 3.25744 10.626 1.60737C11.2187 1.11898 11.9394 1.15218 12.3472 1.73065C12.4942 1.93454 12.5653 2.22377 12.5843 2.48456C12.6175 3.07252 12.5938 3.66522 12.5938 4.25317C12.5938 8.73397 12.5938 13.2148 12.5938 17.7003C12.5938 18.4258 12.2144 18.8999 11.5696 18.9805C11.2139 19.0279 10.9152 18.8904 10.645 18.6628C9.13239 17.4063 7.61509 16.1545 6.10252 14.898C5.6094 14.4902 5.12101 14.0777 4.62315 13.6794C4.52357 13.6036 4.37659 13.5467 4.2533 13.5467C3.33344 13.5372 2.41831 13.5135 1.49844 13.5467C0.777723 13.5751 0.256148 13.3523 -0.00463867 12.6458V7.62918L0.000102912 7.63866Z"
+                                    fill="#7E7E7E" />
+                                <path
+                                    d="M25.192 9.74867C25.1303 13.651 24.0208 16.7804 21.7875 19.5068C21.3323 20.0616 20.6543 20.1564 20.1375 19.7487C19.4879 19.2366 19.3598 18.5775 19.8245 17.9706C20.4125 17.2119 20.9625 16.4296 21.3892 15.5666C21.9914 14.348 22.3944 13.063 22.5651 11.7117C22.9634 8.53008 22.2285 5.63298 20.384 3.01562C20.1564 2.69319 19.9004 2.39447 19.6538 2.09101C19.1512 1.47461 19.2366 0.810785 19.8909 0.270245C20.4077 -0.156498 21.0905 -0.0664075 21.5647 0.483616C23.3428 2.54621 24.4902 4.91226 24.9502 7.60073C25.0924 8.43525 25.1446 9.28874 25.192 9.75341V9.74867Z"
+                                    fill="#7E7E7E" />
+                                <path
+                                    d="M19.6396 10.0332C19.6396 12.1242 19.0374 13.9355 17.8568 15.5571C17.4727 16.0882 16.7852 16.2162 16.2683 15.8653C15.6235 15.4244 15.4196 14.7273 15.8084 14.1441C16.3015 13.4092 16.7235 12.6505 16.9322 11.7876C17.4111 9.77713 17.0744 7.92317 15.8843 6.23043C15.7136 5.98861 15.5287 5.72782 15.4481 5.44807C15.2916 4.90753 15.6519 4.30534 16.2209 4.03507C16.7093 3.80748 17.2688 3.94973 17.6292 4.40018C18.9568 6.0787 19.6301 7.98481 19.6396 10.0379V10.0332Z"
+                                    fill="#7E7E7E" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_750_1721">
+                                    <rect width="25.192" height="20" fill="white" />
+                                </clipPath>
+                            </defs>
+                        </svg>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
