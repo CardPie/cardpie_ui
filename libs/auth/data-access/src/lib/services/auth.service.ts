@@ -1,6 +1,11 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {LOGIN_RES, LOGOUT_RES} from '../models/respone.model';
+import {
+  Accountype,
+  BaseReponse,
+  LOGIN_RES,
+  LOGOUT_RES,
+} from '../models/respone.model';
 import {injectAPI} from '../APIConfigs/api';
 
 @Injectable({
@@ -12,11 +17,27 @@ export class AuthService {
   LOGIN_URL = `${this.apiDomain}/auth/sign-in`;
   REFRESH_TOKEN_URL = `${this.apiDomain}/auth/refresh-token`;
   LOGOUT_URL = `${this.apiDomain}/auth/sign-out`;
+  REGISTER_URL = `${this.apiDomain}/auth/register`;
 
   constructor(private httpClient: HttpClient) {}
 
   login(email: string, password: string) {
     return this.httpClient.post<LOGIN_RES>(this.LOGIN_URL, {
+      email,
+      password,
+    });
+  }
+
+  register(
+    fullname: string,
+    accountType: Accountype,
+    email: string,
+    password: string,
+  ) {
+    const accountTypeValue = Number(accountType);
+    return this.httpClient.post<BaseReponse>(this.REGISTER_URL, {
+      fullname,
+      account_type: accountTypeValue,
       email,
       password,
     });

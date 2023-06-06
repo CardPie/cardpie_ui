@@ -4,12 +4,14 @@ import {RouterModule} from '@angular/router';
 import {authRegisterRoutes} from './lib.routes';
 import {SignUpFormComponent} from './sign-up-form/sign-up-form.component';
 import {ToastrModule} from 'ngx-toastr';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     ToastrModule,
-    RouterModule.forChild(authRegisterRoutes),
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(authRegisterRoutes),
   ],
   declarations: [SignUpFormComponent],
