@@ -25,6 +25,8 @@ import {SavedDeckComponent} from './saved-deck/saved-deck.component';
 import {CreateNewDecksPopupComponent} from './create-new-decks-popup/create-new-decks-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 
 @NgModule({
   imports: [
@@ -44,7 +46,8 @@ import { MatRadioModule } from '@angular/material/radio';
     FlexLayoutModule,
     MatDialogModule,
     ReactiveFormsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTooltipModule
   ],
   declarations: [
     HeaderComponent,

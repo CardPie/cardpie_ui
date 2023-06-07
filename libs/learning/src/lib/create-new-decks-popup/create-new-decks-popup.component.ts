@@ -5,6 +5,7 @@ import { LearningService } from '../data-access/services/learning.service';
 import { Subscription } from 'rxjs';
 import { take } from 'rxjs';
 import { Folder, INewFolder } from '../data-access/models/folder.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'exe-project-create-new-decks-popup',
@@ -22,17 +23,21 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
   editMode: boolean = false;
   folderList: Folder[] = [];
   newFolder!: INewFolder;
+  folderName!: string;
+  errorMessage!: string;
   newFolderCreatedId!: string;
   newfolderName: string = "new folder";
-  newfolderNameInput: string = "new folder";
+  newfolderNameInput: string = "";
 
   @Output() listenFormParent: EventEmitter<IInputField> = new EventEmitter<IInputField>();
-  constructor(private formBuilder: FormBuilder, private folderService: LearningService) { }
+  constructor(private formBuilder: FormBuilder, private folderService: LearningService, private router: Router,
+  ) { }
 
   ngOnInit(): void {
     this.formController = this.formBuilder.group({
       deckName: [''],
       folderName: [''],
+      folder: [''],
     });
     this.subscription = this.folderService
       .getFolderOfUser()
@@ -42,9 +47,6 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
           (this.folderList = data.data)
         ),
       );
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
 
@@ -59,37 +61,50 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
   }
 
   onInputName(event: any) {
+    this.errorMessage = ""
     this.inputField.deckName = event.target.value;
     this.listenFromParent();
+  }
+  onInputFolderName(event: any) {
+    this.newfolderNameInput = event.target.value;
   }
   enterEditMode() {
     this.editMode = true;
   }
+  createNewDesk(id: string, data: IInputField) {
+    this.router.navigate(['deck', id]);
+  }
   onSubmit() {
-    console.log("first")
-    this.inputField.folderName = this.formController.value.folderName
-    console.log("inputField: ", this.inputField)
-
-    if ( this.inputField.folderName === "new folder") {
-      if (this.editMode) {
-        this.newFolder = {
-          folder_name: this.newfolderNameInput,
-          is_public: false
-        }
-      } else (
-        this.newFolder = {
-          folder_name: this.newfolderName,
-          is_public: false
-        }
-      )
-      this.subscription = this.folderService
-        .createNewFolder(this.newFolder)
-        .pipe()
-        .subscribe(
-          (data) => {
-            this.newFolderCreatedId = data.data.id
+    if (this.inputField.deckName !== "") {
+      if (this.folderName === "new folder") {
+        if (this.editMode) {
+          this.newFolder = {
+            folder_name: this.newfolderNameInput,
+            is_public: true
           }
-        );
-    }
+        } else (
+          this.newFolder = {
+            folder_name: this.newfolderName,
+            is_public: true
+          }
+        )
+        console.log("newFolder: ", this.newFolder)
+
+        this.subscription = this.folderService
+          .createNewFolder(this.newFolder)
+          .pipe()
+          .subscribe(
+            (data) => {
+              this.newFolderCreatedId = data.data.id
+            }
+          );
+        if (this.newFolderCreatedId !== null) {
+          this.createNewDesk(this.newFolderCreatedId, this.inputField);
+        }
+      }
+    } else (this.errorMessage = "Bạn chưa nhập Deck Name!")
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }
