@@ -1,6 +1,10 @@
 import {Component} from '@angular/core';
 import {FlashcardSet, Folder} from './main-page-model';
-import {MatDialog} from '@angular/material/dialog';
+import {
+  MatDialog,
+  MatDialogConfig,
+  MatDialogRef,
+} from '@angular/material/dialog';
 import {CreateNewDecksPopupComponent} from '../create-new-decks-popup/create-new-decks-popup.component';
 
 @Component({
@@ -12,7 +16,11 @@ export class MainPageComponent {
   constructor(private dialog: MatDialog) {}
 
   openPopup() {
-    const dialogRef = this.dialog.open(CreateNewDecksPopupComponent);
+    const dialogConfig = new MatDialogConfig();
+    const dialogRef: MatDialogRef<CreateNewDecksPopupComponent> =
+      this.dialog.open(CreateNewDecksPopupComponent, {
+        ...dialogConfig,
+      });
 
     dialogRef.afterClosed().subscribe((result) => {
       // console.log(`Dialog result: ${result}`);

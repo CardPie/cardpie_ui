@@ -4,6 +4,7 @@ import {
   EventEmitter,
   OnInit,
   OnDestroy,
+  Optional,
 } from '@angular/core';
 import {IInputField} from '../data-access/models/desk.model';
 import {FormBuilder, FormGroup} from '@angular/forms';
@@ -18,9 +19,6 @@ import {MatDialogRef} from '@angular/material/dialog';
   selector: 'exe-project-create-new-decks-popup',
   templateUrl: './create-new-decks-popup.component.html',
   styleUrls: ['./create-new-decks-popup.component.scss'],
-  providers: [
-    {provide: MatDialogRef, useValue: {}}, // Thêm giá trị mặc định cho MatDialogRef
-  ],
 })
 export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
   subscription!: Subscription;
@@ -45,7 +43,7 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
     private formBuilder: FormBuilder,
     private folderService: LearningService,
     private router: Router,
-    private dialogRef: MatDialogRef<CreateNewDecksPopupComponent>,
+    @Optional() private dialogRef: MatDialogRef<CreateNewDecksPopupComponent>,
   ) {}
 
   ngOnInit(): void {
@@ -85,6 +83,8 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
     this.router.navigate(['deck', id]);
   }
   onSubmit() {
+    console.log(' this.dialogRef ', this.dialogRef);
+    this.dialogRef.close();
     if (this.inputField.deckName !== '') {
       if (this.folderName === 'new folder') {
         if (this.editMode) {
@@ -105,6 +105,8 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
           .subscribe((data) => {
             this.newFolderCreatedId = data.data.id;
           });
+        console.log(' this.dialogRef ', this.dialogRef);
+        console.log('this.newFolderCreatedId ', this.newFolderCreatedId);
         if (this.newFolderCreatedId !== null) {
           this.createNewDesk(this.newFolderCreatedId, this.inputField);
           this.closeDialog();
