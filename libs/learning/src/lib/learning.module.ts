@@ -15,13 +15,16 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RecommendSectionComponent} from './recommend-section/recommend-section.component';
 import {CardItemsComponent} from './card-items/card-items.component';
 import {MostCommonSectionComponent} from './most-common-section/most-common-section.component';
 import {DestroyService} from 'libs/shared/services/destroy.service';
 import {SeenRecentlyComponent} from './seen-recently/seen-recently.component';
 import {SavedDeckComponent} from './saved-deck/saved-deck.component';
+import {CreateNewDecksPopupComponent} from './create-new-decks-popup/create-new-decks-popup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatRadioModule } from '@angular/material/radio';
 
 @NgModule({
   imports: [
@@ -39,6 +42,9 @@ import {SavedDeckComponent} from './saved-deck/saved-deck.component';
     MatListModule,
     MatTabsModule,
     FlexLayoutModule,
+    MatDialogModule,
+    ReactiveFormsModule,
+    MatRadioModule
   ],
   declarations: [
     HeaderComponent,
@@ -49,6 +55,7 @@ import {SavedDeckComponent} from './saved-deck/saved-deck.component';
     MostCommonSectionComponent,
     SeenRecentlyComponent,
     SavedDeckComponent,
+    CreateNewDecksPopupComponent,
   ],
   providers: [DestroyService],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],

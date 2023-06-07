@@ -34,14 +34,11 @@
       width: 100%;
       height: 100%;
       position: absolute;
-
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border-radius: 10px;
-
       color: #fff;
       text-align: center;
-      line-height: 100px;
       font-size: 24px;
       font-weight: 700;
       cursor: pointer;
@@ -49,15 +46,32 @@
       -moz-user-select: none;
       -ms-user-select: none;
       user-select: none;
+      overflow: hidden;
+      white-space: pre-wrap;
+      .title-card {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        position: none;
+      }
+      .description-card {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.5);
+      }
     }
     .tp-box__front {
       background: #ffffff;
       -webkit-transform: rotateY(0deg);
       -ms-transform: rotateY(0deg);
       transform: rotateY(0deg);
-      .noted-text{
+      .noted-text {
         font-size: 15px;
         font-weight: 100;
+        position: absolute;
         margin-top: 100px;
       }
     }
@@ -90,7 +104,6 @@
   .box span {
     font-size: 30px;
     color: black;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

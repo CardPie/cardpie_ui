@@ -39,3 +39,8 @@ export interface CountView {
   status_code: number;
   message: string;
 }
+
+export interface IInputField {
+  deckName: string;
+  folderName: string;
+}

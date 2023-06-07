@@ -1,8 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {injectAPI} from 'libs/auth/data-access/src/lib/APIConfigs/api';
-import {DeskRes, CountView} from '../models/desk.model';
-import {UserInforRes} from 'libs/folder-management/src/lib/data-acess/models/user.model';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { injectAPI } from 'libs/auth/data-access/src/lib/APIConfigs/api';
+import { DeskRes, CountView } from '../models/desk.model';
+import { UserInforRes } from 'libs/folder-management/src/lib/data-acess/models/user.model';
+import { FolderRes, INewFolder } from '../models/folder.model';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,8 +15,9 @@ export class LearningService {
   USER_INFORMATION_URL = `${this.apiDomain}/account/information`;
   SAVED_DECK_URL = `${this.apiDomain}/saved-deck`;
   COUNT_VIEW_URL = `${this.apiDomain}/deck/`;
-
-  constructor(private httpClient: HttpClient) {}
+  FOLDER_OF_USER = `${this.apiDomain}/folder/own-folder`;
+  CREATE_NEW_FOLDER = `${this.apiDomain}/folder`;
+  constructor(private httpClient: HttpClient) { }
 
   getRecommendDesk() {
     return this.httpClient.get<DeskRes>(this.RECOMMEND_DESK_URL);
@@ -30,9 +32,16 @@ export class LearningService {
   getSavedDeck() {
     return this.httpClient.get<DeskRes>(this.SAVED_DECK_URL);
   }
+  getFolderOfUser() {
+    return this.httpClient.get<FolderRes>(this.FOLDER_OF_USER);
 
+  }
   triggerCountView(id: string) {
     const url = this.COUNT_VIEW_URL + id + '/view';
     return this.httpClient.get<CountView>(url);
+  }
+  createNewFolder(folderName: INewFolder) {
+    return this.httpClient.post<any>(this.CREATE_NEW_FOLDER, folderName);
+
   }
 }
