@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { take } from 'rxjs';
 import { Folder, INewFolder } from '../data-access/models/folder.model';
 import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'exe-project-create-new-decks-popup',
@@ -30,7 +31,8 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
   newfolderNameInput: string = "";
 
   @Output() listenFormParent: EventEmitter<IInputField> = new EventEmitter<IInputField>();
-  constructor(private formBuilder: FormBuilder, private folderService: LearningService, private router: Router,
+  constructor(private formBuilder: FormBuilder, private folderService: LearningService, private router: Router, 
+    private dialogRef: MatDialogRef<CreateNewDecksPopupComponent>
   ) { }
 
   ngOnInit(): void {
@@ -100,9 +102,13 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
           );
         if (this.newFolderCreatedId !== null) {
           this.createNewDesk(this.newFolderCreatedId, this.inputField);
+          this.closeDialog();
         }
       }
     } else (this.errorMessage = "Bạn chưa nhập Deck Name!")
+  }
+  closeDialog() {
+    this.dialogRef.close();
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();

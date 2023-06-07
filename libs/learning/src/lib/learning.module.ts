@@ -23,7 +23,7 @@ import {DestroyService} from 'libs/shared/services/destroy.service';
 import {SeenRecentlyComponent} from './seen-recently/seen-recently.component';
 import {SavedDeckComponent} from './saved-deck/saved-deck.component';
 import {CreateNewDecksPopupComponent} from './create-new-decks-popup/create-new-decks-popup.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
@@ -60,7 +60,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     SavedDeckComponent,
     CreateNewDecksPopupComponent,
   ],
-  providers: [DestroyService],
+  providers: [DestroyService, MatDialogRef],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],
 })
 export class LearningModule {}
