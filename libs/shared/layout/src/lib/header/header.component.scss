@@ -25,7 +25,7 @@
       width: 157px;
     }
     .menu {
-      background-color: white;    
+      background-color: white;
       margin-top: 25px;
       vertical-align: middle;
       display: table-cell;
@@ -34,8 +34,7 @@
       border-radius: 15px;
       .navbar {
         width: 95%;
-        a{
-          font-family: 'Inter';
+        a {
           font-style: normal;
           font-weight: 600;
           font-size: 16px;
@@ -60,10 +59,9 @@
     }
   }
   ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
-    color: #4043BF;
+    color: #4043bf;
   }
   .fit-content {
     width: fit-content;
   }
-
 }

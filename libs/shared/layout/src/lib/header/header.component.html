@@ -22,7 +22,7 @@
                         routerLinkActive
                         #rla="routerLinkActive"
                         [active]="rla.isActive"
-                        >Trang chủ</a
+                        >Details</a
                     >
                     <a
                         mat-tab-link
@@ -42,25 +42,24 @@
                     >
                     <div class="signin-signup" fxLayout="row">
                         <a
-                        mat-tab-link
-                        href="#contact"
-                        routerLinkActive
-                        #rla="routerLinkActive"
-                        [active]="rla.isActive"
-                        class="signup"
-                        >Sign up</a
-                    >
-                    <a
-                        mat-tab-link
-                        routerLink="/login"
-                        routerLinkActive
-                        #rla="routerLinkActive"
-                        [active]="rla.isActive"
-                        class="login"
-                        >Login</a
-                    >
+                            mat-tab-link
+                            href="#contact"
+                            routerLinkActive
+                            #rla="routerLinkActive"
+                            [active]="rla.isActive"
+                            class="signup"
+                            >Sign up</a
+                        >
+                        <a
+                            mat-tab-link
+                            routerLink="/login"
+                            routerLinkActive
+                            #rla="routerLinkActive"
+                            [active]="rla.isActive"
+                            class="login"
+                            >Login</a
+                        >
                     </div>
-                   
                 </nav>
             </div>
         </div>
