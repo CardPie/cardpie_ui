@@ -20,6 +20,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import {DeleteFolderDialogComponent} from './delete-folder-dialog/delete-folder-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,6 +28,7 @@ import {DeleteFolderDialogComponent} from './delete-folder-dialog/delete-folder-
     MatTabsModule,
     FlexLayoutModule,
     FormsModule,
+    MatDialogModule,
     MatCheckboxModule,
     ReactiveFormsModule,
     MatMenuModule,

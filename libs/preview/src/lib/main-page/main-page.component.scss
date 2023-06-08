@@ -1,35 +1,35 @@
 :host {
-    .split {
-      height: 100%;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      overflow-x: hidden;
-      padding-top: 20px;
-    }
-  
-    /* Control the left side */
-    .left {
-      background-color: aliceblue;
-      width: 75%;
-      left: 0;
-    }
-  
-    /* Control the right side */
-    .right {
-      width: 25%;
-      right: 0;
-      background-color: black;
-      color: white;
-    }
-  
-    /* If you want the content centered horizontally and vertically */
-    .centered {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
+  .split {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
   }
-  
+
+  /* Control the left side */
+  .left {
+    overflow-y: hidden;
+    background-color: aliceblue;
+    width: 75%;
+    left: 0;
+  }
+
+  /* Control the right side */
+  .right {
+    width: 25%;
+    right: 0;
+    background-color: black;
+    color: white;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}

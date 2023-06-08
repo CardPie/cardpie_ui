@@ -1,26 +1,22 @@
-<div class="container ">
+<div class="container">
     <div class="header">
         <div class="horizontal-line"></div>
-        <h3>{{deck_name}}</h3>
+        <h3>{{ deck_name }}</h3>
         <div class="card-info row" fxLayout="row" fxLayoutAlign="start end">
             <div class="number col-2" fxLayout="row" fxLayoutAlign="start end">
-                <p class="title">{{total_card}}</p>
+                <p class="title">{{ total_card }}</p>
                 <p class="name">created card</p>
             </div>
             <div class="folder col-4" fxLayout="row" fxLayoutAlign="start end">
-                <p class="folder-title">Folder : </p>
-                <p class="folder-name">{{folder_name}}</p>
-               
+                <p class="folder-title">Folder :</p>
+                <p class="folder-name">{{ folder_name }}</p>
             </div>
-            <div class="save-button col-6">
-                <button mat-raised-button color="primary" class="save-btn">
-                    Save
-                </button>
-            </div>
-           
         </div>
     </div>
     <div class="deck-list">
-        <exe-project-slide-card [listFlashCard]="listFlashCard" [totalCards]="total_card"></exe-project-slide-card>
+        <exe-project-slide-card
+            [listFlashCard]="listFlashCard"
+            [totalCards]="total_card"
+        ></exe-project-slide-card>
     </div>
 </div>
