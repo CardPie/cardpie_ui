@@ -1,29 +1,17 @@
 <div class="container">
     <div class="horizontal-line"></div>
     <div class="deck-infor">
-        <form
-            class="form-group"
-            [formGroup]="deckCreateForm"
-            (ngSubmit)="onSubmit()"
-        >
+        <form class="form-group container" [formGroup]="deckCreateForm" (ngSubmit)="onSubmit()">
             <div class="deck-name" fxLayout="row" fxLayoutAlign="start end">
                 <input formControlName="nameDesk" placeholder="Unnamed" />
                 <img src="assets/images/jam_write-f.png" />
             </div>
             <div class="deck-detail">
-                <div
-                    class="card-created"
-                    fxLayout="row"
-                    fxLayoutAlign="start end"
-                >
+                <div class="card-created" fxLayout="row" fxLayoutAlign="start end">
                     <p class="number-created">0</p>
                     <p class="infor-created">create decks</p>
                 </div>
-                <div
-                    class="folder-under"
-                    fxLayout="row"
-                    fxLayoutAlign="start end"
-                >
+                <div class="folder-under" fxLayout="row" fxLayoutAlign="start end">
                     <p class="folder-tag">Folder:</p>
                     <p class="folder-name">
                         {{ folderDetail.data.folder_name }}
@@ -33,104 +21,52 @@
             <div class="deck-description">
                 <div clas="deck-description-labe">Description (optional)</div>
                 <mat-form-field>
-                    <input
-                        matInput
-                        formControlName="description"
-                        placeholder="Type something..."
-                        style="border-bottom: none"
-                    />
+                    <input matInput formControlName="description" placeholder="Type something..."
+                        style="border-bottom: none" />
                 </mat-form-field>
             </div>
-            <div
-                class="deck-status"
-                fxLayout="row"
-                fxLayoutAlign="start end"
-                [(ngModel)]="isPublic"
-                [ngModelOptions]="{ standalone: true }"
-            >
-                <div
-                    class="status-item"
-                    fxLayout="row"
-                    fxLayoutAlign="space-around center"
-                >
-                    <mat-radio-button formControlName="isPublic" value="true"
-                        >PUBLIC</mat-radio-button
-                    >
+            <div class="deck-status" fxLayout="row" fxLayoutAlign="start end" [(ngModel)]="isPublic"
+                [ngModelOptions]="{ standalone: true }">
+                <div class="status-item public" fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-radio-button formControlName="isPublic" value="true">PUBLIC</mat-radio-button>
                 </div>
-                <div
-                    class="status-item"
-                    fxLayout="row"
-                    fxLayoutAlign="space-around center"
-                >
-                    <mat-radio-button formControlName="isPublic" value="false"
-                        >PRIVATE</mat-radio-button
-                    >
+                <div class="status-item private" fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-radio-button formControlName="isPublic" value="false">PRIVATE</mat-radio-button>
                 </div>
             </div>
             <div class="import-set-title">Import a flashcard set</div>
-            <div
-                class="import-set"
-                fxLayout="row"
-                fxLayoutAlign="space-around center"
-            >
-                <div
-                    class="import-button"
-                    fxLayout="row"
-                    fxLayoutAlign="space-around center"
-                >
+            <div class="import-set row" fxLayout="row" fxLayoutAlign="start end">
+                <div class="import-button col-6" fxLayout="row">
                     <button>
-                        <img src="assets/images/a.png" />
+                        <img src="assets/images/a.png" class="icon-import-file" />
                         <p>From file</p>
                     </button>
                 </div>
-                <div class="import-button">
+                <div class="import-button col-6">
                     <button>
                         <img src="assets/images/ggdrive 1.png" />
                     </button>
                 </div>
             </div>
-            <div class="help-button">
-                <button fxLayout="row" fxLayoutAlign="space-around center">
+            <div class="help-button" fxLayoutAlign="start end">
+                <button fxLayout="row">
                     <mat-icon>help</mat-icon>
                     <p>How to import a file ?</p>
                 </button>
             </div>
-            <div class="create-card-section">
-                <div class="create-title">Create new cards</div>
-                <div
-                    class="sides"
-                    fxLayout="row"
-                    fxLayoutAlign="space-around center"
-                >
-                    <div class="side">FRONT</div>
-                    <div class="side back-side">BACK</div>
-                </div>
-            </div>
             <div class="card-list" formArrayName="inputs">
                 <div #container>
-                    <exe-project-create-card-item
-                        (listenFormParent)="getData($event)"
-                    ></exe-project-create-card-item>
+                    <exe-project-create-card-item (listenFormParent)="getData($event)"></exe-project-create-card-item>
                 </div>
             </div>
-            <div
-                class="add-new-card-btn"
-                fxLayout="row"
-                fxLayoutAlign="start center"
-                (click)="addComponent()"
-            >
+            <div class="add-new-card-btn" fxLayout="row" fxLayoutAlign="start center" (click)="addComponent()">
                 <img src="assets/images/plus-border.png" />
                 <p>Add new card</p>
             </div>
             <div class="bottom-button-group" fxLayout="row">
                 <div class="center-button">
                     <button class="border-btn" mat-raised-button>Delete</button>
-                    <button
-                        class="border-btn"
-                        mat-raised-button
-                        color="primary"
-                        type="submit"
-                    >
+                    <button class="border-btn" mat-raised-button color="primary" type="submit">
                         Save
                     </button>
                 </div>

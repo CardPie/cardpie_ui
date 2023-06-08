@@ -24,11 +24,16 @@
                     <p class="folder-name-p" (click)="getFolder(folder)">
                         {{ folder.folder_name }}
                     </p>
-                    <button class="delete-btn">
+                    <button [matMenuTriggerFor]="beforeMenu" class="delete-btn">
                         <img
                             src="assets/images/solar_trash-bin-trash-bold.png"
                         />
                     </button>
+                    <mat-menu #beforeMenu="matMenu" xPosition="before">
+                        <button mat-menu-item (click)="deletePopup(folder)">
+                            Delete
+                        </button>
+                    </mat-menu>
                 </div>
             </div>
         </ng-container>

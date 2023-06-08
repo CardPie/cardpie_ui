@@ -13,7 +13,7 @@ export class FolderService {
   USER_INFORMATION_URL = `${this.apiDomain}/account/information`;
   FOLDER_OF_USER = `${this.apiDomain}/folder/own-folder`;
   DETAIL_FOLDER = `${this.apiDomain}/folder`;
-
+  DELETE_FOLDER = `${this.apiDomain}/folder`;
   DELETE_DECK = `${this.apiDomain}/deck`;
   constructor(private httpClient: HttpClient) {}
 
@@ -30,6 +30,10 @@ export class FolderService {
   }
   deleteDeck(id: string) {
     const url = this.DELETE_DECK + '/' + id;
+    return this.httpClient.delete(url);
+  }
+  deleteFolder(id: string) {
+    const url = this.DELETE_FOLDER + '/' + id;
     return this.httpClient.delete(url);
   }
 }

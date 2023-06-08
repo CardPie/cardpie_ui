@@ -104,7 +104,12 @@
 
       .deck-status {
         margin-top: 2rem;
-
+          .mdc-form-field{
+            font-weight: 800;
+          }
+          .private {
+            margin-left: 21px;
+          }
         .status-item {
           margin-right: 1.6rem;
           width: 9rem;
@@ -118,7 +123,10 @@
             font-size: 16px;
             line-height: 122.02%;
             color: black;
+            
           }
+         
+
         }
         .status-item:hover {
           cursor: pointer;
@@ -127,8 +135,8 @@
       }
 
       .import-set-title {
-        margin-left: 3.3rem;
         margin-top: 4rem;
+        margin-bottom: 20px;
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
@@ -138,23 +146,27 @@
         color: #000000;
       }
       .import-set {
-        margin-left: 3.3rem;
-        margin-top: 1.8rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-around;
+        width: 100%;
+        margin: auto;
+        .import-button{
+          height: 54px;
+          .icon-import-file{
+            margin-right: 15px;
+          }
+        }
         button {
+          margin-left: -3%;
+          width: 100%;
           display: flex;
           background: transparent;
           background: #f5f5f5;
           align-items: center;
           justify-content: center;
           /* card shadow */
-
+          font-weight: 800;
           box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.09);
           border-radius: 10px;
-          width: 25rem;
-          height: 3.7rem;
+          height: 54px;
         }
         button:hover {
           cursor: pointer;
@@ -163,20 +175,22 @@
       }
       .help-button {
         margin-top: 1.2rem;
-        margin-left: 3.3rem;
+        margin-left: 0;
         button {
-          align-items: center;
           color: #7e7e7e;
           background: transparent;
           font-weight: 600;
           font-size: 13px;
           line-height: 108.02%;
         }
+        p{
+          margin-left: 10px;
+          margin-top: 5px;
+        }
       }
 
       .create-card-section {
         margin-top: 1.8rem;
-        margin-left: 3.3rem;
 
         .create-title {
           font-style: normal;
@@ -190,9 +204,6 @@
         .sides {
           margin-top: 1.8rem;
           display: flex;
-          align-items: center;
-          justify-content: space-around;
-
           .side {
             color: #7e7e7e;
             font-style: normal;
@@ -204,10 +215,8 @@
         }
       }
       .card-list {
-        margin-left: 3.3rem;
       }
       .add-new-card-btn {
-        margin-left: 3.3rem;
         font-style: normal;
         font-weight: 600;
         font-size: 16px;
@@ -228,7 +237,7 @@
 
         .center-button {
           position: absolute;
-          left: 40%;
+          left: 35%;
           .border-btn {
             width: 6rem;
             height: 2.2rem;
@@ -252,7 +261,7 @@
 
           text-align: right;
 
-          color: #4441db;
+          color: #4441DB;
         }
       }
     }

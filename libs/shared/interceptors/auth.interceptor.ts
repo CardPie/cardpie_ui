@@ -4,12 +4,14 @@ import {
   HttpRequest,
   HttpHandler,
   HttpEvent,
+  HttpErrorResponse,
 } from '@angular/common/http';
 import {Observable, throwError} from 'rxjs';
 import {catchError, switchMap, tap} from 'rxjs/operators';
 import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
 import {Router} from '@angular/router';
 import {SpinnerService} from 'libs/shared/components/spinner/src/lib/spinner/spinner.service';
+import {HttpResponse} from 'aws-sdk';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -36,9 +38,17 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     return next.handle(request).pipe(
-      tap((event) => {
-        this.spinnerService.requestEnded();
-      }),
+      tap(
+        (event) => {
+          if (event.type == 4) {
+            this.spinnerService.requestEnded();
+          }
+        },
+        catchError((err) => {
+          this.spinnerService.resetSpinner();
+          throw err;
+        }),
+      ),
       catchError((error) => {
         if (error.status === 401 && refreshToken) {
           // If the request fails with 401 Unauthorized and we have a refresh token,
