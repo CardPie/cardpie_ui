@@ -44,10 +44,15 @@ export class AuthInterceptor implements HttpInterceptor {
             this.spinnerService.requestEnded();
           }
         },
-        catchError((err) => {
-          this.spinnerService.resetSpinner();
+        (err) => {
+          if (err.status == 404) {
+            this.spinnerService.requestEnded();
+          } else if (err.status == 422) this.spinnerService.resetSpinner();
+          else {
+            this.spinnerService.resetSpinner();
+          }
           throw err;
-        }),
+        },
       ),
       catchError((error) => {
         if (error.status === 401 && refreshToken) {
