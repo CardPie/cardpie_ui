@@ -1,4 +1,4 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, Optional} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {Folder} from '../data-acess/models/folder.model';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
@@ -13,7 +13,7 @@ export class DeleteFolderDialogComponent {
   deckSelected!: Folder;
   subscription!: Subscription;
   constructor(
-    public dialogRef: MatDialogRef<DeleteFolderDialogComponent>,
+    @Optional() public dialogRef: MatDialogRef<DeleteFolderDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Folder,
     private folderService: FolderService,
     private toastrService: ToastrService,

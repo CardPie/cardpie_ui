@@ -103,7 +103,7 @@ export class SlideCardComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    //this.subscription.unsubscribe();
   }
   previousCard() {
     if (this.currentCardIndex > 0) {
