@@ -2,7 +2,7 @@
     <mat-card-header>
         <mat-card-title class="desk-title">{{ desk.name }}</mat-card-title>
         <!-- 3 dots icon -->
-        <button mat-icon-button class="detail-button">
+        <button mat-icon-button class="detail-button" style="margin-left: auto;">
             <mat-icon>more_vert</mat-icon>
         </button>
     </mat-card-header>
@@ -27,7 +27,7 @@
                     class="btn-start primary"
                     (click)="learning(desk)"
                 >
-                    Get started
+                <p class="fw-bold">Get started</p>
                 </button>
             </mat-card-actions>
         </div>

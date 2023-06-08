@@ -15,7 +15,7 @@
     <ng-container *ngIf="total_count > 0; else noData">
         <ng-container *ngFor="let folder of folderList; let i = index">
             <div class="folder-item">
-                <div class="devicer" style="background: colorArray[i]"></div>
+                <div class="devicer" [style.background]="colorArray[i]"></div>
                 <div
                     class="folder-name"
                     fxLayout="row"

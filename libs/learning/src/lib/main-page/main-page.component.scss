@@ -1,4 +1,10 @@
 :host {
+  .section-background {
+    background-image: url('../../../../../apps/exe-project/src/assets/svg/circle_background.svg'), url('../../../../../apps/exe-project/src/assets/svg/circle_background2.svg');
+    background-size: 20%, 20%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 100px, calc(100% - 0px) 450px;
+  }
   .new-desk {
     margin-top: 30px;
     height: 600px;
@@ -19,6 +25,7 @@
     left: 45%;
     .icon-plus {
       background-color: transparent;
+      margin-bottom: 10px;
     }
     .button-label {
       font-weight: 600;

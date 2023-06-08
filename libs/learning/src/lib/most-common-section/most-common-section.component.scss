@@ -1,10 +1,12 @@
 :host {
   .container {
-    max-width: 90%;
+    max-width: 100%;
     margin-bottom: 20px;
+    padding-left: 5%;
     .title {
-      width: 190px;
+      width: 100%;
       margin-bottom: 10px;
+      padding-right: 50px;
       p {
         font-style: normal;
         font-weight: 600;
@@ -24,5 +26,15 @@
     .item-list::-webkit-scrollbar {
       display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
     }
+  }
+
+  exe-project-card-items {
+    padding-top: 20px;
+    padding-left: 15px;
+  }
+
+  .arrow-icons mat-icon {
+    cursor: pointer;
+    margin: 0 5px;
   }
 }
