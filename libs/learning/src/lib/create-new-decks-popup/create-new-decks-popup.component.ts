@@ -6,16 +6,16 @@ import {
   OnDestroy,
   Optional,
 } from '@angular/core';
-import { IInputField } from '../data-access/models/desk.model';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { LearningService } from '../data-access/services/learning.service';
-import { Subscription, of } from 'rxjs';
-import { take } from 'rxjs';
-import { Folder, INewFolder } from '../data-access/models/folder.model';
-import { Router } from '@angular/router';
-import { MatDialogRef } from '@angular/material/dialog';
-import { switchMap, tap } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import {IInputField} from '../data-access/models/desk.model';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {LearningService} from '../data-access/services/learning.service';
+import {Subscription, of} from 'rxjs';
+import {take} from 'rxjs';
+import {Folder, INewFolder} from '../data-access/models/folder.model';
+import {Router} from '@angular/router';
+import {MatDialogRef} from '@angular/material/dialog';
+import {switchMap, tap} from 'rxjs/operators';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'exe-project-create-new-decks-popup',
@@ -86,8 +86,6 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    console.log(' this.dialogRef ', this.dialogRef);
-    this.dialogRef.close();
     if (this.inputField.deckName !== '') {
       if (this.folderName === 'new folder') {
         if (this.editMode) {
@@ -101,25 +99,16 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
             is_public: true,
           };
         }
-        console.log('newFolder: ', this.newFolder);
 
         this.subscription = this.folderService
           .createNewFolder(this.newFolder)
-          .pipe(
-            switchMap((data) => {
-              this.newFolderCreatedId = data.data.id;
-              this.createNewDesk(this.newFolderCreatedId);
-              return of(null); // Return an observable with a null value to satisfy the switchMap operator
-            }),
-            tap(() => {
-              this.closeDialog(); // Close the dialog
-            })
-          )
-          .subscribe();
-      } else (
-        this.closeDialog(),
-        this.createNewDesk(this.folderName)
-      )
+          .pipe()
+          .subscribe((data) => {
+            this.newFolderCreatedId = data.data.id;
+            this.createNewDesk(this.newFolderCreatedId);
+            this.closeDialog();
+          });
+      } else this.createNewDesk(this.folderName), this.closeDialog();
     } else {
       this.errorMessage = 'Bạn chưa nhập Deck Name!';
     }
