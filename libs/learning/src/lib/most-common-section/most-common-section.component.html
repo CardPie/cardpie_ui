@@ -1,14 +1,13 @@
-<section class="container">
-    <header
-        class="title"
-        div
-        fxLayout="row"
-        fxLayoutAlign="space-between center"
-    >
-        <p>Most common</p><mat-icon>keyboard_arrow_right</mat-icon>
-        
+<section class="container deck-review">
+    <header class="title" fxLayout="row" fxLayoutAlign="space-between center">
+        <p>Recommend for you</p>
+        <div class="arrow-icons" fxLayout="row" fxLayoutAlign="end center">
+            <mat-icon class="back" (click)="scrollContainer('back')">keyboard_arrow_left</mat-icon>
+            <mat-icon class="forth" (click)="scrollContainer('forth')">keyboard_arrow_right</mat-icon>
+        </div>
     </header>
-    <div class="item-list" fxLayout="row" fxLayoutAlign="space-between center">
+        
+    <div class="item-list"  #containerRef fxLayout="row" fxLayoutAlign="space-between center">
         <ng-container *ngIf="totalDesk > 0; else noData">
             <ng-container *ngFor="let desk of mostCommonDeskList">
                 <exe-project-card-items [desk]="desk"></exe-project-card-items>

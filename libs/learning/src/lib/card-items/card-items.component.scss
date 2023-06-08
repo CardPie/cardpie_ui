@@ -1,8 +1,8 @@
 :host {
   .preview-card {
     width: 309px;
-    height: 160px;
-    box-shadow: 12px 12px 24px rgba(0, 0, 0, 0.09);
+    height: 180px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
     margin-bottom: 35px;
     margin-right: 35px;
@@ -48,6 +48,16 @@
         font-size: 12px;
         line-height: 15px;
       }
+      .btn-start:hover{
+        background-color: rgb(20, 31, 114);
+        color: aliceblue;
+      }
     }
+  }
+  .preview-card {
+    transition: box-shadow 0.3s ease;
+  }
+  .preview-card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 }
