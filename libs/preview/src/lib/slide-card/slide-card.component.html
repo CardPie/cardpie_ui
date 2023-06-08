@@ -8,9 +8,10 @@
                 <div class="icon col-12 d-flex justify-content-center align-items-center" fxLayout="row" fxLayoutAlign="start end">
                     <img _ngcontent-ng-c1938978110="" class="icon-create" src="assets/svg/writte.svg">
                     <mat-icon class="icon-volume">volume_up</mat-icon>
-
                 </div>
-                <span>{{listFlashCard![currentCardIndex].front_content}}
+                <span class="title-card">{{listFlashCard![currentCardIndex].front_content}}
+                </span>
+                <span class="description-card">{{listFlashCard![currentCardIndex].front_description}}
                 </span>
                 <span class="noted-text">Click to show the answer</span>
             </div>
@@ -19,8 +20,9 @@
                     <img _ngcontent-ng-c1938978110="" class="icon-create" src="assets/svg/writte.svg">
                     <mat-icon class="icon-volume">volume_up</mat-icon>
                 </div>
+                <span class="title-card">{{listFlashCard![currentCardIndex].back_content}}</span>
+                <span class="description-card">{{listFlashCard![currentCardIndex].back_description}}</span>
 
-                <span>{{listFlashCard![currentCardIndex].back_content}}</span>
             </div>
         </div>
         <div class="box box-a"></div>
