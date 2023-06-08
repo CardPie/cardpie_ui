@@ -22,6 +22,7 @@ import {FolderDetailComponent} from './folder-detail/folder-detail.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {DialogComponent} from './dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {DeleteFolderDialogComponent} from './delete-folder-dialog/delete-folder-dialog.component';
 
 @NgModule({
   imports: [
@@ -48,6 +49,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     AvatarBaseComponent,
     FolderDetailComponent,
     DialogComponent,
+    DeleteFolderDialogComponent,
   ],
   exports: [MainPageComponent, SideBarComponent],
 })

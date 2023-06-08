@@ -4,6 +4,8 @@ import {take} from 'rxjs';
 import {Subscription} from 'rxjs';
 import {Folder} from '../data-acess/models/folder.model';
 import {Router} from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import {DeleteFolderDialogComponent} from '../delete-folder-dialog/delete-folder-dialog.component';
 @Component({
   selector: 'exe-project-folder-list-management',
   templateUrl: './folder-list-management.component.html',
@@ -23,11 +25,15 @@ export class FolderListManagementComponent implements OnInit, OnDestroy {
     '#db4141',
     '#41db9b',
   ];
-  constructor(private folderService: FolderService, private router: Router) {}
+  constructor(
+    private folderService: FolderService,
+    private router: Router,
+    public dialog: MatDialog,
+  ) {}
   ngOnInit(): void {
     this.subscription = this.folderService
       .getFolderOfUser()
-      .pipe(take(2))
+      .pipe(take(1))
       .subscribe(
         (data) => (
           (this.folderList = data.data), (this.total_count = data.total_count)
@@ -39,5 +45,16 @@ export class FolderListManagementComponent implements OnInit, OnDestroy {
   }
   getFolder(folder: Folder) {
     this.router.navigate(['/folders', folder.id]);
+  }
+
+  deletePopup(folder: Folder) {
+    const dialogRef = this.dialog.open(DeleteFolderDialogComponent, {
+      data: folder,
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result.status_code == 200) {
+        window.location.reload();
+      }
+    });
   }
 }
