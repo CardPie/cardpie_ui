@@ -130,6 +130,8 @@ export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
             this.toastr.warning('Some thing wrong with input field');
           } else if (error.status == 422) {
             this.toastr.warning('Please input fields empty!');
+          } else {
+            this.toastr.error('An error occurred. Please try again later.');
           }
         },
       );
