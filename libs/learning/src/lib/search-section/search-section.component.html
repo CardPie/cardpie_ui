@@ -1,0 +1,24 @@
+<exe-project-header [openPopup]="openPopup"></exe-project-header>
+<section class="container">
+    <header
+        class="title"
+        div
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+    >
+        <p>Search</p>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+    </header>
+    <div class="item-list" fxLayout="row" fxLayoutAlign="space-between center">
+        <ng-container *ngIf="totalDesk > 0; else noData">
+            <ng-container *ngFor="let desk of seachDeckList">
+                <exe-project-card-items [desk]="desk"></exe-project-card-items>
+            </ng-container>
+        </ng-container>
+        <ng-template #noData>
+            <p>No data yet</p>
+        </ng-template>
+    </div>
+</section>
+
+<exe-project-footer></exe-project-footer>

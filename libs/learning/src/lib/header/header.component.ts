@@ -1,10 +1,10 @@
-import { Component , OnInit , Input} from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthService } from 'libs/auth/data-access/src/lib/services/auth.service';
-import { LearningService } from '../data-access/services/learning.service';
-import { Subscription, take } from 'rxjs';
-import { UserInfor } from 'libs/folder-management/src/lib/data-acess/models/user.model';
-import { MatDialog } from '@angular/material/dialog';
+import {Component, OnInit, Input} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthService} from 'libs/auth/data-access/src/lib/services/auth.service';
+import {LearningService} from '../data-access/services/learning.service';
+import {Subscription, take} from 'rxjs';
+import {UserInfor} from 'libs/folder-management/src/lib/data-acess/models/user.model';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'exe-project-header',
@@ -12,14 +12,14 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  searchTerm: any;
+  searchTerm: string = '';
   subscription!: Subscription;
   constructor(
     private authService: AuthService,
     private router: Router,
     private learningService: LearningService,
-    public dialog: MatDialog
-  ) { }
+    public dialog: MatDialog,
+  ) {}
   @Input() openPopup!: () => void;
   userInfor!: UserInfor;
   ngOnInit(): void {
@@ -35,5 +35,9 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('refreshToken');
     this.authService.logout();
     this.router.navigate(['/login']);
+  }
+  search() {
+    const queryParams = {query: this.searchTerm};
+    this.router.navigate(['/home/search'], {queryParams: queryParams});
   }
 }
