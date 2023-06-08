@@ -18,6 +18,8 @@ import {MatInputModule} from '@angular/material/input';
 import {CreateCardItemComponent} from './create-card-item/create-card-item.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatMenuModule} from '@angular/material/menu';
+import {DeleteFolderDialogComponent} from './delete-folder-dialog/delete-folder-dialog.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -27,6 +29,7 @@ import {MatRadioModule} from '@angular/material/radio';
     FormsModule,
     MatCheckboxModule,
     ReactiveFormsModule,
+    MatMenuModule,
     MatButtonModule,
     MatInputModule,
     MatRadioModule,
@@ -41,6 +44,7 @@ import {MatRadioModule} from '@angular/material/radio';
     FolderListManagementComponent,
     DeckDetailComponent,
     CreateCardItemComponent,
+    DeleteFolderDialogComponent,
   ],
 })
 export class DeckManagementModule {}

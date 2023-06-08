@@ -13,7 +13,8 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {FlipCardItemComponent} from './flip-card-item/flip-card-item.component';
 import {MatCardModule} from '@angular/material/card';
 import {SlideCardComponent} from './slide-card/slide-card.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     FlexLayoutModule,
     FormsModule,
+    MatMenuModule,
     RouterModule.forChild(previewRoutes),
     RouterModule.forChild(previewRoutes),
   ],
