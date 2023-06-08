@@ -81,7 +81,7 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
   enterEditMode() {
     this.editMode = true;
   }
-  createNewDesk(id: string, inputField: any): void {
+  createNewDesk(id: string): void {
     this.router.navigate(['deck', id]);
   }
 
@@ -108,7 +108,7 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
           .pipe(
             switchMap((data) => {
               this.newFolderCreatedId = data.data.id;
-              this.createNewDesk(this.newFolderCreatedId, this.inputField);
+              this.createNewDesk(this.newFolderCreatedId);
               return of(null); // Return an observable with a null value to satisfy the switchMap operator
             }),
             tap(() => {
@@ -116,7 +116,10 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
             })
           )
           .subscribe();
-      }
+      } else (
+        this.closeDialog(),
+        this.createNewDesk(this.folderName)
+      )
     } else {
       this.errorMessage = 'Bạn chưa nhập Deck Name!';
     }
