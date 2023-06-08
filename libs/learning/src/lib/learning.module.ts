@@ -26,6 +26,7 @@ import {CreateNewDecksPopupComponent} from './create-new-decks-popup/create-new-
 import {MatDialogModule, MatDialogRef} from '@angular/material/dialog';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {SearchSectionComponent} from './search-section/search-section.component';
 
 @NgModule({
   imports: [
@@ -58,6 +59,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     SeenRecentlyComponent,
     SavedDeckComponent,
     CreateNewDecksPopupComponent,
+    SearchSectionComponent,
   ],
   providers: [DestroyService],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],

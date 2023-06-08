@@ -1,5 +1,4 @@
 import {Component} from '@angular/core';
-import {FlashcardSet, Folder} from './main-page-model';
 import {
   MatDialog,
   MatDialogConfig,

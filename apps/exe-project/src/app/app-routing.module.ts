@@ -23,7 +23,6 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    pathMatch: 'full',
     loadChildren: () =>
       import('libs/learning/src/index').then((m) => m.LearningModule),
     canActivate: [AuthGuard],
