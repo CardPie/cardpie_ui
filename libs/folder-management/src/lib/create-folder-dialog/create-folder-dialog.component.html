@@ -1,0 +1,17 @@
+<div class="title" mat-dialog-content>
+    <p>Folder name</p>
+    <div class="d-flex flex-column">
+        <form (ngSubmit)="onSubmit()">
+            <input
+                type="text"
+                class="form-control"
+                name="folderName"
+                [(ngModel)]="folderName"
+                placeholder="Type something..."
+            />
+            <div mat-dialog-actions>
+                <button mat-button color="primary" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

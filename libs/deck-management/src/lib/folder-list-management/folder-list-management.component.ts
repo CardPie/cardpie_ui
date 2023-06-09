@@ -6,6 +6,7 @@ import {Folder} from '../data-acess/models/folder.model';
 import {Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
 import {DeleteFolderDialogComponent} from '../delete-folder-dialog/delete-folder-dialog.component';
+import {CreateFolderDialogComponent} from 'libs/folder-management/src/lib/create-folder-dialog/create-folder-dialog.component';
 @Component({
   selector: 'exe-project-folder-list-management',
   templateUrl: './folder-list-management.component.html',
@@ -54,6 +55,14 @@ export class FolderListManagementComponent implements OnInit, OnDestroy {
       if (result.status_code == 200) {
         window.location.reload();
       }
+    });
+  }
+  openFolderDialog() {
+    const dialogRef = this.dialog.open(CreateFolderDialogComponent);
+    dialogRef.afterClosed().subscribe((result) => {
+      // if (result.status_code == 200) {
+      //   window.location.reload();
+      // }
     });
   }
 }

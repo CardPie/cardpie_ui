@@ -13,11 +13,12 @@ export class LearningService {
   RECOMMEND_DESK_URL = `${this.apiDomain}/deck/recommend`;
   MOST_COMMON_DESK_URL = `${this.apiDomain}/deck?order_by=View desc`;
   USER_INFORMATION_URL = `${this.apiDomain}/account/information`;
-  SAVED_DECK_URL = `${this.apiDomain}/saved-deck`;
+  SAVED_DECK_URL = `${this.apiDomain}/deck/saved`;
   COUNT_VIEW_URL = `${this.apiDomain}/deck/`;
   FOLDER_OF_USER = `${this.apiDomain}/folder/own-folder`;
   CREATE_NEW_FOLDER = `${this.apiDomain}/folder`;
   SEARCH_DECK = `${this.apiDomain}/deck?deck_name=`;
+  SAVE_DECK = `${this.apiDomain}/saved-deck`;
   constructor(private httpClient: HttpClient) {}
 
   getRecommendDesk() {
@@ -46,5 +47,11 @@ export class LearningService {
   getSearchDeck(deckNameQ: string) {
     const url = this.SEARCH_DECK + deckNameQ;
     return this.httpClient.get<DeskRes>(url);
+  }
+  saveDeck(idDeck: string) {
+    return this.httpClient.post<any>(this.SAVE_DECK, {
+      deck_id: idDeck,
+      note: '',
+    });
   }
 }

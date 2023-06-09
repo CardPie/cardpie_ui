@@ -2,9 +2,17 @@
     <mat-card-header>
         <mat-card-title class="desk-title">{{ desk.name }}</mat-card-title>
         <!-- 3 dots icon -->
-        <button mat-icon-button class="detail-button">
+        <button
+            [matMenuTriggerFor]="beforeMenu"
+            mat-icon-button
+            class="detail-button"
+            style="margin-left: auto"
+        >
             <mat-icon>more_vert</mat-icon>
         </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+            <button mat-menu-item (click)="savePopup(desk)">Save</button>
+        </mat-menu>
     </mat-card-header>
     <mat-card-content>
         <div class="owner-info" fxLayout="row" fxLayoutAlign="start center">
@@ -27,7 +35,7 @@
                     class="btn-start primary"
                     (click)="learning(desk)"
                 >
-                    Get started
+                    <p class="fw-bold">Get started</p>
                 </button>
             </mat-card-actions>
         </div>

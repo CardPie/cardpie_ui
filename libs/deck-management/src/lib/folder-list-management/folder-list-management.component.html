@@ -2,7 +2,12 @@
     <div class="title-section">
         <p>My folders</p>
     </div>
-    <button class="create-folder" fxLayout="row" fxLayoutAlign="center center">
+    <button
+        class="create-folder"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        (click)="openFolderDialog()"
+    >
         <img src="assets/images/plus-border.png" />
         <p>Create new folders</p>
     </button>
@@ -15,7 +20,7 @@
     <ng-container *ngIf="total_count > 0; else noData">
         <ng-container *ngFor="let folder of folderList; let i = index">
             <div class="folder-item">
-                <div class="devicer" style="background: colorArray[i]"></div>
+                <div class="devicer" [style.background]="colorArray[i]"></div>
                 <div
                     class="folder-name"
                     fxLayout="row"
