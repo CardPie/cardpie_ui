@@ -1,0 +1,27 @@
+:host {
+  .premium-introduction {
+    h2 {
+      color: #4043bf;
+      font-size: 50px;
+      width: 50%;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+        margin: auto;
+    }
+    .premium-content {
+      margin-top: 50px;
+      .premium-content-row {
+        margin-top: 50px;
+        img {
+          margin-bottom: 28px;
+        }
+        h4 {
+          color: #4043bf;
+          margin: auto;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

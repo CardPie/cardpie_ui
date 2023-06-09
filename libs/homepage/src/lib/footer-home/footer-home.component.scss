@@ -1,0 +1,60 @@
+:host{
+    .footer-container {
+      height: 500px;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
+    .horizontal-line {
+      margin-top: 5%;
+      width: 100%;
+      display: block;
+      height: 2px;
+      background-color: #f5f5f5;
+      opacity: 0.3;
+    }
+    .menu {
+      margin: 70px 0 70px 0;
+      button {
+        padding: unset;
+      }
+      img {
+        background-color: black;
+        color: white;
+      }
+      .info {
+        max-width: 100%;
+        .address {
+          color: white;
+        }
+        .phone-and-tax {
+          margin-top: 5px;
+          color: white;
+        }
+        .tax {
+        }
+        .social {
+          margin-top: 15px;
+          color: white;
+        }
+        .p{
+          margin-left: 10px;
+        }
+      }
+    }
+    .btn-group {
+      margin-top: 5%;
+      color: white;
+  
+      a {
+        margin-left: 2%;
+      }
+    }
+    @media (min-width: 992px) {
+      .info {
+        width: 50%; /* Độ rộng khi màn hình lớn hơn 992px là 50% */
+      }
+    }
+  }
