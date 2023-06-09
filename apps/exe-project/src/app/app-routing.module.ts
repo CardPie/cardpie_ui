@@ -54,7 +54,7 @@ const routes: Routes = [
   {
     path: 'payment',
     loadChildren: () =>
-      import('libs/Payment/src/index').then((m) => m.PaymentModule),
+      import('libs/payment/src/index').then((m) => m.PaymentModule),
   },
   {
     path: 'not-found',
