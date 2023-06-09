@@ -15,6 +15,7 @@ import {MatCardModule} from '@angular/material/card';
 import {SlideCardComponent} from './slide-card/slide-card.component';
 import {FormsModule} from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatIconModule,
     MatCardModule,
     FlexLayoutModule,
+    MatDialogModule,
     FormsModule,
     MatMenuModule,
     RouterModule.forChild(previewRoutes),

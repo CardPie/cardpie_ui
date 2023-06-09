@@ -1,0 +1,41 @@
+<div class="container-fluid vh-100 w-100 container-section">
+    <div class="banner h-50">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="group-thumb">
+            <img src="assets/images/group-thumb.png" />
+        </div>
+    </div>
+    <div
+        class="choose-plan w-50 d-flex flex-column justify-content-center align-items-center"
+    >
+        <p class="text-center">Choose your plan</p>
+    </div>
+    <div
+        class="plan-tag-list w-50 d-flex justify-content-center align-items-center"
+    >
+        <div class="plan-item annually-plan-item" routerLink="/payment/annual">
+            <img src="assets/images/item-plan-annualy.png" />
+        </div>
+        <div class="plan-item monthly-plan-item" routerLink="/payment/monthly">
+            <img src="assets/images/item-plan-monthly.png" />
+        </div>
+    </div>
+    <div
+        class="free-trial-tag w-50 d-flex flex-column justify-content-center align-items-center"
+        routerLink="/payment/trial"
+    >
+        <p
+            class="text-center free-trial-btn d-flex justify-content-center align-items-center"
+        >
+            Start 7 days free trials
+        </p>
+    </div>
+    <div
+        class="note w-50 d-flex flex-column justify-content-center align-items-center"
+    >
+        <p class="note-desc text-center">
+            Monthly billing automatically starts after free trial ends
+        </p>
+    </div>
+</div>

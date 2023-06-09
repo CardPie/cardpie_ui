@@ -15,6 +15,7 @@ export class FolderService {
   DETAIL_FOLDER = `${this.apiDomain}/folder`;
   DELETE_FOLDER = `${this.apiDomain}/folder`;
   DELETE_DECK = `${this.apiDomain}/deck`;
+  CREATE_FOLDER = `${this.apiDomain}/folder`;
   constructor(private httpClient: HttpClient) {}
 
   getUserInfor() {
@@ -35,5 +36,11 @@ export class FolderService {
   deleteFolder(id: string) {
     const url = this.DELETE_FOLDER + '/' + id;
     return this.httpClient.delete(url);
+  }
+  createFolder(folderName: string) {
+    return this.httpClient.post<any>(this.CREATE_FOLDER, {
+      folder_name: folderName,
+      is_public: true,
+    });
   }
 }

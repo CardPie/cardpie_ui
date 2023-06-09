@@ -23,11 +23,15 @@ import {MatMenuModule} from '@angular/material/menu';
 import {DialogComponent} from './dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {DeleteFolderDialogComponent} from './delete-folder-dialog/delete-folder-dialog.component';
+import {CreateFolderDialogComponent} from './create-folder-dialog/create-folder-dialog.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
     MatIconModule,
+    FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule,
     MatTabsModule,
     MatButtonModule,
@@ -50,6 +54,7 @@ import {DeleteFolderDialogComponent} from './delete-folder-dialog/delete-folder-
     FolderDetailComponent,
     DialogComponent,
     DeleteFolderDialogComponent,
+    CreateFolderDialogComponent,
   ],
   exports: [MainPageComponent, SideBarComponent],
 })
