@@ -16,6 +16,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MainBannerV2Component} from './main-banner-v2/main-banner-v2.component';
 import {CardpieIntroduceComponent} from './cardpie-introduce/cardpie-introduce.component';
+import {PremiumIntroductionComponent} from './premium-introduction/premium-introduction.component';
+import {ChoosePlanPremiumComponent} from './choose-plan-premium/choose-plan-premium.component';
+import {BottomBannerCardpieComponent} from './bottom-banner-cardpie/bottom-banner-cardpie.component';
+import {FooterHomeComponent} from './footer-home/footer-home.component';
+import {TeamInfomationComponent} from './team-infomation/team-infomation.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -35,6 +41,11 @@ import {CardpieIntroduceComponent} from './cardpie-introduce/cardpie-introduce.c
     ContactUsComponent,
     MainBannerV2Component,
     CardpieIntroduceComponent,
+    PremiumIntroductionComponent,
+    ChoosePlanPremiumComponent,
+    BottomBannerCardpieComponent,
+    FooterHomeComponent,
+    TeamInfomationComponent,
   ],
 })
 export class HomepageModule {}
