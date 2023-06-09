@@ -1,0 +1,71 @@
+:host {
+  .premium-choose {
+    h2 {
+      color: #4043bf;
+      font-size: 50px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 40px;
+      margin-top: 137px;
+      margin-bottom: 34px;
+    }
+    .premium-choose-content {
+      .circle-1 {
+        background-image: url('../../../../../apps/exe-project/src/assets/svg/circle-3.svg');
+        width: 155px;
+        height: 155px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 85px;
+        top: 262rem;
+        z-index: -1;
+      }
+      .circle-2 {
+        background-image: url('../../../../../apps/exe-project/src/assets/svg/circle-2.svg');
+        width: 482px;
+        height: 482px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: -10rem;
+        top: 230rem;
+        z-index: -1;
+        background-position: center center;
+      }
+      .circle-3 {
+        background-image: url('../../../../../apps/exe-project/src/assets/svg/circle-3.svg');
+        width: 155px;
+        height: 155px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        right: 6rem;
+        top: 240rem;
+        z-index: -1;
+      }
+      .button-start {
+        width: 420px;
+        height: 60px;
+        background: #4043bf;
+        border-radius: 38px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        color: white;
+        margin-top: 64px;
+      }
+      h4 {
+        margin-top: 27px;
+        color: #4043bf;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+      }
+    }
+  }
+}

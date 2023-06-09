@@ -1,0 +1,13 @@
+:host {
+  .team-info {
+    margin-top: 100px;
+    background-image: url('../../../../../apps/exe-project/src/assets/images/Frame 190.png');
+    width: 100%;
+    height: 0;
+    padding-bottom: 40%; /* Tính theo tỷ lệ chiều cao: (chiều cao / chiều rộng) x 100% */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    margin-bottom: 40px;
+  }
+}
