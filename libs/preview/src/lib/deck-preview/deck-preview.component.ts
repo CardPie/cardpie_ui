@@ -30,7 +30,7 @@ export class DeckPreviewComponent implements OnInit, OnDestroy {
         .toPromise();
       if (data?.data) {
         this.total_card = data.data.total_card;
-        this.deck_name = data.data.folder_name;
+        this.deck_name = data.data.name;
         this.folder_name = data.data.folder_name;
         this.listFlashCard = data.data.list_flash_cards;
       }

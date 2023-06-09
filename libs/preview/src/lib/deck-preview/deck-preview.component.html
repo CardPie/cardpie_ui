@@ -9,7 +9,9 @@
             </div>
             <div class="folder col-4" fxLayout="row" fxLayoutAlign="start end">
                 <p class="folder-title">Folder :</p>
-                <p class="folder-name">{{ folder_name }}</p>
+                <p class="folder-name">
+                    {{ folder_name !== '' ? folder_name : 'None folder' }}
+                </p>
             </div>
         </div>
     </div>
