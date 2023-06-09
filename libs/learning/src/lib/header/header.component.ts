@@ -40,4 +40,5 @@ export class HeaderComponent implements OnInit {
     const queryParams = {query: this.searchTerm};
     this.router.navigate(['/home/search'], {queryParams: queryParams});
   }
+  openProfile() {}
 }
