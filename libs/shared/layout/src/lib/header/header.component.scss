@@ -34,6 +34,9 @@
       border-radius: 15px;
       .navbar {
         width: 95%;
+        .login{
+          color: white;
+        }
         a {
           font-style: normal;
           font-weight: 600;
@@ -61,6 +64,10 @@
   ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label {
     color: #4043bf;
   }
+  :host ::ng-deep .mat-mdc-tab-link .mdc-tab__text-label.login {
+    color: white;
+  }
+  
   .fit-content {
     width: fit-content;
   }
