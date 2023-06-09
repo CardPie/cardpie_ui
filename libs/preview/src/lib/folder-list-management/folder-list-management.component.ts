@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FolderService} from '../data-acess/services/folder-management.service';
 import {take} from 'rxjs';
 import {Subscription} from 'rxjs';
+import {MatDialog} from '@angular/material/dialog';
+import {CreateFolderDialogComponent} from 'libs/folder-management/src/lib/create-folder-dialog/create-folder-dialog.component';
 import {Folder} from '../data-acess/models/folder.model';
 @Component({
   selector: 'exe-project-folder-list-management',
@@ -22,7 +24,7 @@ export class FolderListManagementComponent implements OnInit, OnDestroy {
     '#db4141',
     '#41db9b',
   ];
-  constructor(private folderService: FolderService) {}
+  constructor(public dialog: MatDialog, private folderService: FolderService) {}
   ngOnInit(): void {
     this.subscription = this.folderService
       .getFolderOfUser()
@@ -35,5 +37,13 @@ export class FolderListManagementComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+  openFolderDialog() {
+    const dialogRef = this.dialog.open(CreateFolderDialogComponent);
+    dialogRef.afterClosed().subscribe((result) => {
+      // if (result.status_code == 200) {
+      //   window.location.reload();
+      // }
+    });
   }
 }

@@ -33,7 +33,7 @@ export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
   isPublic = true;
   subscription!: Subscription;
   folderDetail!: DetailFolder;
-
+  deckName: string = '';
   cardlist: Card[] = new Array(1);
   constructor(
     private formBuilder: FormBuilder,
@@ -47,6 +47,11 @@ export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnInit(): void {
     this.idFolder = this.router.snapshot.paramMap.get('id');
+    this.router.queryParams.subscribe((params) => {
+      this.deckName = params['deckName'];
+    });
+    if (this.deckName !== '') {
+    }
     this.subscription = this.folderService
       .getFolderDetail(this.idFolder)
       .pipe(take(1))
@@ -55,7 +60,7 @@ export class DeckDetailComponent implements OnInit, OnChanges, OnDestroy {
       });
 
     this.deckCreateForm = this.formBuilder.group({
-      nameDesk: ['Unnamed'],
+      nameDesk: [this.deckName !== '' ? this.deckName : 'Unnamed'],
       description: [''],
       isPublic: ['true'],
     });

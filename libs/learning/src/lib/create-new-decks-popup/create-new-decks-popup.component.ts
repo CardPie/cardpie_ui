@@ -82,7 +82,8 @@ export class CreateNewDecksPopupComponent implements OnInit, OnDestroy {
     this.editMode = true;
   }
   createNewDesk(id: string): void {
-    this.router.navigate(['deck', id]);
+    const data = {deckName: this.inputField.deckName};
+    this.router.navigate(['deck', id], {queryParams: data});
   }
 
   onSubmit() {

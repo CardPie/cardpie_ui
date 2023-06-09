@@ -1,0 +1,86 @@
+<div class="container-fluid vh-100 w-100" style="width: 581px !important">
+    <div class="nav-tag d-flex">
+        <div class="row key-back">
+            <mat-icon class="mat-icon-lg" routerLink="/payment"
+                >keyboard_arrow_left</mat-icon
+            >
+        </div>
+        <span class="selected-tag">Selected: </span>
+        <span class="plan-tag"> Free trial</span>
+    </div>
+    <div class="rectangle">
+        <div
+            class="tag d-flex flex-column justify-content-center align-items-center"
+        >
+            <p>Free trial</p>
+        </div>
+        <div class="money-count d-flex align-items-end">
+            <div class="number">$ 0.00 USD</div>
+            <p>for 7 days free trial</p>
+        </div>
+        <div class="money-count-save d-flex align-items-end">
+            <div class="number">
+                You can cancel your subscription at any time
+            </div>
+        </div>
+        <div class="line"></div>
+        <div class="code d-flex">
+            <input
+                type="text"
+                class="form-control"
+                placeholder="Discount code"
+            />
+            <button type="submit">Apply</button>
+        </div>
+        <div class="line1"></div>
+        <div class="payment-methods d-flex">
+            <button
+                class="d-flex credit justify-content-center align-items-center"
+            >
+                <img src="assets/images/credit.png" /><span
+                    >Credit/Debit Card</span
+                >
+            </button>
+            <button (click)="openMomoDialog()">
+                <img src="assets/images/MoMo_Logo 1.png" />
+            </button>
+            <button (click)="openZaloPayDialog()">
+                <img src="assets/images/Zalo_Logo.png" />
+            </button>
+        </div>
+        <div class="line2"></div>
+        <div class="card-number d-flex">
+            <input type="text" class="form-control" placeholder="Card number" />
+            <img src="assets/images/credit2.png" />
+        </div>
+        <div class="date-place d-flex">
+            <input
+                type="text"
+                class="form-control input-dp"
+                placeholder="MM/YY"
+            />
+            <input
+                type="text"
+                class="form-control input-dp"
+                placeholder="CVV"
+            />
+            <input
+                type="text"
+                class="form-control input-dp"
+                placeholder="Postal Code"
+            />
+        </div>
+        <button
+            class="btn-checkout d-flex justify-content-center align-items-center"
+        >
+            <p>Check out</p>
+        </button>
+        <div class="make-sure">
+            <p>
+                By clicking the "Check Out" button above, you agree to our
+                <span>Terms of Service </span>and have read our
+                <span>Privacy Policy.</span>
+            </p>
+        </div>
+    </div>
+</div>
