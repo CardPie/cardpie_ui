@@ -2,7 +2,12 @@
     <div class="title-section">
         <p>My folders</p>
     </div>
-    <button class="create-folder" fxLayout="row" fxLayoutAlign="center center">
+    <button
+        class="create-folder"
+        fxLayout="row"
+        fxLayoutAlign="center center"
+        (click)="openFolderDialog()"
+    >
         <img src="assets/images/plus-border.png" />
         <p>Create new folders</p>
     </button>

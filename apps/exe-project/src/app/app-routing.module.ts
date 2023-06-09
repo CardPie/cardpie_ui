@@ -2,12 +2,14 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {NgModule} from '@angular/core';
 import {AuthGuard} from 'libs/shared/guards/auth.guard';
+import {RedirectGuard} from 'libs/shared/guards/redirect.guard';
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
     loadChildren: () =>
       import('libs/homepage/src/index').then((m) => m.HomepageModule),
+    canLoad: [RedirectGuard],
   },
   {
     path: 'login',
@@ -49,7 +51,11 @@ const routes: Routes = [
       ),
     canActivate: [AuthGuard],
   },
-
+  {
+    path: 'payment',
+    loadChildren: () =>
+      import('libs/Payment/src/index').then((m) => m.PaymentModule),
+  },
   {
     path: 'not-found',
     loadChildren: () =>
