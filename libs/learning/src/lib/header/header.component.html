@@ -60,18 +60,21 @@
                     />
                 </button>
                 <mat-menu #beforeMenu="matMenu" xPosition="before">
-                    <button mat-menu-item>My Profile</button>
+                    <button mat-menu-item (click)="openDevelopDialog()">
+                        My Profile
+                    </button>
                     <button mat-menu-item routerLink="/folders">
                         My Folders
                     </button>
-                    <button mat-menu-item (click)="openProfile()">
-                        Profile
+                    <button mat-menu-item (click)="openDevelopDialog()">
+                        Reminder setting
                     </button>
-                    <button mat-menu-item>Reminder setting</button>
                     <button mat-menu-item routerLink="/payment">
                         Upgrade account
                     </button>
-                    <button mat-menu-item>System setting</button>
+                    <button mat-menu-item (click)="openDevelopDialog()">
+                        System setting
+                    </button>
                     <button mat-menu-item (click)="logout()">Logout</button>
                 </mat-menu>
             </div>

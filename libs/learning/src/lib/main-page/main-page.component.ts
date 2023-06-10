@@ -18,6 +18,7 @@ export class MainPageComponent {
     const dialogConfig = new MatDialogConfig();
     const dialogRef: MatDialogRef<CreateNewDecksPopupComponent> =
       this.dialog.open(CreateNewDecksPopupComponent, {
+        position: {top: '87px'},
         ...dialogConfig,
       });
 
