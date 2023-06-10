@@ -2,6 +2,9 @@
   .cardpie-introduce {
     text-align: center;
     justify-content: center;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
     .header-text {
       color: #4043bf;
       font-size: 35px;
@@ -90,20 +93,26 @@
         }
       }
     }
-    ._icon_1ho08_15 {
+    .circle-3 {
+      background-image: url('../../../../../apps/exe-project/src/assets/svg/circle-3.svg');
       width: 155px;
       height: 155px;
-      left: 17%;
-      top: 140%;
+      background-repeat: no-repeat;
+      background-size: contain;
       position: absolute;
+      right: 68rem;
+      top: 2rem;
       z-index: -1;
     }
-    ._icon_1ho08_15-2 {
+    .circle-4 {
+      background-image: url('../../../../../apps/exe-project/src/assets/svg/circle-3.svg');
       width: 155px;
       height: 155px;
-      left: 77%;
-      top: 195%;
+      background-repeat: no-repeat;
+      background-size: contain;
       position: absolute;
+      right: 11rem;
+      top: 28rem;
       z-index: -1;
     }
 
@@ -143,27 +152,26 @@
       left: -5%;
       top: 150%;
     }
- 
-      // .mat-icon{
-      //   width: 100%;
-      //   height: 600px;
-      //   .special{
-      //     width: 1000px;
 
-      //   }
-      // }
-      .special-banner{
-        justify-self: center;
-        width: 100%;
-        height: 580px;
-        background-image: url("../../../../../apps/exe-project/src/assets/images/cardpie-special.jpg");
+    // .mat-icon{
+    //   width: 100%;
+    //   height: 600px;
+    //   .special{
+    //     width: 1000px;
+
+    //   }
+    // }
+    .special-banner {
+      justify-self: center;
+      background-image: url('../../../../../apps/exe-project/src/assets/images/special-cardpie.png');
+      width: 100%;
+      height: 0;
+      padding-bottom: 43%; /* Tính theo tỷ lệ chiều cao: (chiều cao / chiều rộng) x 100% */
+      background-repeat: no-repeat;
+        background-size: contain;
         background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        position: relative;
-        right: 100px;
-        margin-bottom: 60px;
-      }
-   
+        background-clip: padding-box;
+
+    }
   }
 }

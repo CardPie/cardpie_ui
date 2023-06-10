@@ -1,5 +1,8 @@
 :host {
   .premium-introduction {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
     h2 {
       color: #4043bf;
       font-size: 50px;

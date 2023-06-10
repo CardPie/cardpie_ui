@@ -1,5 +1,6 @@
 :host {
   .premium-choose {
+    max-width: 100%;
     h2 {
       color: #4043bf;
       font-size: 50px;
@@ -11,6 +12,15 @@
       margin-bottom: 34px;
     }
     .premium-choose-content {
+      .premium-content-choose{
+        width: 100%;
+        .choose{
+          width: 41%;
+          img{
+            width: 100%;
+          }
+        }
+      }
       .circle-1 {
         background-image: url('../../../../../apps/exe-project/src/assets/svg/circle-3.svg');
         width: 155px;

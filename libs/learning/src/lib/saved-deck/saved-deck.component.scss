@@ -24,6 +24,15 @@
     .item-list::-webkit-scrollbar {
       display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
     }
+    .image-banner {
+      justify-self: center;
+      width: 100%;
+      height: 427px;
+      background-image: url('../../../../../apps/exe-project/src/assets/images/facebookCover111.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
   }
 
   exe-project-card-items {

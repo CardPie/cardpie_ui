@@ -30,7 +30,6 @@ export class SearchSectionComponent implements OnInit, OnChanges {
     this.route.queryParams.subscribe((params) => {
       this.searchName = params['query'];
       // Sử dụng searchQuery cho mục đích tìm kiếm
-      console.log('Từ khóa tìm kiếm:', this.searchName);
     });
   }
   ngOnInit(): void {

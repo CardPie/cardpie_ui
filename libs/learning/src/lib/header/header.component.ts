@@ -5,6 +5,7 @@ import {LearningService} from '../data-access/services/learning.service';
 import {Subscription, take} from 'rxjs';
 import {UserInfor} from 'libs/folder-management/src/lib/data-acess/models/user.model';
 import {MatDialog} from '@angular/material/dialog';
+import {AnnouncementDialogComponent} from '../announcement-dialog/announcement-dialog.component';
 
 @Component({
   selector: 'exe-project-header',
@@ -40,5 +41,16 @@ export class HeaderComponent implements OnInit {
     const queryParams = {query: this.searchTerm};
     this.router.navigate(['/home/search'], {queryParams: queryParams});
   }
-  openProfile() {}
+  openDevelopDialog() {
+    const dialogRef = this.dialog.open(AnnouncementDialogComponent, {
+      width: '300px',
+      height: '200px',
+      panelClass: 'dialog-container',
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      // if (result.status_code == 200) {
+      //   window.location.reload();
+      // }
+    });
+  }
 }
