@@ -28,6 +28,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {SearchSectionComponent} from './search-section/search-section.component';
 import {SaveDeckDialogComponent} from './save-deck-dialog/save-deck-dialog.component';
+import {AnnouncementDialogComponent} from './announcement-dialog/announcement-dialog.component';
 
 @NgModule({
   imports: [
@@ -62,6 +63,7 @@ import {SaveDeckDialogComponent} from './save-deck-dialog/save-deck-dialog.compo
     CreateNewDecksPopupComponent,
     SearchSectionComponent,
     SaveDeckDialogComponent,
+    AnnouncementDialogComponent,
   ],
   providers: [DestroyService],
   exports: [HeaderComponent, FooterComponent, MainPageComponent],

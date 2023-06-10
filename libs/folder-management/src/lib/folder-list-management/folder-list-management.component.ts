@@ -45,7 +45,9 @@ export class FolderListManagementComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
   getFolder(folder: Folder) {
-    this.router.navigate(['/folders', folder.id]);
+    this.router.navigate(['/folders', folder.id], {
+      queryParams: {id: folder.id},
+    });
   }
 
   deletePopup(folder: Folder) {
