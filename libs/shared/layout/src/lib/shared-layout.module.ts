@@ -8,6 +8,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatTabsModule} from '@angular/material/tabs';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatListModule,
     MatTabsModule,
     FlexLayoutModule,
+    MatIconModule
   ],
   declarations: [HeaderComponent, FooterComponent],
   exports: [HeaderComponent, FooterComponent],

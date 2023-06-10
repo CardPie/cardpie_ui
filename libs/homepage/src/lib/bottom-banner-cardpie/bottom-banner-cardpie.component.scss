@@ -2,6 +2,7 @@
   .bottom-banner {
     overflow: hidden;
     max-width: 100%;
+    position: relative;
     .image-banner {
       background-image: url('../../../../../apps/exe-project/src/assets/images/Frame.png');
       width: 100%;
@@ -53,7 +54,6 @@
         background-image: url('../../../../../apps/exe-project/src/assets/images/Group 150.png');
         width: 100%;
         height: 0;
-        margin-left: 40px;
         padding-bottom: 55%; /* Tính theo tỷ lệ chiều cao: (chiều cao / chiều rộng) x 100% */
         background-repeat: no-repeat;
         background-size: contain;
