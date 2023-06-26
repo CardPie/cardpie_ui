@@ -17,4 +17,4 @@ To run the CardPie UI locally, follow these steps:
 2. Install the required packages: `npm i`
 3. Change API Endpoint && key of S3.
 4. Start the application: `npm run start`
-5. The API will be available at: `http://localhost:5200`
+5. The API will be available at: `http://localhost:4200`
