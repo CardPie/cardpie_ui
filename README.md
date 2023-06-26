@@ -9,7 +9,7 @@ CardPie UI is the Front-end component of the CardPie flashcard application. It p
 - **Angular Material**
 - **Vercel**
 - **Upload images to S3 Storage**
-- 
+  
 ## Getting Started with Development
 To run the CardPie UI locally, follow these steps:
 
