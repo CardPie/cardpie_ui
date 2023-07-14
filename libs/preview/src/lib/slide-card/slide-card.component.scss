@@ -148,4 +148,23 @@
       font-size: 25px;
     }
   }
+  .front-img{
+    position: absolute;
+    padding-left: 1rem;
+  
+    img{
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+  }
+  .back-img{
+    position: absolute;
+    padding-left: 1rem; 
+    img{
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+  }
 }
