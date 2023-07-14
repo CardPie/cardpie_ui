@@ -27,13 +27,27 @@
                     />
                     <mat-icon class="icon-volume">volume_up</mat-icon>
                 </div>
-                <span class="title-card"
+                <ng-container *ngIf="listFlashCard![currentCardIndex].front_image_url;  else templateA">
+                    <div class ="front-img">
+                        <img  src="{{listFlashCard![currentCardIndex].front_image_url}}">
+                    </div>
+                    <span class="title-card"  style="margin-left: 5rem;"
+                    >{{ listFlashCard![currentCardIndex].front_content }} </span
+                    ><br />
+                    <span class="description-card"  style="margin-left: 5rem;"
+                        >{{ listFlashCard![currentCardIndex].front_description }}
+                    </span>
+                    <span class="noted-text">Click to show the answer</span>
+                  </ng-container>
+                  <ng-template #templateA>
+                    <span class="title-card"
                     >{{ listFlashCard![currentCardIndex].front_content }} </span
                 ><br />
                 <span class="description-card"
                     >{{ listFlashCard![currentCardIndex].front_description }}
                 </span>
                 <span class="noted-text">Click to show the answer</span>
+                  </ng-template>               
             </div>
             <div class="tp-box__side tp-box__back">
                 <div
@@ -48,13 +62,27 @@
                     />
                     <mat-icon class="icon-volume">volume_up</mat-icon>
                 </div>
-                <span class="title-card">{{
-                    listFlashCard![currentCardIndex].back_content
-                }}</span
-                ><br />
-                <span class="description-card">{{
-                    listFlashCard![currentCardIndex].back_description
-                }}</span>
+                <ng-container *ngIf="listFlashCard![currentCardIndex].back_image_url;  else templateB">
+                    <div class ="back-img">
+                        <img  src="{{listFlashCard![currentCardIndex].back_image_url}}">
+                    </div>
+                    <span class="title-card"  style="margin-left: 5rem;">{{
+                        listFlashCard![currentCardIndex].back_content
+                    }}</span
+                    ><br />
+                    <span class="description-card"  style="margin-left: 5rem;">{{
+                        listFlashCard![currentCardIndex].back_description
+                    }}</span>
+                  </ng-container>
+                  <ng-template #templateB>
+                    <span class="title-card">{{
+                        listFlashCard![currentCardIndex].back_content
+                    }}</span
+                    ><br />
+                    <span class="description-card">{{
+                        listFlashCard![currentCardIndex].back_description
+                    }}</span>
+                  </ng-template>   
             </div>
         </div>
         <div class="box box-a"></div>
