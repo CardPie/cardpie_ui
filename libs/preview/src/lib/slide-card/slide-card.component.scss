@@ -150,21 +150,23 @@
   }
   .front-img{
     position: absolute;
-    padding-left: 1rem;
+    margin-left: 4rem;
   
     img{
-      width: 150px;
-      height: 150px;
+      width: 170px;
+      height: 170px;
       object-fit: contain;
     }
   }
   .back-img{
     position: absolute;
-    padding-left: 1rem; 
+    margin-left: 4rem; 
     img{
-      width: 150px;
-      height: 150px;
+      width: 170px;
+      height: 170px;
       object-fit: contain;
     }
   }
+   
+  
 }
